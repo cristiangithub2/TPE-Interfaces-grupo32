@@ -2,6 +2,7 @@ body{
     background-color:#1A1923;  
 }
 header{
+    margin-top: 0px;
     background-color: #242832;
     display: flex;
     justify-content: space-between;
