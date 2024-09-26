@@ -1,3 +1,64 @@
 body{
     background-color:#1A1923;  
 }
+header{
+    background-color: #242832;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    width: 100%;
+}
+
+
+/* icono menu */ 
+.circle{
+    margin-top: 3%;
+    position: relative;
+    border: solid 2px #D2CFCF;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #242832;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,2);
+    cursor:pointer;
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+    width: 10px; 
+    height: 10px;
+}
+
+
+.line {
+    height: 2px; 
+    background-color: #D2CFCF; 
+    border-radius: 2px; 
+    transition: all 0.3s;
+}
+.circle:hover .line {
+    background-color: #ff6347; 
+}
+
+
+
+
+/*icono perfil*/
+.perfil{
+    margin-top: 3%;
+    width: 26px;
+    height: 26px;
+}
+
+
+/*icon pagina*/
+.iconoPrincipal{
+    margin-top: 3%;
+    width: 26px;
+    height: 26px;
+}
