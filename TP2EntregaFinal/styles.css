@@ -1,4 +1,5 @@
 body{
+    font-family: 'Lato', sans-serif;
     background-color:#1A1923;  
 }
 header{
@@ -9,7 +10,16 @@ header{
     height: 50px;
     width: 100%;
 }
-
+.logo{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.perfil-img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
 
 /* icono menu */ 
 .circle{
@@ -62,4 +72,35 @@ header{
     margin-top: 3%;
     width: 26px;
     height: 26px;
+}
+.categoria{
+color: #D2CFCF;
+}
+.game-card-img img{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+.game-card a{
+    text-decoration: none;
+    color:#D2CFCF
+}
+.btn-jugar {
+    background-color: #4CD02A; 
+    border: 2px solid black; 
+    border-radius: 25px; 
+    width: 145px; 
+    height: 56px; 
+    box-shadow: 0 4px 8px rgba(82, 74, 74, 0.5); 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    font-size: 16px; 
+    color: black; 
+    text-align: center; 
+}
+.btn-jugar .play {
+    margin-left: 10px; /* Espaciado entre la imagen y el texto */
 }
