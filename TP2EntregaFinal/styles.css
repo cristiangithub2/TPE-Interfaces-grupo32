@@ -53,7 +53,6 @@ header{
     transition: all 0.3s;
 }
 .circle:hover .line {
-    background-color: #ff6347; 
 }
 
 
@@ -73,7 +72,37 @@ header{
     width: 26px;
     height: 26px;
 }
-.categoria{
+
+
+
+
+/*seccion de categoria  */
+section.category{
+    position: relative;
+    padding-left: 3px;
+    margin-bottom: 40px;
+}
+
+/*titulo de la categoria*/
+section.category h2.name-category{
+    position: relative;
+    display: flex;
+    font-size: 20px;
+    font-family: lato;
+    margin-left: 6%;
+}
+/*el carrucel */
+.carrucel{
+    height: 205px;
+    width: 86%;
+    display: flex;
+    column-gap: 20px;
+    overflow: hidden;
+    scroll-behavior:smooth ;
+
+}
+
+.category{
 color: #D2CFCF;
 }
 .game-card-img img{
@@ -86,6 +115,8 @@ color: #D2CFCF;
     text-decoration: none;
     color:#D2CFCF
 }
+
+/*botones*/
 .btn-jugar {
     background-color: #4CD02A; 
     border: 2px solid black; 
@@ -103,4 +134,75 @@ color: #D2CFCF;
 }
 .btn-jugar .play {
     margin-left: 10px; /* Espaciado entre la imagen y el texto */
+}
+
+button.btn-left{
+    margin: 0%;
+    visibility: 0%;
+}
+
+.btn-left, .btn-right{
+    background-color: #1A1923;
+    
+
+}
+
+.btn-left-mobile, .btn-right-mobile{
+    width: 25px;
+    height: 25px;
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+@media only screen and (min-width: 1024px) {
+    
+    header{
+        height: 70px;
+        margin-bottom: 30px;
+        position:sticky;
+        top:0%;
+        z-index: 8;
+    }
+
+    /*menu hamburguesa*/
+    .circle{
+        height: 46px;
+        width: 46px;
+        margin-top: 8px;
+        position: relative;
+        border: solid 3px #D2CFCF;
+    }
+
+    .menu-icon {
+        display: flex;
+        flex-direction: column; 
+        justify-content: space-between;
+        width: 18px; 
+        height: 15px;
+    }
+
+    .line {
+        height: 3px; 
+        background-color: #D2CFCF; 
+        border-radius: 0px; 
+        transition: all 0.3s;
+    }
+
+    /*perfil*/
+    .perfil{
+        margin-top: 8px;
+        width: 55px;
+        height: 55px;
+    }
+
+    /*logo*/
+    .iconoPrincipal{
+        margin-top: 8px;
+        width: 55px;
+        height: 55px;
+    }
 }
