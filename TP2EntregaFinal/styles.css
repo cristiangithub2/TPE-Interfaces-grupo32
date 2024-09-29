@@ -12,7 +12,7 @@ header{
 }
 .logo{
     height: 100%;
-    width: 100%;
+ 
     object-fit: contain;
 }
 .perfil-img{
@@ -218,6 +218,7 @@ button.btn-left{
     .logo, .logo-footer {
         font-size: 24px;
         font-weight: bold;
+        
     }
     .iconoPrincipal {
         flex-grow: 1; /* Para que el logo ocupe el espacio disponible */
@@ -253,6 +254,8 @@ button.btn-left{
     }
     
     .game-header {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
         margin: 0 auto;
         width: 1144px;
         height: 50px;
@@ -260,18 +263,12 @@ button.btn-left{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 20px;
+        padding: 0 0px;
     }
     
-    .nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-    }
-    
+      
     .nav-item {
-        margin-right: 20px; /* Espacio entre texto y iconos */
+        margin-left: 98px; /* Espacio entre texto y iconos */
     }
     
     .videojuego {
@@ -280,6 +277,7 @@ button.btn-left{
     
     .icons {
         display: flex;
+        margin-right: 10px;
         gap: 10px; /* Espacio entre iconos */
     }
     
@@ -289,8 +287,9 @@ button.btn-left{
     }
     
     .title-container {
-        text-align: center;
+        text-align: left;
         flex: 1; /* Para centrar el título en el header */
+        margin: 10px;
     }
     
     .game-title {
@@ -304,12 +303,14 @@ button.btn-left{
     }
     
     .banner-image {
-        width: 100%;
-        height: auto;
+        width: 1144px;
+        height: 720px;
         display:block;
     }
     
     .game-footer {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
         margin: 0 auto;
         width: 1144px;
         height: 50px;
@@ -317,7 +318,7 @@ button.btn-left{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 20px;
+        padding: 0 0px;
     }
     
     .footer-left {
@@ -329,6 +330,7 @@ button.btn-left{
         width: 24px; /* Ajusta el tamaño según sea necesario */
         height: auto;
         margin-right: 10px; /* Espacio entre logo y título */
+        margin-left: 10px;
     }
     
     .footer-title {
@@ -338,6 +340,7 @@ button.btn-left{
     .footer-icons {
         display: flex;
         gap: 10px; /* Espacio entre iconos */
+        margin-right: 10px;
     }
     
     .footer-icon {
