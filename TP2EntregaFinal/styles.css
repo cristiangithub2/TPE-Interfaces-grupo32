@@ -1,6 +1,7 @@
+
 body{
     font-family: 'Lato', sans-serif;
-    background-color:#1A1923;  
+    background-color:#43464C;  
 }
 header{
     margin-top: 0px;
@@ -78,72 +79,141 @@ header{
 
 /*seccion de categoria  */
 section.category{
-    position: relative;
-    padding-left: 3px;
-    margin-bottom: 40px;
+background-color: aqua;
 }
 
 /*titulo de la categoria*/
-section.category h2.name-category{
+section .category h2.name-category{
     position: relative;
-    display: flex;
+    width: 100%;
     font-size: 20px;
     font-family: lato;
-    margin-left: 6%;
 }
+
 /*el carrucel */
-.carrucel{
-    height: 205px;
-    width: 86%;
-    display: flex;
-    column-gap: 20px;
-    overflow: hidden;
-    scroll-behavior:smooth ;
-
-}
-
 .category{
 color: #D2CFCF;
+position: relative;
+margin-bottom: 40;
 }
-.game-card-img img{
+
+ul.carrusel{
+    background-color: rgb(0, 26, 255);
+    height: 131px;
+    display: flex;
+    column-gap:15px;
+    padding: 0;
+    margin: 0;
+}
+li.game-card{    
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+/*card*/
+.game-card{
+    height: 131px;
+    background-color: blueviolet;
+    width: 156px;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+
+.game-card-img {
+    height: 76px;
+    
+}
+.game-card-img  img{
+
+    border-radius: 10px 10px 0px 0px;
     width: 100%;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
+    height: 76px;
 }
-.game-card a{
-    text-decoration: none;
-    color:#D2CFCF
+.game-card-info{
+    height: 56px;
+    background-color: #242832;
+    display: flex;
+    align-items: center;
+    border-radius: 0px 0px 10px 10px;
+    
+    
+
+}
+
+.title-card{
+    font-size: 14px;
+    margin: 0px;
+    color: white;
+    padding-top: 0px;
+}
+.category-card{
+    font-size: 12px;
+    margin: 0px;
+    color: white;
+    opacity: 0.7;
+}
+
+.text-card{
+    
+    display: flex;             /* Flexbox para alinear el título y la categoría */
+    flex-direction: column;    /* Si quieres que los textos estén uno debajo del otro */
+    gap: 4px;  /*es el empacio entre en un elemento y otro pero aun  no se aplico*/
+    padding-left: 9px;
+    padding-bottom:16px ;
+}
+
+
+
+.etiqueta-premium{
+    width: 30px;
+    z-index: 3;
+}
+
+.etiqueta-pliegue{
+    height: 200px;
+}
+
+
+
+
+
+
+a{
+    text-decoration: none; /*saca la linea*/
+    color: inherit;
 }
 
 /*botones*/
 .btn-jugar {
-    background-color: #4CD02A; 
-    border: 2px solid black; 
-    border-radius: 25px; 
-    width: 145px; 
-    height: 56px; 
-    box-shadow: 0 4px 8px rgba(82, 74, 74, 0.5); 
-    cursor: pointer; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-    font-size: 16px; 
-    color: black; 
-    text-align: center; 
+    background-color: transparent;
+    height: 38px;
+    width: 38px;
+    border: 0px;
+
+    margin-top: 8px;
+    margin-left: 29px;
+}
+.btn-jugar img{
+    height: 38px;
+    width: 38px;
 }
 .btn-jugar .play {
-    margin-left: 10px; /* Espaciado entre la imagen y el texto */
+   /* Espaciado entre la imagen y el texto */
 }
 
 button.btn-left{
     margin: 0%;
-    visibility: 0%;
+    border: 0px;
 }
 
 .btn-left, .btn-right{
     background-color: #1A1923;
-    
+    background-color: transparent;
+    display: none;
+    border: 0px;
 
 }
 
@@ -154,9 +224,25 @@ button.btn-left{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
+    cursor: pointer;
+    border: 0px;
+
+}
+
+.btn-left-mobile img, .btn-right-mobile img{
+    width: 25px;
+    height: 25px;
+} 
+
+.btn-left-mobile{
+    left: 35%;
 }
 
 
+.btn-right-mobile{
+    right: 35%;
+}
 
 @media only screen and (min-width: 1024px) {
     
@@ -204,5 +290,10 @@ button.btn-left{
         margin-top: 8px;
         width: 55px;
         height: 55px;
+    }
+    .btn-left, .btn-right{
+        display: block;
+    
+    
     }
 }
