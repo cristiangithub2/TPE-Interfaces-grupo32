@@ -83,7 +83,7 @@ li{
 
 /*ul specials*/
 ul.specials{
-    height: 314px;
+    height: 208px;
     width: 80%;
     display: flex;
     flex-direction: row;
@@ -91,12 +91,14 @@ ul.specials{
     overflow: hidden;
     scroll-behavior: smooth;
     position: relative;
-    padding-bottom: 0px;
+    margin-bottom: 40px;
     margin-left: 10%;
     padding-left: 0px;
 }
 
+
 /*card recommended*/
+
 .card-recommended{
     background-color: #242832;
     height: 208px;
@@ -109,7 +111,6 @@ ul.specials{
     position: absolute;
     padding-left: 5%;
     padding-top: 5%;
-    height: 279px;
 }
 .recommended-card-img img{
     position: absolute;
@@ -170,13 +171,14 @@ section.category{
 }
 
 /*titulo de la categoria*/
-section .category h2.name-category{
+h2.name-category{
     position: relative;
     display: flex;
     width: 100%;
-    font-size: 20px;
+    font-size: 18px;
     font-family: lato;
-
+    padding-left:11% ;
+    
 }
 
 /*el carrucel */
@@ -381,7 +383,11 @@ button.btn-left{
     border: 0px;
 
 }
-
+.btns-mobile{
+    width: 100%;
+    height: 25px;
+    margin-bottom: 30px;
+}
 .btn-left-mobile img, .btn-right-mobile img{
     width: 25px;
     height: 25px;
