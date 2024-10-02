@@ -1,453 +1,245 @@
-
-body{
-    font-family: 'Lato', sans-serif;
-    background-color:#43464C;  
-}
-header{
+* {
+    margin: 0;
     padding: 0;
-    margin:0;
-    background-color: #242832;
-    display: flex;
-    justify-content: space-between;
-    height: 50px;
-    width: 100%;
+    box-sizing: border-box;
 }
 
-li{
-    list-style: none;
-}
-
-.logo{
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-}
-.perfil-img{
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-}
-
-/* icono menu */ 
-.circle{
-    margin-top: 3%;
-    position: relative;
-    border: solid 2px #D2CFCF;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    background-color: #242832;
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f4f4f9;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,2);
-    cursor:pointer;
+    height: 100vh;
 }
 
-.menu-icon {
-    display: flex;
-    flex-direction: column; 
-    justify-content: space-between;
-    width: 10px; 
-    height: 10px;
-}
-
-
-.line {
-    height: 2px; 
-    background-color: #D2CFCF; 
-    border-radius: 2px; 
-    transition: all 0.3s;
-}
-.circle:hover .line {
-}
-
-
-
-
-/*icono perfil*/
-.perfil{
-    margin-top: 3%;
-    width: 26px;
-    height: 26px;
-}
-
-
-/*icon pagina*/
-.iconoPrincipal{
-    margin-top: 3%;
-    width: 26px;
-    height: 26px;
-}
-
-
-/*ul specials*/
-ul.specials{
-    height: 314px;
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    column-gap: 13px;
-    overflow: hidden;
-    scroll-behavior: smooth;
-    position: relative;
-    padding-bottom: 0px;
-    margin-left: 10%;
-    padding-left: 0px;
-}
-
-/*card recommended*/
-.card-recommended{
-    background-color: #242832;
-    height: 208px;
-    width: 312px;
-    border-radius: 15px;
-    margin-left: 7%;
-}
-
-.recommended-card-img{
-    position: absolute;
-    padding-left: 5%;
-    padding-top: 5%;
-    height: 279px;
-}
-.recommended-card-img img{
-    position: absolute;
-    border-radius: 10px 10px 10px 10px;
-    width: 279px;
-    height: 179px;
-    object-fit: cover; /* para que no se deforme la imagen*/
-    left: 17px;
-    top: 15px;
-}
-
-.btn-jugar-recommended{
-    column-gap: 6px;
-    width: 65px;
-    height: 23px;
-    display: flex;
-    align-items: center;
-    background-color: #4cd02a ; /* Fondo semi-transparente para destacar la etiqueta */
-    position: relative;
-    top: 169px;
-    left:58%;
-    z-index: 10;
-    border-radius: 30px;
-    border:0 ;
-
-}
-.btn-jugar-recommended img{
-    width: 17px;
-    height: 17px;
-}
-.btn-jugar-recommended p{
-    position: relative;
-    top: -1px;
-    left: 1px;
-    font-size: 11px;
-}
-.btn-miLista-recommended{
-    column-gap: 6px;
-    width: 65px;
-    height: 23px;
-    display: flex;
-    align-items: center;
-    background-color: #DCFA00 ; /* Fondo semi-transparente para destacar la etiqueta */
-    position: relative;
-    top:145px;
-    left:25%;
-    z-index: 10;
-    border-radius: 30px;
-    font-size: 11px;
-    border: 0;
-}
-
-
-
-/*seccion de categoria  */
-section.category{
-
-}
-
-/*titulo de la categoria*/
-section .category h2.name-category{
-    position: relative;
-    display: flex;
-    width: 100%;
-    font-size: 20px;
-    font-family: lato;
-
-}
-
-/*el carrucel */
-.category{
-color: #D2CFCF;
-position: relative;
-margin-bottom: 40;
-}
-
-ul.carrusel{
-
-    height: 131px;
-    width: 84%;
-    display: flex;
-    flex-direction: row;
-    column-gap: 13px;
-    overflow: hidden;
-    scroll-behavior: smooth;
-    position: relative;
-    padding-bottom: 0px;
-    margin-left: 7%;
-    padding-left: 0px;
-}
-
-li.game-card{    
-    list-style: none;
-    flex-shrink: 0;
-    
-}
-/*card*/
-.game-card{
-    height: 131px;
-    width: 158px;
-    position: relative;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-left: 18px;
-}
-.game-card:hover{
-    transform: scale(1.1);
-    transition: 0.3s ease-in;
-}
-
-.game-card-img {
-    height: 76px;
-    
-}
-.game-card-img  img{
-    position: absolute;
-    border-radius: 10px 10px 0px 0px;
-    width: 156px;
-    height: 76px;
-    object-fit: cover; /* para que no se deforme la imagen*/
-}
-.game-card-info{
-    height: 56px;
-    background-color: #242832;
-    display: flex;
-    align-items: center;
-    border-radius: 0px 0px 10px 10px;
-    width: 156px;
-    position: absolute;
-    
-
-}
-.game-card-info-premium{
-    height: 56px;
-    background-color: #242832;
-    display: flex;
-    align-items: center;
-    border-radius: 0px 0px 10px 10px;
-    width: 156px;
-    position: absolute;
-}
-.etiqueta-premium{
-    width: 46px;
-    height: 19px;
-    display: flex;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para destacar la etiqueta */
-    position: absolute;
-    top: 67px;
-    left: 105px;
-    z-index: 10;
-
-}
-
-.title-etiqueta{
-    color: white;
-    margin-left:  5px;
-    font-size: 12px;
-    position: absolute;
-    left: 23px;
-    top: -90%;
-    transform: translate(-50%);
-    z-index:15;
-}
-.icono-premium{
-    position: relative;
-
-}
-.icono-premium img{
-    width: 60px;
-    height: auto;
-    object-fit: contain;
-
-}
-.title-card{
-    font-size: 14px;
-    margin: 0px;
-    color: white;
-    padding-top: 0px;
-}
-.category-card{
-    font-size: 12px;
-    margin: 0px;
-    color: white;
-    opacity: 0.7;
-}
-
-.text-card{
-    
-    display: flex;             /* Flexbox para alinear el título y la categoría */
-    flex-direction: column;    /* Si quieres que los textos estén uno debajo del otro */
-    gap: 4px;  /*es el empacio entre en un elemento y otro pero aun  no se aplico*/
-    padding-left: 9px;
-    padding-bottom:16px ;
-}
-
-
-
-
-
-
-
-
-a{
-    text-decoration: none; /*saca la linea*/
-    color: inherit;
-}
-
-/*botones*/
-.btn-jugar {
-    background-color: transparent;
-    height: 38px;
-    width: 38px;
-    border: 0px;
-
-    margin-top: 8px;
-    margin-left: 29px;
-}
-.btn-jugar img{
-    height: 38px;
-    width: 38px;
-}
-.btn-jugar .play {
-   /* Espaciado entre la imagen y el texto */
-}
-
-.btn-right-recommended, .btn-left-recommended{
-    background-color: transparent;
-    border: 0;
-}
-.btn-right-recommended img, .btn-left-recommended img{
-    height: 35px;
-    width: 35px;
-}
-.btn-left-recommended{
-    position: absolute;
-    top: 150px;
-    left: 41px;
-    z-index: 3;
-}
-.btn-right-recommended{
-    position: absolute;
-    top: 150px;
-    right: 41px;
-    z-index: 3;
-}
-button.btn-left{
-    margin: 0%;
-    border: 0px;
-}
-
-.btn-left, .btn-right{
-    background-color: transparent;
-    display: none;
-    border: 0px;
-
-}
-
-.btn-left-mobile, .btn-right-mobile{
-    width: 25px;
-    height: 25px;
-    position:absolute;
+.login-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
+    width: 100%;
+}
+
+.login-box {
+    background-color: #242832; /* Fondo gris oscuro */
+    padding: 15px; /* Reducido el padding */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ocupa todo el ancho disponible del contenedor */
+    max-width: 300px; /* Aumentado a 300px para el formulario de Iniciar Sesión */
+    text-align: center;
+}
+
+.logo {
+    width: 100px; /* Aumentado el tamaño del logo */
+    height: auto; /* Asegura que la altura se ajuste proporcionalmente */
+    margin-bottom: 10px; /* Margen ajustado */
+}
+
+h2 {
+    margin-bottom: 10px; /* Margen ajustado */
+    color: #fff; /* Texto blanco */
+}
+
+.social-login {
+    display: flex;
+    justify-content: center; /* Centrar los iconos horizontalmente */
+    gap: 20px; /* Aumentado el espacio entre los iconos */; /* Espacio uniforme entre los iconos */
+    margin-bottom: 10px; /* Margen inferior ajustado */
+}
+
+.social-btn {
+    width: 50px;  /* Ancho uniforme para todos los botones */
+    height: 50px; /* Altura uniforme para todos los botones */
+    border: none;
+    border-radius: 5px; /* Bordes redondeados */
+    color: #fff;
+    font-weight: bold;
     cursor: pointer;
-    border: 0px;
-
+    font-size: 20px; /* Ajustar el tamaño de los iconos */
+    display: flex; /* Usar flexbox para centrar el contenido */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
 }
 
-.btn-left-mobile img, .btn-right-mobile img{
-    width: 25px;
-    height: 25px;
-} 
+/* Estilo de cada red social */
+.facebook {
+    background-color: #267CEC;
+}
 
-.btn-left-mobile{
-    left: 40%;
+.google {
+    background-color: #fff;
+}
+
+.discord {
+    background-color: #7289da;
 }
 
 
-.btn-right-mobile{
-    right: 40%;
+/* Asegurando que los iconos dentro de los botones tengan el mismo tamaño */
+.social-btn img {
+    max-height: 30px; /* Tamaño máximo de altura para los iconos */
+    max-width: 30px;  /* Tamaño máximo de ancho para los iconos */
+}
+
+.social-btn i {
+    font-size: 30px; /* Asegura que los iconos de FontAwesome tengan el mismo tamaño */
+}
+
+/* Ajuste específico para el logo de Discord */
+.discord img {
+    max-height: 30px; /* Ajusta específicamente la altura del logo de Discord */
+    max-width: 30px;  /* Ajusta específicamente el ancho del logo de Discord */
+}
+
+/* Línea divisoria blanca */
+.divider {
+    border: none;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 10px; /* Margen ajustado */
+}
+
+/* Estilo del formulario */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Etiquetas para los inputs */
+.input-label {
+    font-family: 'Lato', sans-serif;
+    color: #fff; /* Texto blanco */
+    font-size: 12px; /* Tamaño de fuente reducido */
+    text-align: left; /* Alinear a la izquierda */
+    margin-bottom: 5px; /* Espacio entre etiqueta y input */
+}
+
+/* Inputs */
+input {
+    padding: 6px; /* Reducido el padding */
+    margin-bottom: 6px; /* Ajustado el margen */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px; /* Tamaño de fuente reducido */
+}
+
+input:focus {
+    outline: none;
+    border-color: #7EEB00; /* Color primario */
+    box-shadow: 0 0 8px rgba(126, 235, 0, 0.5);
+}
+
+/* Estilo para "¿Se te olvidó tu contraseña?" */
+.forgot-password {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px; /* Tamaño de fuente reducido */
+    color: #fff; /* Texto blanco */
+    text-align: right;
+    margin-bottom: 10px; /* Ajustado el margen */
+}
+
+/* Estilo del botón de inicio de sesión */
+.login-btn {
+    background-color: #fff; /* Botón de iniciar sesión blanco */
+    color: #242832; /* Texto en gris oscuro */
+    padding: 8px; /* Tamaño ajustado */
+    border: none;
+    border-radius: 25px; /* Bordes más redondeados */
+    font-size: 14px; /* Tamaño de fuente reducido */
+    cursor: pointer;
+    font-weight: bold;
+    width: 130px; /* Mismo tamaño que el botón de REGÍSTRATE */
+    margin: 0 auto 10px; /* Centrado y con margen inferior */
+}
+
+.login-btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* Sección de registro */
+.register-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px; /* Ajustado el margen */
+}
+
+/* Texto de la pregunta con fuente Lato */
+.register-text {
+    font-family: 'Lato', sans-serif;
+    color: #fff; /* Texto blanco */
+    font-size: 12px; /* Tamaño de fuente reducido */
+    margin-bottom: 5px; /* Ajustado el margen */
+}
+
+.register-btn {
+    background-color: #7EEB00; /* Botón de registrarse color primario */
+    color: #242832;
+    padding: 8px; /* Tamaño ajustado */
+    border: none;
+    border-radius: 25px; /* Bordes más redondeados */
+    font-size: 14px; /* Tamaño de fuente reducido */
+    cursor: pointer;
+    font-weight: bold;
+    width: 120px; /* Tamaño ajustado para ser más pequeño */
+    margin: 0 auto 10px; /* Centrado y con margen inferior */
+}
+
+.register-btn:hover {
+    background-color: #69c500; /* Color primario al pasar el ratón */
+}
+
+/* Estilo para la animación de éxito */
+.success-animation {
+    background-color: #FF700F; /* Color de fondo acento */
+    transition: background-color 0.5s ease; /* Transición suave */
+    animation: pulse 1s infinite; /* Efecto de pulso */
+}
+
+/* Animación de pulso */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05); /* Escala el botón al 105% */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.terms-text {
+    color: #fff;
+    font-size: 10px; /* Tamaño de fuente reducido */
+    margin: 5px 0; /* Ajustado el margen */
+}
+
+.terms-highlight {
+    color: #7EEB00; /* Color primario para los términos */
 }
 
 
+/* Estilos para la notificación de éxito */
+.success-notification {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 40px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
 
-@media only screen and (min-width: 1024px) {
-    
-    header{
-        height: 70px;
-        margin-bottom: 30px;
-        position:sticky;
-        top:0%;
-        z-index: 8;
-    }
-
-    /*menu hamburguesa*/
-    .circle{
-        height: 46px;
-        width: 46px;
-        margin-top: 8px;
-        position: relative;
-        border: solid 3px #D2CFCF;
-    }
-
-    .menu-icon {
-        display: flex;
-        flex-direction: column; 
-        justify-content: space-between;
-        width: 18px; 
-        height: 15px;
-    }
-
-    .line {
-        height: 3px; 
-        background-color: #D2CFCF; 
-        border-radius: 0px; 
-        transition: all 0.3s;
-    }
-
-    /*perfil*/
-    .perfil{
-        margin-top: 8px;
-        width: 55px;
-        height: 55px;
-    }
-
-    /*logo*/
-    .iconoPrincipal{
-        margin-top: 8px;
-        width: 55px;
-        height: 55px;
-    }
-    .btn-left, .btn-right{
-        display: block;
-    
-    
-    }
+/* Mostrar la notificación de éxito con animación */
+.success-notification.show {
+    display: block;
+    opacity: 1;
 }
