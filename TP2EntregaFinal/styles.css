@@ -1,0 +1,353 @@
+
+body{
+    font-family: 'Lato', sans-serif;
+    background-color:#43464C;  
+}
+header{
+    padding: 0;
+    margin:0;
+    background-color: #242832;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    width: 100%;
+}
+.logo{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.perfil-img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+/* icono menu */ 
+.circle{
+    margin-top: 3%;
+    position: relative;
+    border: solid 2px #D2CFCF;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #242832;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,2);
+    cursor:pointer;
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+    width: 10px; 
+    height: 10px;
+}
+
+
+.line {
+    height: 2px; 
+    background-color: #D2CFCF; 
+    border-radius: 2px; 
+    transition: all 0.3s;
+}
+.circle:hover .line {
+}
+
+
+
+
+/*icono perfil*/
+.perfil{
+    margin-top: 3%;
+    width: 26px;
+    height: 26px;
+}
+
+
+/*icon pagina*/
+.iconoPrincipal{
+    margin-top: 3%;
+    width: 26px;
+    height: 26px;
+}
+
+
+
+
+/*seccion de categoria  */
+section.category{
+
+}
+
+/*titulo de la categoria*/
+section .category h2.name-category{
+    position: relative;
+    display: flex;
+    width: 100%;
+    font-size: 20px;
+    font-family: lato;
+
+}
+
+/*el carrucel */
+.category{
+color: #D2CFCF;
+position: relative;
+margin-bottom: 40;
+}
+
+ul.carrusel{
+
+    height: 131px;
+    width: 84%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 13px;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    position: relative;
+    padding-bottom: 0px;
+    margin-left: 7%;
+    padding-left: 0px;
+}
+
+li.game-card{    
+    list-style: none;
+    flex-shrink: 0;
+    
+}
+/*card*/
+.game-card{
+    height: 131px;
+    width: 158px;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 18px;
+}
+.game-card:hover{
+    transform: scale(1.1);
+    transition: 0.3s ease-in;
+}
+
+.game-card-img {
+    height: 76px;
+    
+}
+.game-card-img  img{
+    position: absolute;
+    border-radius: 10px 10px 0px 0px;
+    width: 156px;
+    height: 76px;
+    object-fit: cover; /* para que no se deforme la imagen*/
+}
+.game-card-info{
+    height: 56px;
+    background-color: #242832;
+    display: flex;
+    align-items: center;
+    border-radius: 0px 0px 10px 10px;
+    width: 156px;
+    position: absolute;
+    
+
+}
+.game-card-info-premium{
+    height: 56px;
+    background-color: #242832;
+    display: flex;
+    align-items: center;
+    border-radius: 0px 0px 10px 10px;
+    width: 156px;
+    position: absolute;
+}
+.etiqueta-premium{
+    width: 46px;
+    height: 19px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para destacar la etiqueta */
+    position: absolute;
+    top: 67px;
+    left: 105px;
+    z-index: 10;
+
+}
+
+.title-etiqueta{
+    color: white;
+    margin-left:  5px;
+    font-size: 12px;
+    position: absolute;
+    left: 23px;
+    top: -90%;
+    transform: translate(-50%);
+    z-index:15;
+}
+.icono-premium{
+    position: relative;
+
+}
+.icono-premium img{
+    width: 60px;
+    height: auto;
+    object-fit: contain;
+
+}
+.title-card{
+    font-size: 14px;
+    margin: 0px;
+    color: white;
+    padding-top: 0px;
+}
+.category-card{
+    font-size: 12px;
+    margin: 0px;
+    color: white;
+    opacity: 0.7;
+}
+
+.text-card{
+    
+    display: flex;             /* Flexbox para alinear el título y la categoría */
+    flex-direction: column;    /* Si quieres que los textos estén uno debajo del otro */
+    gap: 4px;  /*es el empacio entre en un elemento y otro pero aun  no se aplico*/
+    padding-left: 9px;
+    padding-bottom:16px ;
+}
+
+
+
+
+
+
+
+
+a{
+    text-decoration: none; /*saca la linea*/
+    color: inherit;
+}
+
+/*botones*/
+.btn-jugar {
+    background-color: transparent;
+    height: 38px;
+    width: 38px;
+    border: 0px;
+
+    margin-top: 8px;
+    margin-left: 29px;
+}
+.btn-jugar img{
+    height: 38px;
+    width: 38px;
+}
+.btn-jugar .play {
+   /* Espaciado entre la imagen y el texto */
+}
+
+.btn-right-recommended, .btn-left-recommended{
+    background-color: transparent;
+    border: 0;
+}
+.btn-right-recommended img, .btn-left-recommended img{
+    height: 35px;
+    width: 35px;
+}
+button.btn-left{
+    margin: 0%;
+    border: 0px;
+}
+
+.btn-left, .btn-right{
+    background-color: transparent;
+    display: none;
+    border: 0px;
+
+}
+
+.btn-left-mobile, .btn-right-mobile{
+    width: 25px;
+    height: 25px;
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    cursor: pointer;
+    border: 0px;
+
+}
+
+.btn-left-mobile img, .btn-right-mobile img{
+    width: 25px;
+    height: 25px;
+} 
+
+.btn-left-mobile{
+    left: 40%;
+}
+
+
+.btn-right-mobile{
+    right: 40%;
+}
+
+@media only screen and (min-width: 1024px) {
+    
+    header{
+        height: 70px;
+        margin-bottom: 30px;
+        position:sticky;
+        top:0%;
+        z-index: 8;
+    }
+
+    /*menu hamburguesa*/
+    .circle{
+        height: 46px;
+        width: 46px;
+        margin-top: 8px;
+        position: relative;
+        border: solid 3px #D2CFCF;
+    }
+
+    .menu-icon {
+        display: flex;
+        flex-direction: column; 
+        justify-content: space-between;
+        width: 18px; 
+        height: 15px;
+    }
+
+    .line {
+        height: 3px; 
+        background-color: #D2CFCF; 
+        border-radius: 0px; 
+        transition: all 0.3s;
+    }
+
+    /*perfil*/
+    .perfil{
+        margin-top: 8px;
+        width: 55px;
+        height: 55px;
+    }
+
+    /*logo*/
+    .iconoPrincipal{
+        margin-top: 8px;
+        width: 55px;
+        height: 55px;
+    }
+    .btn-left, .btn-right{
+        display: block;
+    
+    
+    }
+}
