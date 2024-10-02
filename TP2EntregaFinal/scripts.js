@@ -6,7 +6,7 @@ document.getElementById("login-form").addEventListener("submit", function(event)
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    // Aquí puedes agregar validación o hacer una llamada a tu backend
+    // Acá se puede agregar validación o hacer una llamada al backend
     if (email === "grupo32@example.com" && password === "grupo32") {
         alert("Inicio de sesión exitoso!");
     } else {
@@ -19,7 +19,7 @@ document.querySelector(".register-btn").addEventListener("click", function(event
     event.preventDefault(); // Evitar el comportamiento por defecto del botón
 
     // Simular registro exitoso
-    const isSuccess = true; // Aquí puedes colocar tu lógica para verificar el registro
+    const isSuccess = true; // Lógica para verificar el registro
 
     if (isSuccess) {
         const registerButton = document.querySelector('.register-btn');
@@ -35,7 +35,7 @@ document.querySelector(".register-btn").addEventListener("click", function(event
 document.getElementById("register-form").addEventListener("submit", function(event) {
     event.preventDefault(); // Evitar el envío del formulario por defecto
 
-    // Aquí podrías agregar la lógica para verificar el reCAPTCHA y enviar los datos al servidor
+    // Lógica para verificar el reCAPTCHA y enviar los datos al servidor
 
     const registerButton = document.querySelector('.register-btn');
     registerButton.classList.add('success-animation'); // Añadir clase de éxito
