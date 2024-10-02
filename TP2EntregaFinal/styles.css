@@ -83,8 +83,17 @@ li{
 
 /*ul specials*/
 ul.specials{
+    height: 314px;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 13px;
     overflow: hidden;
     scroll-behavior: smooth;
+    position: relative;
+    padding-bottom: 0px;
+    margin-left: 10%;
+    padding-left: 0px;
 }
 
 /*card recommended*/
@@ -337,14 +346,16 @@ a{
     width: 35px;
 }
 .btn-left-recommended{
-    position: relative;
-    top: 145px;
+    position: absolute;
+    top: 150px;
     left: 41px;
+    z-index: 3;
 }
 .btn-right-recommended{
-    position: relative;
-    top: -136px;
-    left: 359px;
+    position: absolute;
+    top: 150px;
+    right: 41px;
+    z-index: 3;
 }
 button.btn-left{
     margin: 0%;
