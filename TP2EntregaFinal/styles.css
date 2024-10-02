@@ -26,10 +26,13 @@ li{
     height: 100%;
     width: 100%;
     object-fit: contain;
+    margin-right: 3px;
+    
 }
 
 /* icono menu */ 
 .circle{
+    margin-left: 3px;
     margin-top: 3%;
     position: relative;
     border: solid 2px #D2CFCF;
@@ -83,8 +86,8 @@ li{
 
 /*ul specials*/
 ul.specials{
-    height: 208px;
-    width: 80%;
+    height: 230px;
+    width: 96%;
     display: flex;
     flex-direction: row;
     column-gap: 13px;
@@ -92,8 +95,13 @@ ul.specials{
     scroll-behavior: smooth;
     position: relative;
     margin-bottom: 40px;
-    margin-left: 10%;
+    margin-left: 1%;
     padding-left: 0px;
+}
+section.recommended a{
+    margin: 0;
+    padding: 0;
+    width: inherit;
 }
 
 
@@ -101,10 +109,10 @@ ul.specials{
 
 .card-recommended{
     background-color: #242832;
-    height: 208px;
-    width: 312px;
+    height: 230px;
+    width: 380px;
     border-radius: 15px;
-    margin-left: 7%;
+    margin-left: 7.2%;
 }
 
 .recommended-card-img{
@@ -115,8 +123,8 @@ ul.specials{
 .recommended-card-img img{
     position: absolute;
     border-radius: 10px 10px 10px 10px;
-    width: 279px;
-    height: 179px;
+    width: 348px;
+    height: 200px;
     object-fit: cover; /* para que no se deforme la imagen*/
     left: 17px;
     top: 15px;
@@ -130,7 +138,7 @@ ul.specials{
     align-items: center;
     background-color: #4cd02a ; /* Fondo semi-transparente para destacar la etiqueta */
     position: relative;
-    top: 169px;
+    top: 189px;
     left:58%;
     z-index: 10;
     border-radius: 30px;
@@ -155,7 +163,7 @@ ul.specials{
     align-items: center;
     background-color: #DCFA00 ; /* Fondo semi-transparente para destacar la etiqueta */
     position: relative;
-    top:145px;
+    top:166px;
     left:25%;
     z-index: 10;
     border-radius: 30px;
@@ -190,16 +198,16 @@ margin-bottom: 40;
 
 ul.carrusel{
 
-    height: 131px;
-    width: 84%;
+    height: 160px;
+    width: 90%;
     display: flex;
     flex-direction: row;
-    column-gap: 13px;
+    column-gap: 12px;
     overflow: hidden;
     scroll-behavior: smooth;
     position: relative;
     padding-bottom: 0px;
-    margin-left: 7%;
+    margin-left: 4%;
     padding-left: 0px;
 }
 
@@ -210,8 +218,8 @@ li.game-card{
 }
 /*card*/
 .game-card{
-    height: 131px;
-    width: 158px;
+    height: 150px;
+    width: 170px;
     position: relative;
     flex-direction: column;
     justify-content: flex-start;
@@ -224,34 +232,34 @@ li.game-card{
 }
 
 .game-card-img {
-    height: 76px;
+    height: 90px;
     
 }
 .game-card-img  img{
     position: absolute;
     border-radius: 10px 10px 0px 0px;
-    width: 156px;
-    height: 76px;
+    width: 170px;
+    height: 90px;
     object-fit: cover; /* para que no se deforme la imagen*/
 }
 .game-card-info{
-    height: 56px;
+    height: 65px;
     background-color: #242832;
     display: flex;
     align-items: center;
     border-radius: 0px 0px 10px 10px;
-    width: 156px;
+    width: 170px;
     position: absolute;
     
 
 }
 .game-card-info-premium{
-    height: 56px;
+    height: 65px;
     background-color: #242832;
     display: flex;
     align-items: center;
     border-radius: 0px 0px 10px 10px;
-    width: 156px;
+    width: 170px;
     position: absolute;
 }
 .etiqueta-premium{
@@ -261,15 +269,15 @@ li.game-card{
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para destacar la etiqueta */
     position: absolute;
-    top: 67px;
-    left: 105px;
+    top: 80px;
+    left: 115px;
     z-index: 10;
 
 }
 
 .title-etiqueta{
     color: white;
-    margin-left:  5px;
+    margin-left: 8px;
     font-size: 12px;
     position: absolute;
     left: 23px;
@@ -282,7 +290,7 @@ li.game-card{
 
 }
 .icono-premium img{
-    width: 60px;
+    width: 70px;
     height: auto;
     object-fit: contain;
 
@@ -324,16 +332,16 @@ a{
 /*botones*/
 .btn-jugar {
     background-color: transparent;
-    height: 38px;
-    width: 38px;
+    height: 44px;
+    width: 44px;
     border: 0px;
 
     margin-top: 8px;
-    margin-left: 29px;
+    margin-left: 34px;
 }
 .btn-jugar img{
-    height: 38px;
-    width: 38px;
+    height: 44px;
+    width: 44px;
 }
 .btn-jugar .play {
    /* Espaciado entre la imagen y el texto */
@@ -349,14 +357,14 @@ a{
 }
 .btn-left-recommended{
     position: absolute;
-    top: 150px;
-    left: 41px;
+    top: 165px;
+    left: 3%;
     z-index: 3;
 }
 .btn-right-recommended{
     position: absolute;
-    top: 150px;
-    right: 41px;
+    top: 165px;
+    right: 3%;
     z-index: 3;
 }
 button.btn-left{
