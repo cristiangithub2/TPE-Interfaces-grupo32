@@ -76,7 +76,23 @@ header{
 }
 
 
+/*card recommended*/
+.card-recommended{
+    background-color: #43464C;
+    height: 208px;
+    width: 312px;
+}
 
+.recommended-card-img{
+    height: 279px;
+}
+.recommended-card-img img{
+    position: absolute;
+    border-radius: 10px 10px 10px 10px;
+    width: 279px;
+    height: 179px;
+    object-fit: cover; /* para que no se deforme la imagen*/
+}
 
 /*seccion de categoria  */
 section.category{
