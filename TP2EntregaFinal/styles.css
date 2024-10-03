@@ -17,7 +17,9 @@ li{
     list-style: none;
 }
 
-.logo{
+
+
+.logo-principal{
     height: 100%;
     width: 100%;
     object-fit: contain;
@@ -62,8 +64,6 @@ li{
     border-radius: 2px; 
     transition: all 0.3s;
 }
-.circle:hover .line {
-}
 
 
 
@@ -81,6 +81,223 @@ li{
     margin-top: 3%;
     width: 26px;
     height: 26px;
+}
+
+/*login*/
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.login-box {
+    background-color: #242832; /* Fondo gris (neutro+2) */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ocupa todo el ancho disponible del contenedor */
+    max-width: 300px;
+    text-align: center;
+}
+.logo {
+    width: 100px; 
+    height: auto; /* Asegura que la altura se ajuste proporcionalmente */
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.social-login {
+    display: flex;
+    justify-content: center; /* Centrar los iconos horizontalmente */
+    gap: 20px; /* Espacio uniforme entre los iconos */
+    margin-bottom: 10px;
+}
+.social-btn {
+    width: 50px;  /* Ancho uniforme para todos los botones */
+    height: 50px; /* Altura uniforme para todos los botones */
+    border: none;
+    border-radius: 5px; /* Bordes redondeados */
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex; /* Flexbox para centrar el contenido */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+/* Estilo de cada red social */
+.facebook {
+    background-color: #267CEC;
+}
+
+.google {
+    background-color: #fff;
+}
+
+.discord {
+    background-color: #7289da;
+}
+
+/* Asegurando que los iconos dentro de los botones tengan el mismo tamaño */
+.social-btn img {
+    max-height: 30px; /* Tamaño máximo de altura para los iconos */
+    max-width: 30px;  /* Tamaño máximo de ancho para los iconos */
+}
+
+.social-btn i {
+    font-size: 30px; /* Asegura que los iconos de FontAwesome tengan el mismo tamaño */
+}
+/* Ajuste específico para el logo de Discord */
+.discord img {
+    max-height: 30px; /* Ajusta la altura del logo de Discord */
+    max-width: 30px;  /* Ajusta el ancho del logo de Discord */
+}
+/* Línea divisoria blanca */
+.divider {
+    border: none;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 10px;
+}
+
+/* Estilo del formulario */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Etiquetas para los inputs */
+.input-label {
+    font-family: 'Lato', sans-serif;
+    color: #fff; 
+    font-size: 12px;
+    text-align: left; /* Alinear a la izquierda */
+    margin-bottom: 5px; /* Espacio entre etiqueta e input */
+}
+
+/* Inputs */
+input {
+    padding: 6px; 
+    margin-bottom: 6px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #7EEB00; /* Color primario */
+    box-shadow: 0 0 8px rgba(126, 235, 0, 0.5);
+}
+/* Estilo para "¿Se te olvidó tu contraseña?" */
+.forgot-password {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px; 
+    color: #fff;
+    text-align: right;
+    margin-bottom: 10px; 
+}
+/* Estilo del botón de inicio de sesión */
+.login-btn {
+    background-color: #fff; /* Botón de iniciar sesión blanco */
+    color: #242832; /* Texto en gris (neutro + 2) */
+    padding: 8px; 
+    border: none;
+    border-radius: 25px; /* Bordes redondeados */
+    font-size: 14px; 
+    cursor: pointer;
+    font-weight: bold;
+    width: 130px; /* Mismo tamaño que el botón de REGÍSTRATE */
+    margin: 0 auto 10px; /* Centrado y con margen inferior */
+}
+.login-btn:hover {
+    background-color: #e0e0e0;
+}
+/* Sección de registro */
+.register-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+/* Texto de la pregunta con fuente Lato */
+.register-text {
+    font-family: 'Lato', sans-serif;
+    color: #fff; 
+    font-size: 12px; 
+    margin-bottom: 5px; 
+}
+.register-btn {
+    background-color: #7EEB00; /* Botón de registrarse color primario */
+    color: #242832;
+    padding: 8px; 
+    border: none;
+    border-radius: 25px; /* Bordes redondeados */
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 120px;
+    margin: 0 auto 10px; /* Centrado y con margen inferior */
+}
+.register-btn:hover {
+    background-color: #69c500; /* Color primario al pasar el ratón */
+}
+/* Estilo para la animación de éxito */
+.success-animation {
+    background-color: #FF700F; /* Color de fondo acento */
+    transition: background-color 0.5s ease; /* Transición suave */
+    animation: pulse 1s infinite; /* Efecto de pulso */
+}
+
+/* Animación de pulso */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05); /* Escala el botón al 105% */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.terms-text {
+    color: #fff;
+    font-size: 10px; 
+    margin: 5px 0; 
+}
+
+.terms-highlight {
+    color: #7EEB00; /* Color primario para los términos y políticas */
+}
+
+
+/* Estilos para la notificación de éxito */
+.success-notification {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 40px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Mostrar la notificación de éxito con animación */
+.success-notification.show {
+    display: block;
+    opacity: 1;
 }
 
 
