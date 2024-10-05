@@ -666,21 +666,146 @@ button.btn-left{
     }
 
     /*perfil*/
-    .perfil{
+    .icons {
+        display: flex; /* Usar flexbox para alinear los iconos a la derecha */
+    }
+    
+    .perfil, .perfil-img, .notificacion-img, .corazon-img{
         margin-top: 8px;
         width: 55px;
         height: 55px;
     }
-
+    .perfil, .notificacion, .corazon {
+        margin-top: 8px;
+        margin-left: 10px; /* Espacio entre iconos, ajusta según sea necesario */
+    }
     /*logo*/
     .iconoPrincipal{
         margin-top: 8px;
         width: 55px;
         height: 55px;
+        display: flex;
+        align-items: center; /* Alinear el logo verticalmente con el menú */
+        flex-grow: 1; /* Para que el logo ocupe el espacio disponible */
+        text-align: center; /* Centrar el logo */
     }
     .btn-left, .btn-right{
         display: block;
     
     
+    }
+    .body-4enLinea{
+        background-color: #1e1e2f;
+        color: white;
+    }
+    .inicio-4enLinea-blanco{
+        color: white;
+        font-size: 13px;
+        margin-left: 98px; /* Espacio entre texto y iconos */
+    }
+    .videojuego-4enLinea-verde{
+        color: #7EEB00;
+    }
+    .game-4enLinea-header{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        margin: 0 auto;
+        width: 1144px;
+        height: 50px;
+        background-color: #666C78; /* Gris de fondo */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 0px;
+    }
+    .logo-4enLinea, .game-title-4enLinea{
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .icons-4enLinea-header{
+        display: flex;
+        margin-right: 10px;
+        gap: 10px; /* Espacio entre iconos */
+    }
+    .nav-icon-4enLinea-header{
+        width: 24px; /* Ajusta el tamaño de los iconos */
+        height: auto;
+    }
+    .title-container-4enLinea{
+        text-align: left;
+        flex: 1; /* Para centrar el título en el header */
+        margin: 10px;
+    }
+    .banner-4enLinea{
+        width: 1144px;
+        margin: 0 auto;
+    }
+    .banner-4enLinea-image{
+        width: 1144px;
+        height: 720px;
+        display:block;
+    }
+    .footer-4enLinea{
+        margin: 0 auto;
+        width: 1144px;
+        height: 50px;
+        background-color: #666C78; /* Gris de fondo */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 0px;
+    }
+    .footer-4enLinea-left{
+        display: flex;
+        align-items: center;
+    }
+    .logo-4enLinea{
+        height: auto;
+        margin-right: 10px; /* Espacio entre logo y título */
+        margin-left: 10px;
+    }
+    .title-4enLinea-footer{
+        font-size: 18px;
+    }
+    .footer-4enLinea-icons{
+        display: flex;
+        gap: 10px; /* Espacio entre iconos */
+        margin-right: 10px;
+    }
+    .footer-icon-4enLinea{
+        width: 24px; /* Ajusta el tamaño de los iconos */
+        height: auto;
+    }
+    .description-game-4enlinea{
+        background-color:#3a3a4a;
+        text-align: left;
+        margin: 0 auto; /* Centrar descripción */ 
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        width: 1144px;
+        height: 150px;
+        background-color:#3a3a4a; /* Gris de fondo */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 0px;
+    }
+    .left-description-4enLinea{
+        margin-left: 10px;
+        display: block;
+        align-items: center;
+    }
+    
+    .imagen-4enLinea-ejemplo{
+        margin-right: 10px;
+    }
+    .titulo-4enLinea-indicaciones{
+        font-size: 15px;
+        color: white;
+    }
+    .description-4enLinea-parrafo{
+        font-size: 16px;
+        margin-top: 10px;
+        max-width: 400px;
     }
 }
