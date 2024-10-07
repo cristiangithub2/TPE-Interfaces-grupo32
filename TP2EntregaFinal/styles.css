@@ -31,15 +31,18 @@ li{
     margin-right: 3px;
     
 }
+.notificacion, .corazon{
+    display: none;
+}
 
 /* icono menu */ 
 .circle{
     margin-left: 3px;
     margin-top: 3%;
     position: relative;
-    border: solid 2px #D2CFCF;
-    width: 26px;
-    height: 26px;
+    border: solid 2px #d2cfcfed;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     background-color: #242832;
     display: flex;
@@ -60,7 +63,7 @@ li{
 
 .line {
     height: 2px; 
-    background-color: #D2CFCF; 
+    background-color: #d2cfcfed; 
     border-radius: 2px; 
     transition: all 0.3s;
 }
@@ -73,8 +76,8 @@ li{
     margin-top: 3%;
     width: 26px;
     height: 26px;
+    margin-right: 1%;
 }
-
 
 /*icon pagina*/
 .iconoPrincipal{
@@ -331,6 +334,9 @@ section.recommended a{
     border-radius: 15px;
     margin-left: 7.2%;
 }
+.game-recommended{
+    display: none;
+}
 
 .recommended-card-img{
     position: absolute;
@@ -396,14 +402,18 @@ section.category{
 }
 
 /*titulo de la categoria*/
-h2.name-category{
+.name-category{
     position: relative;
     display: flex;
     width: 100%;
     font-size: 18px;
     font-family: lato;
-    padding-left:11% ;
+    padding-left:0 ;
+    margin-bottom: -5px;
     
+}
+.see-more{
+    display: none;
 }
 
 /*el carrucel */
@@ -426,6 +436,7 @@ ul.carrusel{
     padding-bottom: 0px;
     margin-left: 4%;
     padding-left: 0px;
+    margin-bottom: 0;
 }
 
 li.game-card{    
@@ -517,6 +528,9 @@ li.game-card{
     margin: 0px;
     color: white;
     padding-top: 0px;
+    white-space: nowrap; /* Impide que el texto se divida en varias líneas */
+        overflow: hidden;    /* Oculta el texto que desborda el contenedor */
+        text-overflow: ellipsis; /* Añade "..." al final del texto que no cabe */
 }
 .category-card{
     font-size: 12px;
@@ -635,10 +649,11 @@ button.btn-left{
     
     header{
         height: 70px;
-        margin-bottom: 30px;
+        margin-bottom: 0px;
         position:sticky;
         top:0%;
-        z-index: 8;
+        z-index: 15;
+        width: 100%;
     }
 
     /*menu hamburguesa*/
@@ -669,6 +684,9 @@ button.btn-left{
     .icons {
         display: flex; /* Usar flexbox para alinear los iconos a la derecha */
     }
+    .notificacion, .corazon{
+        display: block;
+    }
     
     .perfil, .perfil-img, .notificacion-img, .corazon-img{
         margin-top: 8px;
@@ -689,11 +707,7 @@ button.btn-left{
         flex-grow: 1; /* Para que el logo ocupe el espacio disponible */
         text-align: center; /* Centrar el logo */
     }
-    .btn-left, .btn-right{
-        display: block;
     
-    
-    }
     .body-4enLinea{
         background-color: #1e1e2f;
         color: white;
@@ -808,4 +822,118 @@ button.btn-left{
         margin-top: 10px;
         max-width: 400px;
     }
+
+    section.recommended{
+        margin-top: 30px;
+        margin-bottom: 0;
+    }
+    ul.specials{
+        margin-top: 0;
+        width: 76%;
+        height: 350px;
+    }
+
+    .recommended-card{
+        height: 325px;
+    }
+
+    .recommended-card a{
+        width: inherit;
+        height: 325px;
+    }
+    
+    .card-recommended{
+        width: 600px;
+        height: 325px;
+        margin-left:35% ;
+    }
+    .recommended-card-img{
+        height: 350px;
+        width: 400px;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    .recommended-card-img img{
+        width: 100%;      
+        height: 275px;    
+        object-fit: cover;
+        border-radius: 10px 0px 0px 10px;
+    }
+
+    .btn-jugar-recommended{
+        top: 180px;
+        left:81%;
+
+    }
+    .btn-miLista-recommended{
+        top: 185px;
+        left:81%;
+    }
+    .game-recommended{
+        position: relative;
+        left: 79%;
+        top:60px;
+        white-space: nowrap; /* Impide que el texto se divida en varias líneas */
+        overflow: hidden;    /* Oculta el texto que desborda el contenedor */
+        text-overflow: ellipsis; /* Añade "..." al final del texto que no cabe */
+        display: block;
+    }
+
+    .btn-right-recommended, .btn-left-recommended{
+        width: 64px;
+        height: 64px;
+    }
+    .btn-right-recommended img, .btn-left-recommended img{
+        width: inherit;
+        height: inherit;
+    }
+
+    .btn-right-recommended{
+        left: 77.3%;
+        top: 240px;
+    }
+    .btn-left-recommended{
+        left: 13%;
+        top: 240px;
+    }
+
+    h2.name-category{
+        padding-left: 60px;
+        bottom: -50px;
+
+    }
+    .btn-left, .btn-right{
+        display: block;
+        position: relative;
+    }
+    .btn-left{
+        top: 120px;
+    }
+    
+    .btn-right{
+        top: -162px;
+        left: 94.5%;
+    }
+
+    .btn-left-mobile, .btn-right-mobile{
+        display: none;
+    }
+    section.category{
+        margin-bottom: -130px ;
+    }
+    
+    .see-more{
+        display: block;
+        position: relative;
+        top: 70px;
+        right: 6%;
+        font-size: 8px;
+        width: 50px;
+        height: 17px;
+        border-radius: 20px;
+        border: none;
+        background-color: #DCFA00;
+    }
+
 }
