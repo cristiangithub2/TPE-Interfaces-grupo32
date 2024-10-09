@@ -1100,18 +1100,57 @@ button.btn-left{
     }
 
     .game-card-info{
-        height: 65px;
+        height: 86px;
         background-color: #242832;
         display: flex;
         align-items: center;
         border-radius: 0px 0px 10px 10px;
-        width: 250px;
+        width: 230px;
         position: absolute;
         
     
     }
-
+    .game-card-img {
+        height: 119px;
+        width: 230px;
+        
+    }
+    .game-card-img img{
+        width: 230px;
+        height: 119px;
+    }
+    .game-card-info-premium{
+        height: 86px;
+        background-color: #242832;
+        display: flex;
+        align-items: center;
+        border-radius: 0px 0px 10px 10px;
+        width: 230px;
+        position: absolute;
+    }
+    .etiqueta-premium{
+        top:110px;
+        left: 173px;
+        width: 68;
+        height: 19px;
+        background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para destacar la etiqueta */
+    }
+    .icono-premium img{
+        width: 80px;
+        height: auto;
     
+    }
+
+    .title-etiqueta{
+        color: white;
+        margin-left: 8px;
+        font-size: 14px;
+        position: absolute;
+        left: 28px;
+        top: -110%;
+        transform: translate(-50%);
+    }
+
     .see-more{
         display: block;
         position: relative;
