@@ -973,32 +973,40 @@ button.btn-left{
     section.recommended{
         margin-top: 30px;
         margin-bottom: 0;
+        position: relative;
+    
     }
     ul.specials{
         display: flex;
         margin: 0;
         padding: 0;
-        width: 100%;
+        padding-left: 20%;
+        width: 60%;
         height: 500px;
         transition: transform 0.5s ease-in-out;
+        overflow: hidden;
+        flex-wrap: nowrap; /* No permite que las tarjetas se muevan a una nueva línea */
+        column-gap: 33%;
+        scroll-behavior: smooth;
+        position: relative;
     }
 
     
     .recommended-card{
+        flex: 0 0 100%; /* Cada tarjeta ocupará todo el ancho del contenedor */
         height: 500px;
         padding-left: 0;
         margin-left: 0px;
-        width: 60%;
-        background-color: #4caf50;
-        margin-left: 20%;
-    }
-
-    .recommended-card a{
-        width: inherit;
-        height: 500px;
+        margin-left: 0%;
+        position: relative;
+        justify-content: flex-start; 
+        align-items: flex-start;
+        
     }
     
     .card-recommended{
+        flex-direction: column;
+        position: relative;
         height: 500px;
         width: 100%;
         padding: 0px;
@@ -1006,7 +1014,7 @@ button.btn-left{
     }
     .recommended-card-img{
         height: 350px;
-        width: 30%;
+        width: 65%;
         margin-left: 10px;
         margin-top: 10px;
     }
@@ -1019,12 +1027,12 @@ button.btn-left{
     }
 
     .btn-jugar-recommended{
+        position: relative;
         top:260px;
-        left:81%;
-        width: 145px;
+        left:78%;
+        width: 17%;
         height: 56px;
         font-size: 18px;
-        left: 80%;
 
     }
     .btn-jugar-recommended p{
@@ -1034,12 +1042,13 @@ button.btn-left{
     .btn-jugar-recommended img{
         width: 27px;
         height: 27px;
+        padding-left: 5%;
     }
 
     .btn-miLista-recommended{
         top: 290px;
-        left:80%;
-        width: 145px;
+        left:78%;
+        width: 17%;
         height: 56px;
         font-size: 18px;
     }
@@ -1066,12 +1075,22 @@ button.btn-left{
     }
 
     .btn-right-recommended{
-        left: 74.5%;
-        top: 335px;
+        top: 50%; /* Centrado verticalmente */
+        transform: translateY(-50%); /* Asegura que esté centrado */
+        right: 10%; /* Ajusta la distancia del borde derecho de la pantalla */
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 10; /* Asegúrate de que esté por encima del contenido */
     }
-    .btn-left-recommended{
-        left: 21%;
-        top: 335px;
+    .btn-left-recommended{  
+        top: 50%; /* Centrado verticalmente */
+        transform: translateY(-50%); /* Asegura que esté centrado */
+        left: 10%; /* Ajusta la distancia del borde izquierdo de la pantalla */
+        background-color: transparent;
+        border: none; /* Elimina el borde si no lo necesitas */
+        cursor: pointer;
+        z-index: 10; /* Asegúrate de que esté por encima del contenido */
     }
 
     h2.name-category{
