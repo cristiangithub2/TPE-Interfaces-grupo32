@@ -654,6 +654,7 @@ button.btn-left{
         top:0%;
         z-index: 15;
         width: 100%;
+        
     }
 
     /*menu hamburguesa*/
@@ -708,9 +709,9 @@ button.btn-left{
         text-align: center; /* Centrar el logo */
     }
     /*4enLinea*/
-    .body-4enLinea{
-        background-color: #666878;
-        color: white;
+    body, header, footer {
+        margin: 0; /* Asegúrate de que no haya margen */
+        padding: 0; /* Asegúrate de que no haya padding */
     }
     .inicio-4enLinea-blanco{
         color: white;
@@ -726,11 +727,12 @@ button.btn-left{
         margin: 0 auto;
         width: 1144px;
         height: 50px;
-        background-color: #242832; /* Gris de fondo */
+        background-color: #242832; 
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 0 0px;
+        color: white;
     }
     .logo-4enLinea, .game-title-4enLinea{
         font-size: 24px;
@@ -763,11 +765,12 @@ button.btn-left{
         margin: 0 auto;
         width: 1144px;
         height: 50px;
-        background-color: #242832; /* Gris de fondo */
+        background-color: #242832; 
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 0 0px;
+        color: white;
     }
     .footer-4enLinea-left{
         display: flex;
@@ -783,26 +786,27 @@ button.btn-left{
     }
     .footer-4enLinea-icons{
         display: flex;
-        gap: 10px; /* Espacio entre iconos */
+        gap: 10px; 
         margin-right: 10px;
     }
     .footer-icon-4enLinea{
-        width: 24px; /* Ajusta el tamaño de los iconos */
+        width: 24px; 
         height: auto;
     }
     .description-game-4enlinea{
         background-color:#3a3a4a;
         text-align: left;
-        margin: 0 auto; /* Centrar descripción */ 
+        margin: 0 auto; 
         border-bottom-right-radius: 10px;
         border-bottom-left-radius: 10px;
         width: 1144px;
         height: 150px;
-        background-color:#3a3a4a; /* Gris de fondo */
+        background-color:#3a3a4a; 
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 0 0px;
+        color: white;
     }
     .left-description-4enLinea{
         margin-left: 10px;
@@ -835,139 +839,258 @@ button.btn-left{
     }
     
     .multimedia-4enLinea-wrapper {
-        text-align: left;              /* Alinea el contenido del wrapper a la izquierda */
+        text-align: left;              
     }
     
     .title-4enLinea-multimedia {
-        margin-bottom: 20px;           /* Espacio entre el título y las imágenes */
+        margin-bottom: 20px;   
+        color: white;        
     }
     
     .multimedia-4enLinea-container {
         display: flex;
-        justify-content: center;       /* Centra las imágenes dentro del contenedor */
-        flex-wrap: wrap;               /* Ajusta las imágenes si es necesario */
-        gap: 20px;                     /* Espacio entre las imágenes */
+        justify-content: center;       
+        flex-wrap: wrap;               
+        gap: 20px;                     
     }
     .comentarios-4enLinea {  
-        background-color: #43464C;       /* Fondo de la sección comentarios */
-        color: white;                    /* Color de letra blanco por defecto */
-        width: 1144px;                   /* Ancho del contenedor */
-        height: 853px;                   /* Alto del contenedor */
-        margin: 0 auto;                          /* Centrar horizontalmente */
-        display: flex;                           /* Usar flexbox para el contenedor principal */
-        flex-direction: column;                  /* Alinear los elementos en columna */
+        background-color: #43464C;       
+        color: white;                    
+        width: 1144px;                  
+        height: 853px;                   
+        margin: 0 auto;                         
+        display: flex;                           
+        flex-direction: column;                  
         border-top-right-radius: 10px;
         border-top-left-radius: 10px;
     }
     
     .footer-comentarios-4enLinea {
-        background-color: #242832;       /* Fondo de la sección footer */
-        height: 20px;                    /* Ajusta la altura según sea necesario */
-        width: 1144px;                   /* Ancho del footer */
+        background-color: #242832;       
+        height: 20px;                    
+        width: 1144px;                   
     }
-    
+    .nuevoComentario4enLinea {
+        display: flex;                     
+        flex-direction: row;              
+        justify-content:flex-start;        
+        align-items: flex-start;       
+        background-color: none;       
+        margin-bottom: 10px;          
+        width: 100%;
+        position: relative;
+    }
     .nuevoComentario {
-        background-color: #666C78;       /* Fondo de nuevo comentario */
-        color: white;                    /* Color de texto blanco */
-        padding: 10px;
-        border-radius: 5px;              /* Bordes redondeados */
-        margin-bottom: 10px;             /* Espacio con el siguiente comentario */
+        background-color: #666C78;      
+        color: white;                    
+        border-radius: 10px;              
+        margin-bottom: 10px;            
         width: 890px;
-        height: 220;
-    }
-    
-    .redirigir-4enLinea {
-        color: #666C78;                  /* Color de texto */
-        text-align: center;              /* Centrar el texto */
-        margin-top: 20px;                /* Espaciado superior */
+        height: 220px;
+        margin: 0 15px;            
+        padding-left: 0;
+        padding: 20px;             
+        position: relative;
+        display: flex;                      
+        align-items: flex-start;            
+        justify-content: flex-start;
+        font-size: 14px;
     }
     
     .title-comentarios-4enLinea h2 {
-        margin-top: 20px;
-        margin-left: 5px;
-        padding-bottom: 10px;            /* Espaciado inferior del título */
-        font-size: 15px;                 /* Tamaño de letra para el título */
+        margin-top: 30px;
+        margin-left: 50px;
+        padding-bottom: 10px;           
+        font-size: 15px;                 
     }
     
-    .iconoComentario4enLinea {
+    .iconoComentario4enLinea, .iconoComentario4enLineaAnterior {
         float: left;                     /* Alinea los iconos de usuario a la izquierda */
-        margin-right: 10px;              /* Añade un margen a la derecha de 10px */
+        margin-left: 50px;              
     }
-    
+    .iconoComentario4enLineaAnterior{
+        margin-right: 15px;
+    }
     .comentarioAnterior4enLinea {
         overflow: hidden;                /* Para asegurarse de que el contenido se mantenga alineado con el icono */
-        width: 358px;                    /* Ancho del contenedor de comentario anterior */
-        height: 44px;                    /* Alto del contenedor de comentario anterior */
-        font-size: 14px;                 /* Tamaño de letra para comentarios */
-        color: white;                    /* Color de texto */
+        width: 358px;                 
+        height: 44px;                   
+        font-size: 14px;                 
+        color: white;                    
+        margin-right: 15px;
+        display: flex;
+        flex-direction: column;
     }
     
     .comentario-4enLinea-item {
-        width: 50px;                     /* Tamaño del icono del usuario */
-        height: 50px;
+        width: 40px;                    
+        height: 40px;
     }
     
     .botones-derecha-comentarios-4enLinea {
         display: flex;
-        gap: 10px;                       /* Espacio entre los botones */
-        justify-content: flex-end;       /* Coloca los botones a la derecha */
+        justify-content: flex-end;
+        gap: 10px;                       
         margin-top: 10px;
+        width: 100%;                       
+        position: absolute;                 /* Posición absoluta para situar debajo del comentario */
+        bottom: -37px;                      /* Ajusta la posición debajo del nuevoComentario */
+        right: 110px;                          
+    
     }
     
     .cancelarComentario {
-        background-color: #DEDBDB;       /* Fondo del botón Cancelar */
-        color: black;                    /* Color del texto del botón Cancelar */
-        border-radius: 30px;             /* Bordes redondeados */
+        background-color: #DEDBDB;     
+        color: black;                   
+        border-radius: 30px;           
         width: 113px;
         height: 31px;
-        border: none;                    /* Sin bordes externos */
+        border: none;                 
+        transition: all 0.3s ease;
     }
     
     .enviarComentario {
-        background-color: #DCFA00;       /* Fondo del botón Enviar */
-        color: black;                    /* Color del texto del botón Enviar */
-        border-radius: 30px;             /* Bordes redondeados */
+        background-color: #DCFA00;     
+        color: black;                  
+        border-radius: 30px;            
         width: 113px;
         height: 31px;
-        border: none;                    /* Sin bordes externos */
+        border: none;               
+        transition: all 0.3s ease;  
     }
-    
-    .usuario-4enLinea {
-        display: block;                  /* Asegura que el nombre de usuario esté en una nueva línea */
-        color: white;
+    /* Hover botones*/
+    .cancelarComentario:hover {
+    background-color: #C0BEBE;   
+    transform: scale(1.05);        /* Aumenta ligeramente el tamaño */
+    }
+
+    .enviarComentario:hover {
+    background-color: #C4F500;   
+    transform: scale(1.05);        
+    }
+    .nombreUsuario4enLinea{
         font-weight: bold;
     }
+    .usuario-4enLinea {
+        font-weight: normal;
+        font-size: 12px;
+    }
     
-    .usuario-comentario-4enLinea {
+    .usuario-comentario-4enLinea, .usuario-4enLinea {
         display: block;                  /* El comentario también aparece en una nueva línea */
         color: white;
         margin-top: 5px;                /* Espaciado con el nombre de usuario */
     }
+    .redirigir-4enLinea {
+        background-color: #666C78;  
+        margin: 49px auto;          
+        width: 544px;
+        height: 110px;
+        display: flex;              
+        justify-content: center;    
+        align-items: center;        
+        text-align: center;         
+        border-radius: 10px;
+    }
     
     .perdido-4enLinea {
-        color: #666C78;                  /* Color de texto */
+        color: white;               /* Texto blanco */
     }
     
     .redirigir-foro-4enLinea {
-        color: #666C78;                  /* Color de texto del enlace */
-        text-decoration: none;           /* Quita el subrayado del enlace */
+        color: #7EEB00;           
+        text-decoration: none;     
+        margin-left: 5px;
+
     }
     
-    .nuevoComentario4enLinea, 
     .comentario1-4enLinea, 
     .comentario2-4enLinea, 
     .comentario3-4enLinea, 
     .comentario4-4enLinea {
-        margin-bottom: 20px;             /* Espaciado entre los comentarios */
+        display: flex;
+        align-items: flex-start;
+        margin-top: 33px;             /* Espaciado entre los comentarios */
     }
     .comentario-4enLinea-linea{
-        width: 153px;
-
+        margin-top: 3px;
+        height: 2px;
     }
+
+    
     .footer-comentarios-4enLinea{
         margin: 0 auto;
         border-bottom-right-radius: 10px;
         border-bottom-left-radius: 10px;
+    }
+    .footer {
+        background-color: #242832; 
+        display: flex;             
+        justify-content: space-between; /* Espacio entre los elementos */
+        align-items: flex-start;   /* Alinear los elementos al principio */
+        padding: 20px;            /* Espacio interno */
+        width: 100%;              /* Asegurar que ocupe todo el ancho */
+        position: relative;       /* Permitir el uso de elementos relativos si es necesario */
+        left: 0;                  /* Alinear a la izquierda */
+        right: 0;                 /* Alinear a la derecha */
+        margin: 0; 
+        margin-top: 60px;
+
+    }
+    
+    .footer-diverJuegos-logo {
+        flex: 1;                   /* Permitir que el logo ocupe espacio flexible */
+    }
+    .logo-sinLetras{
+        width: 93px;
+        height: 90px;
+        margin-left: 70px;
+        margin-top: 1%;
+
+    }
+   
+    
+    .lista1, .lista2, .lista3, .lista4 {
+        flex: 1;                   /* Permitir que cada lista ocupe espacio flexible */
+        color: white;              /* Color de texto blanco */
+        font-size: 14px;
+    }
+    .lista1 li, .lista2 li, .lista3 li, .lista4 li{
+        margin-bottom: 10px; 
+    }
+   
+    .footer-links li.Principal {
+        color: #7EEB00;            /* Color verde para el título de la lista */
+        font-weight: bold;         /* Negrita */
+        font-size: 16px;           /* Tamaño de fuente */
+        margin-bottom: 10px;       /* Espacio inferior para separación */
+    }
+    
+    .footer-links a {
+        color: white;              /* Color blanco para los enlaces */
+        text-decoration: none;     /* Quitar subrayado de los enlaces */
+       
+    }
+    
+    .footer-links a:hover {
+        text-decoration: underline; /* Subrayar al pasar el mouse */
+    }
+    
+    .facebook-twitter, .gmail-youtube {
+        display: flex;             /* Usar flexbox para alinear los iconos */
+        margin-top: 10px;         /* Espacio superior para separación */
+        margin-left: 15px;
+    }
+    
+    .iconoRedesFooter {
+        width: 30px;               /* Ancho del icono */
+        height: 30px;              /* Alto del icono */
+        margin-right: 10px;       /* Espacio entre los iconos */
+        display: inline-block; /* Permite el ajuste de tamaño del div al contenido */
+        border: 2px solid gray; /* Color y grosor del borde */
+        border-radius: 50%; /* Hacer el borde circular */
+        padding: 5px; /* Espacio entre el borde y el icono */
+        width: fit-content; /* Ajustar el ancho al contenido */
     }
     
     section.recommended{
