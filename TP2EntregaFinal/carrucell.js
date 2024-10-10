@@ -88,4 +88,23 @@ function initCategoryCarousel() {
         btnRightMobile.addEventListener("click", moveRightCategory);
         btnLeftMobile.addEventListener("click", moveLeftCategory);
     });
+    
 }
+document.addEventListener("DOMContentLoaded", function() {
+    const menuIcon = document.querySelector(".menu-icon");
+    const sideNav = document.querySelector('.side-nav');
+    const overlay = document.querySelector('.overlay');
+
+    // Evento de clic para abrir/cerrar el menu
+    menuIcon.addEventListener("click", function() {
+        sideNav.classList.toggle('active');
+        overlay.classList.toggle('active');
+    });
+
+    // Cerrar el menú si se hace clic en el en el menu
+    overlay.addEventListener("click", function() {
+        sideNav.classList.remove('active');
+        overlay.classList.remove('active');
+    });
+});
+

@@ -2,6 +2,7 @@
 body{
     font-family: 'Lato', sans-serif;
     background-color:#666C78;  
+    margin: 0;
 }
 header{
     padding: 0;
@@ -647,6 +648,67 @@ button.btn-left{
 
 @media only screen and (min-width: 1024px) {
     
+    .side-nav {
+        position: fixed;
+        bottom: 0;
+        left: -400px; /* Oculto inicialmente fuera de la pantalla */
+        width: 78px;
+        height: 92%;
+        background-color: #333;
+        color: white;
+        transition: left 0.3s ease;
+        z-index: 1000; /* Superpone el resto de la página */
+        padding: 0px;
+    }
+    .side-nav ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .side-nav ul li {
+        margin: 20px 0;
+    }
+    
+    .side-nav ul li a {
+        color: white;
+        text-decoration: none;
+    }
+    .side-nav .title {
+    display: none; /* Oculto inicialmente */
+    margin-left: 10px; /* Espacio entre el ícono y el título */
+    }
+    .side-nav:hover {
+        width: 300px; /* Ancho al pasar el mouse */
+    }
+    .side-nav.active {
+        left: 0;
+    }
+    .side-nav:hover .title {
+        display: inline; /* Muestra los títulos al pasar el mouse */
+    }
+    .menu-icon {
+        cursor: pointer;
+    }
+    /* Efecto de oscurecimiento */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 14; /* Debe estar detrás del menú */
+    }
+    /* Cuando el menú está activo */
+    
+    
+    .overlay.active {
+        visibility: visible;
+        opacity: 1;
+    }
     header{
         height: 70px;
         margin-bottom: 0px;
