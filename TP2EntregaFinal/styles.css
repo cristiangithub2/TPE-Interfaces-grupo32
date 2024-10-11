@@ -1,4 +1,3 @@
-
 body{
     font-family: 'Lato', sans-serif;
     background-color:#666C78;  
@@ -739,6 +738,28 @@ button.btn-left{
         background-color:#CFFDC4 ;
         border: none;
     }
+
+    /*perfil desplegable */
+    .profile-icon {
+        cursor: pointer;
+    }
+    .profile-panel {
+        position: fixed; /* Fija el panel al viewport */
+        top: 0;
+        right: -330px; /* Oculto fuera de la pantalla inicialmente */
+        width: 330px;
+        height: 490px;
+        background-color: #43464C; /* Fondo oscuro */
+        color: white; /* Color de texto */
+        transition: right 0.3s ease; /* Transición suave */
+        z-index: 16; /* Asegúrate de que esté encima del resto de los elementos */
+        padding: 20px;
+    }
+    .profile-panel.active {
+        right: 0; /* Muestra el panel al hacer clic */
+        top: 70px;
+    }
+    
     /*header*/
     header{
         height: 70px;

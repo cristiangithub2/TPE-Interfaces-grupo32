@@ -108,3 +108,19 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const perfilIcon = document.querySelector(".perfil");
+    const profileP = document.querySelector('.profile-panel');
+    const overlay = document.querySelector('.overlay');
+
+    perfilIcon.addEventListener("click", function(){
+        profileP.classList.toggle('active');
+        overlay.classList.toggle('active');
+    });
+
+    overlay.addEventListener("click", function() {
+        profileP.classList.remove('active');
+        overlay.classList.remove('active');
+    });
+
+});
