@@ -304,6 +304,14 @@ input:focus {
 }
 
 
+/*nav*/
+.side-nav {
+    left: -500px;
+}
+
+
+/*panel*/
+
 /*ul specials*/
 ul.specials{
     height: 230px;
@@ -409,11 +417,15 @@ section.recommended a{
     margin-bottom: -5px;
     
 }
+h2.name-category{
+    margin-left: 8%;
+
+}
 .see-more{
     display: none;
 }
 
-/*el carrucel */
+/*el carrusel */
 .category{
 color: #D2CFCF;
 position: relative;
@@ -746,7 +758,7 @@ button.btn-left{
     .profile-panel {
         position: fixed; /* Fija el panel al viewport */
         top: 0;
-        right: -330px; /* Oculto fuera de la pantalla inicialmente */
+        right: -400px; /* Oculto fuera de la pantalla inicialmente */
         width: 330px;
         height: 490px;
         background-color: #43464C; /* Fondo oscuro */
@@ -754,6 +766,7 @@ button.btn-left{
         transition: right 0.3s ease; /* Transición suave */
         z-index: 16; /* Asegúrate de que esté encima del resto de los elementos */
         padding: 20px;
+        border-radius: 5px;
     }
     .profile-panel.active {
         right: 0; /* Muestra el panel al hacer clic */
@@ -783,6 +796,38 @@ button.btn-left{
         height: 1px;
         width: 204px;
         background-color: white;
+    }
+    .usuario-perfil{
+        display: flex;
+        column-gap: 24px;
+        margin-left: 46px;
+        margin-top: 20px;
+    }
+    .icon-usuario-panel, .icon-usuario-panel-salir{
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+    }
+    .icon-usuario-panel img{
+        object-fit: contain;
+        width: 46px;
+        height: 46px;
+
+    }
+    .profile-panel p{
+        padding-top: 1px;
+        font-size: 14px;
+    }
+    .usuario-perfil-salir{
+        display: flex;
+        column-gap: 24px;
+        margin-left: 46px;
+        margin-top: 33px;
+
+    }
+    .icon-usuario-panel-salir:hover{
+        background-color: #FF700F;
+        
     }
     /*header*/
     header{
@@ -822,6 +867,8 @@ button.btn-left{
     /*perfil*/
     .icons {
         display: flex; /* Usar flexbox para alinear los iconos a la derecha */
+        top: -7px;
+        position: relative;
     }
     .notificacion, .corazon{
         display: block;
@@ -1185,7 +1232,7 @@ button.btn-left{
         margin-top: 1%;
 
     }
-   
+
     
     .lista1, .lista2, .lista3, .lista4 {
         flex: 1;                   /* Permitir que cada lista ocupe espacio flexible */
@@ -1195,7 +1242,7 @@ button.btn-left{
     .lista1 li, .lista2 li, .lista3 li, .lista4 li{
         margin-bottom: 10px; 
     }
-   
+
     .footer-links li.Principal {
         color: #7EEB00;            /* Color verde para el título de la lista */
         font-weight: bold;         /* Negrita */
@@ -1354,7 +1401,7 @@ button.btn-left{
     }
 
     h2.name-category{
-        padding-left: 60px;
+        margin-left: 5.5%;
         bottom: -50px;
 
     }
@@ -1441,14 +1488,29 @@ button.btn-left{
     .see-more{
         display: block;
         position: relative;
-        top: 70px;
+        top: 60px;
         right: 6%;
-        font-size: 8px;
-        width: 50px;
-        height: 17px;
+        font-size: 14px;
+        width: 113px;
+        height: 31px;
         border-radius: 20px;
         border: none;
         background-color: #DCFA00;
     }
-
+    .btn-jugar{
+        width: 56px;
+        height: 56px;
+        margin-left: 60px;
+    }
+    .btn-jugar img{
+        width: 56px;
+        height: 56px;
+        object-fit: contain;
+    }
+    .title-card{
+        font-size: 18px;
+    }
+    .category-card{
+        font-size: 14px;
+    }
 }
