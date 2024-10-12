@@ -12,6 +12,10 @@ header{
     height: 50px;
     width: 100%;
 }
+.icons {
+    margin-top: 10px;
+    margin-right: 15px;
+}
 
 
 /*loader*/
@@ -1175,6 +1179,8 @@ button.btn-left{
         display: flex; /* Usar flexbox para alinear los iconos a la derecha */
         gap: 5px; /* Espacio entre iconos */
         align-items: center;
+        margin-top: 4px;
+        margin-right: 8px;
     }
     .notificacion, .corazon{
         display: block;
