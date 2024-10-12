@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles.css">
     <title>War Robots</title>
 </head>
-
+<body>
     <header>
         <div class="circle">
             <div class="menu-icon">
@@ -18,6 +18,10 @@
 
         <div class="iconoPrincipal">
             <img src="./img/logo-completo.png" alt="Logo" class="logo-principal">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="¿A qué jugamos hoy?" class="search-input">
+            <img src="img/iconoLupa.png" alt="Buscar" class="search-icon">
         </div>
         <div class="icons">
             <div class="perfil">
@@ -32,6 +36,7 @@
         </div>
        
     </header>
+   
     <a class="inicio-4enLinea-blanco" href="home.html">Inicio / </a><span class="videojuego-4enLinea-verde">Videojuego</span></span>
     <div class="game-4enLinea-header">
        
@@ -42,12 +47,15 @@
                 <img src="./img/flecha left.png" alt="flecha" class="nav-icon-4enLinea-header">
                 <img src="./img/iconoCompartir.png" alt="compartir" class="nav-icon-4enLinea-header">
             </div>
-      
-    
+       
         
         </div>
     <div class="banner-4enLinea">
         <img src="img/cardWarRobots.png" alt="War Robots" class="banner-4enLinea-image">
+        <button class="btn-jugar-4enLinea">
+            <p>Jugar</p>
+            <img src="./img/jugar.png" alt="">
+        </button>
     </div>
     <div class="footer-4enLinea">
         <div class="footer-4enLinea-left">
@@ -72,18 +80,119 @@
             <img src="img/4enLinea1.png" alt="4enLinea" class="imagen4enLinea">
         </div>
     </div>
-   
-    <div class="multimedia-4enLinea">
-        <div class="multimedia-4enLinea-wrapper">
-            <span class="title-4enLinea-multimedia">Multimedia</span>
-            <div class="multimedia-4enLinea-container">
-                <img src="./img/multimedia4enLineaUno.png" alt="Juego" class="multimedia-4enLinea-item">
-                <img src="./img/multimedia4enLineaDos.png" alt="Juego" class="multimedia-4enLinea-item">
-                <img src="./img/multimedia4enLineaTres.png" alt="Juego" class="multimedia-4enLinea-item">
-                <img src="./img/multimedia4enLineaCuatro.png" alt="Juego" class="multimedia-4enLinea-item">
-            </div>
+    <section class="category">
+        <!-- div que contiene todo el carrucel-->
+        <div class="name-category">
+            <h2 class="name-category">Multimedia</h2>
         </div>
-    </div>
+        <button class="btn-left">
+            <!-- flecha para atras-->
+            <img src="img/flecha left.png" alt="btn-left">
+            <div class="transition"></div>
+        </button>
+        <ul class="carrusel">
+            <!--cada lista es un card-->
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="./img/multimedia4enLineaUno.png" alt="Multimedia 1"class="multimedia-4enLinea-item">
+                        </div>
+                   </div>
+                </a>                
+            </li>
+	        <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="./img/multimedia4enLineaDos.png" alt="Multimedia 2" class="multimedia-4enLinea-item">
+                        </div>
+                   </div>
+                </a>                
+            </li>
+	        <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="./img/multimedia4enLineaTres.png" alt="Multimedia 3" class="multimedia-4enLinea-item">                                          			</div>
+                   </div>
+                </a>                
+            </li>
+	        <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                           <img src="./img/multimedia4enLineaCuatro.png" alt="Multimedia 4" class="multimedia-4enLinea-item">
+                        </div>
+                   </div>
+                </a>                
+            </li>
+	        <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="./img/multimedia4enLineaCinco.png" alt="Multimedia 5" class="multimedia-4enLinea-item">
+                        </div>
+                   </div>
+                </a>                
+            </li>
+	        <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                             <img src="./img/multimedia4enLineaSeis.png" alt="Multimedia 6" class="multimedia-4enLinea-item">
+                        </div>
+                   </div>
+                </a>                
+            </li>
+	        <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="./img/multimedia4enLineaSiete.png" alt="Multimedia 7" class="multimedia-4enLinea-item">
+                        </div>
+                   </div>
+                </a>                
+            </li>
+	        <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="./img/multimedia4enLineaOcho.png" alt="Multimedia 8" class="multimedia-4enLinea-item">
+                        </div>
+                   </div>
+                </a>                
+            </li>
+	    </ul>
+        <div class="btns-mobile">
+            <button class="btn-left-mobile">
+                <img src="img/flecha left.png" alt="btn-right-mobile">
+            </button>
+            <button class="btn-right-mobile">
+                <img src="img/flecha right.png" alt="btn-left-mobile">
+        </div>
+        <button class="btn-right">
+            <img src="img/flecha right.png" alt="btn-right">
+        </button>
+    </section>
+    </section>
+
 
     <div class="comentarios-4enLinea">
         <div class="title-comentarios-4enLinea">
@@ -154,8 +263,8 @@
         <div class="lista1">
             <ul class="footer-links">
                 <li class="Principal">Links</li>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Mi Perfil</a></li>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="index.html">Mi Perfil</a></li>
                 <li><a href="#">Recomendados</a></li>
                 <li><a href="#">Mi Lista</a></li>
             </ul>
