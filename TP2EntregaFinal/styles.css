@@ -110,7 +110,7 @@ li{
     height: 100%;
     width: 100%;
     object-fit: contain;
-    margin-right: 3px;
+    
     
 }
 .notificacion, .corazon{
@@ -120,7 +120,7 @@ li{
 /* icono menu */ 
 .circle{
     margin-left: 3px;
-    margin-top: 3%;
+    margin-top: 0%;
     position: relative;
     border: solid 2px #d2cfcfed;
     width: 22px;
@@ -130,7 +130,6 @@ li{
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,2);
     cursor:pointer;
 }
 
@@ -155,15 +154,15 @@ li{
 
 /*icono perfil*/
 .perfil{
-    margin-top: 3%;
+    margin-top: 0%;
     width: 26px;
     height: 26px;
-    margin-right: 1%;
+    
 }
 
 /*icon pagina*/
 .iconoPrincipal{
-    margin-top: 3%;
+    margin-top: 0%;
     width: 26px;
     height: 26px;
 }
@@ -1017,24 +1016,29 @@ button.btn-left{
         
     }
     /*header*/
-    header{
+    header {
         height: 70px;
         margin-bottom: 0px;
-        position:sticky;
-        top:0%;
+        position: sticky;
+        top: 0;
         z-index: 15;
         width: 100%;
-        
+        display: flex;
+        justify-content: space-between; /* Distribuye los elementos */
+        align-items: center; /* Alinea los elementos verticalmente */
+        padding: 0px; /* Asegúrate de que haya algo de espacio horizontal */
     }
 
     /*menu hamburguesa*/
-    .circle{
+    .circle {
         height: 46px;
         width: 46px;
-        margin-top: 8px;
-        position: relative;
         border: solid 3px #D2CFCF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+    
 
     .menu-icon {
         display: flex;
@@ -1050,35 +1054,66 @@ button.btn-left{
         border-radius: 0px; 
         transition: all 0.3s;
     }
+    .search-bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #666C78; /* Color de fondo gris */
+        border-radius: 50px; /* Bordes redondeados */
+        padding: 10px 15px;
+        width: 300px; /* Ancho de la barra */
+        height: 30px;
+        margin: 0 auto; /* Centrar en el header */
+    }
+    
+    /* Estilo del input */
+    .search-input {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        font-size: 16px;
+        margin-right: 30px; /* Espacio entre el input y la lupa */
+    }
+    /* Cambiar el color del placeholder */
+    .search-input::placeholder {
+        color: white; /* Cambia el color del texto del placeholder a blanco */
+        opacity: 1; /* Asegúrate de que el placeholder tenga una opacidad completa */
+    }
 
+    /* Estilo del icono de búsqueda */
+    .search-icon {
+        width: 20.44px;
+        height: 20.44px;
+    }
     /*perfil*/
     .icons {
         display: flex; /* Usar flexbox para alinear los iconos a la derecha */
-        top: -7px;
-        position: relative;
+        gap: 5px; /* Espacio entre iconos */
+        align-items: center;
     }
     .notificacion, .corazon{
         display: block;
     }
     
     .perfil, .perfil-img, .notificacion-img, .corazon-img{
-        margin-top: 8px;
-        width: 55px;
-        height: 55px;
+        width: 46px;
+        height: 46px;
     }
     .perfil, .notificacion, .corazon {
-        margin-top: 8px;
         margin-left: 10px; /* Espacio entre iconos, ajusta según sea necesario */
     }
     /*logo*/
     .iconoPrincipal{
-        margin-top: 8px;
-        width: 55px;
+        width: 87px;
         height: 55px;
+        margin-left: 10px;
         display: flex;
         align-items: center; /* Alinear el logo verticalmente con el menú */
-        flex-grow: 1; /* Para que el logo ocupe el espacio disponible */
         text-align: center; /* Centrar el logo */
+    }
+    .logo-principal {
+        width: 100%; /* Haz que la imagen ocupe todo el ancho del contenedor */
+        height: auto; /* Mantén la proporción de la imagen */
     }
     /*4enLinea*/
     body, header, footer {
@@ -1125,6 +1160,7 @@ button.btn-left{
         margin: 10px;
     }
     .banner-4enLinea{
+        position: relative;
         width: 1144px;
         margin: 0 auto;
     }
@@ -1133,6 +1169,35 @@ button.btn-left{
         height: 720px;
         display:block;
     }
+    .btn-jugar-4enLinea {
+        position: absolute; 
+        top:177px;
+        left:89%;
+        transform: translate(-50%, -50%); 
+        width: 137.59px;
+        height: 56px;
+        font-size: 18px;
+        background-color: #4cd02a ;
+        border: none; 
+        border-radius: 30px;
+        cursor: pointer; 
+        z-index: 10; 
+    }
+   
+    .btn-jugar-4enLinea p{
+        position: absolute;
+        font-size: 19px;
+        margin: 0px 7px;
+        padding: 7px 10px 3px 17px;
+    }
+    .btn-jugar-4enLinea img{
+        width: 27px;
+        height: 27px;
+        margin: 1px 0px;
+        padding: 3px 0px 0px 74.26px;
+    }
+
+  
     .footer-4enLinea{
         margin: 0 auto;
         width: 1144px;
@@ -1198,19 +1263,18 @@ button.btn-left{
         margin-top: 10px;
         max-width: 400px;
     }
-    .multimedia-4enLinea-item{
-        width: 270px;
-        height: 205px;    
-    }
     .multimedia-4enLinea {
-        display: flex;
-        justify-content: center;
-        margin-top: 100px;
-        margin-bottom: 100px;   
+        position: relative;
+        width: 100%;
+        overflow: hidden; /* Oculta el contenido que excede el contenedor */
     }
     
     .multimedia-4enLinea-wrapper {
+        display: flex;
+        align-items: center; /* Centra verticalmente los elementos */
         text-align: left;              
+        margin-top: 100px;
+        margin-bottom: 100px;   
     }
     
     .title-4enLinea-multimedia {
@@ -1220,10 +1284,24 @@ button.btn-left{
     
     .multimedia-4enLinea-container {
         display: flex;
-        justify-content: center;       
-        flex-wrap: wrap;               
+        scroll-behavior: smooth; /* Desplazamiento suave */
+        list-style: none; /* Elimina los puntos de la lista */
         gap: 20px;                     
     }
+    
+    .multimedia-4enLinea-item {
+        width: 270px;
+        height: 205px;    
+    }
+    .btn-left-4enLinea, .btn-right-4enLinea {
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1; /* Asegura que los botones estén por encima de las imágenes */
+        margin-right: 10px;
+    }
+    
+
     .comentarios-4enLinea {  
         background-color: #43464C;       
         color: white;                    
@@ -1527,6 +1605,7 @@ button.btn-left{
         width: 17%;
         height: 56px;
         font-size: 18px;
+        z-index: 10; 
 
     }
     .btn-jugar-recommended p{
