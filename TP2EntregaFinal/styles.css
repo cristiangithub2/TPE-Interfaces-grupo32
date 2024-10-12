@@ -13,9 +13,91 @@ header{
     width: 100%;
 }
 
+.profile-panel {
+    position: fixed; /* Fija el panel al viewport */
+    bottom: 0;
+    right: -400px; /* Oculto fuera de la pantalla inicialmente */
+    width: 40%;
+    height: 60%;
+    background-color: #43464C; /* Fondo oscuro */
+    color: white; /* Color de texto */
+    transition: right 0.3s ease; /* Transición suave */
+    z-index: 16; /* Asegúrate de que esté encima del resto de los elementos */
+    padding: 20px;
+    border-radius: 5px;
+}
+.profile-icon {
+    cursor: pointer;
+}
+.profile-panel.active {
+    right: 1%; /* Muestra el panel al hacer clic */
+    top: 70px;
+}
+.icono-usuario{
+    width: 50px;
+    height: 50px;
+    background-color: #CFFDC4;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+.usuario{
+    display: flex;
+    column-gap: 20px;
+    margin-left: 10px;
+}
+
+.usuario h2{
+    padding-top: 10px;
+    font-size: 16px;
+}
+.linea-usuario{
+    margin-top: 20px;
+    margin-left: 9%;
+    height: 1px;
+    width: 80%;
+    background-color: white;
+}
+.usuario-perfil{
+    display: flex;
+    column-gap: 24px;
+    margin-left: 46px;
+    margin-top: 20px;
+}
+.icon-usuario-panel, .icon-usuario-panel-salir{
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+}
+.icon-usuario-panel img{
+    object-fit: contain;
+    width: 46px;
+    height: 46px;
+
+}
+.profile-panel p{
+    padding-top: 1px;
+    font-size: 14px;
+}
+.usuario-perfil-salir{
+    display: flex;
+    column-gap: 24px;
+    margin-left: 6%;
+    margin-top: 33px;
+
+}
+.icon-usuario-panel-salir:hover{
+    background-color: #FF700F;
+    
+    
+}
+.usuario-perfil{
+    margin-left: 6%;
+}
+
 li{
     list-style: none;
 }
+
 
 
 
@@ -305,8 +387,106 @@ input:focus {
 
 
 /*nav*/
+.buscador{
+    width: 100%;
+    display: flex;
+    background-color: white;
+}
+.buscador-input{
+    width: 80%;
+    margin-top: 4px;
+}
 .side-nav {
-    left: -500px;
+    position: fixed;
+    bottom: 0;
+    left: -400px; /* Oculto inicialmente fuera de la pantalla */
+    width: 75%;
+    height: 94.3%;
+    background-color: #242832;
+    color: white;
+    transition: left 0.3s ease;
+    z-index: 1000; /* Superpone el resto de la página */
+    padding: 0px;
+    overflow-y: auto; /* Permitir desplazamiento vertical */
+}
+.side-nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.side-nav ul li {
+    margin: 20px 0;
+}
+
+.side-nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+.side-nav .title-nav {
+margin-left: 10px; /* Espacio entre el ícono y el título */
+}
+.side-nav.active {
+    left: 12%;
+}
+.side-nav:hover .title-nav {
+    display: inline; /* Muestra los títulos al pasar el mouse */
+}
+.menu-icon {
+    cursor: pointer;
+}
+/* Efecto de oscurecimiento */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 14; /* Debe estar detrás del menú */
+}
+/* Cuando el menú está activo */
+
+
+.overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/*iconos del navegador*/
+.elementos-nav{
+    width: 300px;
+    margin-left: 20px;
+}
+
+.category-nav{
+    width: 300px;
+    display: flex;
+    align-items: center;
+}
+.icon-nav{
+    width: 34px;
+    height: 34px ;
+    background-color: #CFFDC4;
+    object-fit: contain;
+    border-radius: 50%;
+}
+.icon-nav img{
+    width: 34px;
+    height: 34px ;
+    object-fit: contain;
+}
+.title-nav{
+    position: relative;
+    top:-12px;
+    width: 214px;
+    height: 34px;
+    border-radius: 30px;
+    background-color:#242832;
+    border: none;
+    color: white;
 }
 
 
@@ -697,6 +877,13 @@ button.btn-left{
     .menu-icon {
         cursor: pointer;
     }
+    .buscador{
+        column-gap: 30px;
+        padding-left: 20px;
+    }
+    .buscador-input{
+        width: 60%;
+    }
     /* Efecto de oscurecimiento */
     .overlay {
         position: fixed;
@@ -747,7 +934,7 @@ button.btn-left{
         width: 214px;
         height: 34px;
         border-radius: 30px;
-        background-color:#CFFDC4 ;
+        background-color:#242832 ;
         border: none;
     }
 
