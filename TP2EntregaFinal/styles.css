@@ -532,7 +532,18 @@ margin-left: 10px; /* Espacio entre el ícono y el título */
     width: 300px;
     margin-left: 20px;
 }
-
+.game-recommended h2{
+    width: 20%;
+    overflow: hidden; /* Evita que el texto se desborde */
+    text-overflow: ellipsis; /* Añade "..." si el texto es muy largo */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+.text-card{
+    width: 37%;
+    overflow: hidden; /* Evita que el texto se desborde */
+    text-overflow: ellipsis; /* Añade "..." si el texto es muy largo */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
 .category-nav{
     width: 300px;
     display: flex;
@@ -678,6 +689,7 @@ h2.name-category{
 }
 
 /*el carrusel */
+
 .category{
 color: #D2CFCF;
 position: relative;
@@ -1749,11 +1761,11 @@ button.btn-left{
         position: relative;
     }
     .btn-left{
-        top: 120px;
+        top: 154px;
     }
     
     .btn-right{
-        top: -162px;
+        top: -179px;
         left: 94.5%;
     }
 
@@ -1861,4 +1873,5 @@ button.btn-left{
     #loading-text {
         font-size: 24px;
     }
+    
 }
