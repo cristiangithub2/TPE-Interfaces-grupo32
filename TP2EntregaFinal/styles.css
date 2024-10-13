@@ -1231,6 +1231,7 @@ button.btn-left{
     .inicio-4enLinea-blanco{
         color: white;
         font-size: 13px;
+        margin-top: 20px;
         margin-left: 98px; /* Espacio entre texto y iconos */
     }
     .videojuego-4enLinea-verde{
@@ -1239,6 +1240,7 @@ button.btn-left{
     .game-4enLinea-header{
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
+        margin-top:10px;
         margin: 0 auto;
         width: 1144px;
         height: 50px;
@@ -1290,6 +1292,20 @@ button.btn-left{
         border-radius: 30px;
         cursor: pointer; 
         z-index: 10; 
+        transition: transform 0.3s ease, background-color 0.3s ease; /* Agrega una transición suave */
+        animation: pulse 2s infinite; /* Animación continua */
+    }
+    @keyframes pulse {
+        0%, 100% {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        50% {
+            transform: translate(-50%, -50%) scale(1.1); /* Aumenta ligeramente el tamaño */
+        }
+    }
+    .btn-jugar-4enLinea:hover {
+        transform: translate(-50%, -50%) scale(1.1); /* Aumenta el tamaño al pasar el mouse */
+        background-color: #45ba28; /* Cambia el color de fondo al hacer hover */
     }
    
     .btn-jugar-4enLinea p{
@@ -1397,9 +1413,24 @@ button.btn-left{
         gap: 20px;                     
     }
     
-    .multimedia-4enLinea-item {
+    .multimedia-4enLinea-item{
+         
+        width: 238px !important; 
+        height: 130px !important; 
+        border-radius: 0 !important; 
+        margin: 10px;
+        }
+    
+    
+    .multimedia-4enLinea-img{
+        border-radius: 0 !important; /* Asegura que se elimine cualquier borde redondeado previo */
         width: 270px;
-        height: 205px;    
+        height: 205px;   
+    }
+    .game-card-img-container, .multimedia-4enLinea-img {
+        width: 270px !important;
+        height: 205px !important;
+        border-radius: 0 !important;
     }
     .btn-left-4enLinea, .btn-right-4enLinea {
         background: none;
@@ -1408,14 +1439,16 @@ button.btn-left{
         z-index: 1; /* Asegura que los botones estén por encima de las imágenes */
         margin-right: 10px;
     }
-    
+    .game-card-img-bordes img{
+        border-radius: 0px;
+    }
 
     .comentarios-4enLinea {  
         background-color: #43464C;       
         color: white;                    
         width: 1144px;                  
         height: 853px;                   
-        margin: 0 auto;                         
+        margin: 40px auto;                         
         display: flex;                           
         flex-direction: column;                  
         border-top-right-radius: 10px;
@@ -1425,7 +1458,7 @@ button.btn-left{
     .footer-comentarios-4enLinea {
         background-color: #242832;       
         height: 20px;                    
-        width: 1144px;                   
+        width: 1144px;                
     }
     .nuevoComentario4enLinea {
         display: flex;                     
@@ -1576,7 +1609,7 @@ button.btn-left{
 
     
     .footer-comentarios-4enLinea{
-        margin: 0 auto;
+        margin: -40px auto;
         border-bottom-right-radius: 10px;
         border-bottom-left-radius: 10px;
     }
