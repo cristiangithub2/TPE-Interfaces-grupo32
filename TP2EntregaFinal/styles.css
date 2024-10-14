@@ -2,12 +2,8 @@ body{
     font-family: 'Lato', sans-serif;
     background-color:#666C78;  
     margin: 0;
-
-    
-
-
-    
 }
+
 /* Estilos específicos para la sección del formulario de registro */
 .register-body{
     background-image: url('./img/astronauta.png'); /* URL de la imagen de fondo */
