@@ -1,10 +1,10 @@
 TPE - Interfaces
 Integrantes
 Miriam Alicia González: miriamgonzalez121@gmail.com
-Maria Agustina Toledo López: agustina.toledolopez@gmail.com
+María Agustina Toledo López: agustina.toledolopez@gmail.com
 Cristian Andres González: cris.andres.gz@gmail.com
 
-Temática
+Temática:
 Página de minijuegos.
 
 Tecnologías Utilizadas:
