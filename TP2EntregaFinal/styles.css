@@ -11,9 +11,9 @@ body{
 /* Estilos específicos para la sección del formulario de registro */
 .register-body{
     background-image: url('/img/astronauta.png'); /* URL de la imagen de fondo */
-    background-size: cover; /* Escala la imagen para cubrir todo el fondo */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
     height: 100vh; /* Asegura que el body cubra toda la pantalla */
     margin: 0;
 }
@@ -99,7 +99,7 @@ header{
     color: #7EEB00;
 }
 .facebook-twitter, .gmail-youtube {
-    display: flex;             /* Usar flexbox para alinear los iconos */
+    display: flex;             
     margin-top: 10px;         /* Espacio superior para separación */
     margin-left: 27%;
 }
@@ -110,10 +110,10 @@ header{
     right: -400px; /* Oculto fuera de la pantalla inicialmente */
     width: 40%;
     height: 60%;
-    background-color: #43464C; /* Fondo oscuro */
-    color: white; /* Color de texto */
+    background-color: #43464C; 
+    color: white; 
     transition: right 0.3s ease; /* Transición suave */
-    z-index: 16; /* Asegúrate de que esté encima del resto de los elementos */
+    z-index: 16; 
     padding: 20px;
     border-radius: 5px;
 }
@@ -288,21 +288,21 @@ h2 {
 .social-login {
     display: flex;
     justify-content: center; /* Centrar los iconos horizontalmente */
-    gap: 20px; /* Espacio uniforme entre los iconos */
+    gap: 20px; 
     margin-bottom: 10px;
 }
 .social-btn {
-    width: 50px;  /* Ancho uniforme para todos los botones */
-    height: 50px; /* Altura uniforme para todos los botones */
+    width: 50px;  
+    height: 50px; 
     border: none;
     border-radius: 5px; /* Bordes redondeados */
     color: #fff;
     font-weight: bold;
     cursor: pointer;
     font-size: 20px;
-    display: flex; /* Flexbox para centrar el contenido */
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
 }
 /* Estilo de cada red social */
 .facebook {
@@ -319,17 +319,17 @@ h2 {
 
 /* Asegurando que los iconos dentro de los botones tengan el mismo tamaño */
 .social-btn img {
-    max-height: 30px; /* Tamaño máximo de altura para los iconos */
-    max-width: 30px;  /* Tamaño máximo de ancho para los iconos */
+    max-height: 30px; 
+    max-width: 30px;  
 }
 
 .social-btn i {
-    font-size: 30px; /* Asegura que los iconos de FontAwesome tengan el mismo tamaño */
+    font-size: 30px; 
 }
-/* Ajuste específico para el logo de Discord */
+
 .discord img {
-    max-height: 30px; /* Ajusta la altura del logo de Discord */
-    max-width: 30px;  /* Ajusta el ancho del logo de Discord */
+    max-height: 30px; 
+    max-width: 30px;  
 }
 /* Línea divisoria blanca */
 .divider {
@@ -349,7 +349,7 @@ form {
     font-family: 'Lato', sans-serif;
     color: #fff; 
     font-size: 12px;
-    text-align: left; /* Alinear a la izquierda */
+    text-align: left; 
     margin-bottom: 5px; /* Espacio entre etiqueta e input */
 }
 
@@ -377,11 +377,11 @@ input:focus {
 }
 /* Estilo del botón de inicio de sesión */
 .login-btn {
-    background-color: #fff; /* Botón de iniciar sesión blanco */
-    color: #242832; /* Texto en gris (neutro + 2) */
+    background-color: #fff; 
+    color: #242832; 
     padding: 8px; 
     border: none;
-    border-radius: 25px; /* Bordes redondeados */
+    border-radius: 25px; 
     font-size: 14px; 
     cursor: pointer;
     font-weight: bold;
@@ -398,7 +398,7 @@ input:focus {
     align-items: center;
     margin-top: 10px;
 }
-/* Texto de la pregunta con fuente Lato */
+
 .register-text {
     font-family: 'Lato', sans-serif;
     color: #fff; 
@@ -410,12 +410,12 @@ input:focus {
     color: #242832;
     padding: 8px; 
     border: none;
-    border-radius: 25px; /* Bordes redondeados */
+    border-radius: 25px; 
     font-size: 14px;
     cursor: pointer;
     font-weight: bold;
     width: 120px;
-    margin: 0 auto 10px; /* Centrado y con margen inferior */
+    margin: 0 auto 10px; 
 }
 .register-btn:hover {
     background-color: #69c500; /* Color primario al pasar el ratón */
@@ -835,8 +835,8 @@ li.game-card{
 
 .text-card{
     
-    display: flex;             /* Flexbox para alinear el título y la categoría */
-    flex-direction: column;    /* Si quieres que los textos estén uno debajo del otro */
+    display: flex;             
+    flex-direction: column;    
     gap: 4px;  /*es el empacio entre en un elemento y otro pero aun  no se aplico*/
     padding-left: 9px;
     padding-bottom:16px ;
@@ -1053,10 +1053,10 @@ button.btn-left{
         right: -400px; /* Oculto fuera de la pantalla inicialmente */
         width: 330px;
         height: 490px;
-        background-color: #43464C; /* Fondo oscuro */
-        color: white; /* Color de texto */
+        background-color: #43464C;
+        color: white;
         transition: right 0.3s ease; /* Transición suave */
-        z-index: 16; /* Asegúrate de que esté encima del resto de los elementos */
+        z-index: 16; 
         padding: 20px;
         border-radius: 5px;
     }
@@ -1130,9 +1130,9 @@ button.btn-left{
         z-index: 15;
         width: 100%;
         display: flex;
-        justify-content: space-between; /* Distribuye los elementos */
-        align-items: center; /* Alinea los elementos verticalmente */
-        padding: 0px; /* Asegúrate de que haya algo de espacio horizontal */
+        justify-content: space-between; 
+        align-items: center; 
+        padding: 0px; 
     }
 
     /*menu hamburguesa*/
@@ -1164,12 +1164,12 @@ button.btn-left{
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #666C78; /* Color de fondo gris */
-        border-radius: 50px; /* Bordes redondeados */
+        background-color: #666C78; 
+        border-radius: 50px; 
         padding: 10px 15px;
-        width: 300px; /* Ancho de la barra */
+        width: 300px; 
         height: 30px;
-        margin: 0 auto; /* Centrar en el header */
+        margin: 0 auto; 
     }
     
     /* Estilo del input */
@@ -1183,7 +1183,7 @@ button.btn-left{
     /* Cambiar el color del placeholder */
     .search-input::placeholder {
         color: white; /* Cambia el color del texto del placeholder a blanco */
-        opacity: 1; /* Asegúrate de que el placeholder tenga una opacidad completa */
+        opacity: 1; 
     }
 
     /* Estilo del icono de búsqueda */
@@ -1194,7 +1194,7 @@ button.btn-left{
     /*perfil*/
     .icons {
         display: flex; /* Usar flexbox para alinear los iconos a la derecha */
-        gap: 5px; /* Espacio entre iconos */
+        gap: 5px; 
         align-items: center;
         margin-top: 4px;
         margin-right: 8px;
@@ -1208,7 +1208,7 @@ button.btn-left{
         height: 46px;
     }
     .perfil, .notificacion, .corazon {
-        margin-left: 10px; /* Espacio entre iconos, ajusta según sea necesario */
+        margin-left: 10px; 
     }
     /*logo*/
     .iconoPrincipal{
@@ -1216,26 +1216,33 @@ button.btn-left{
         height: 55px;
         margin-left: 10px;
         display: flex;
-        align-items: center; /* Alinear el logo verticalmente con el menú */
-        text-align: center; /* Centrar el logo */
+        align-items: center; 
+        text-align: center; 
     }
     .logo-principal {
-        width: 100%; /* Haz que la imagen ocupe todo el ancho del contenedor */
-        height: auto; /* Mantén la proporción de la imagen */
+        width: 100%; 
+        height: auto; 
     }
     /*4enLinea*/
     body, header, footer {
-        margin: 0; /* Asegúrate de que no haya margen */
-        padding: 0; /* Asegúrate de que no haya padding */
+        margin: 0; 
+        padding: 0; 
     }
+    .inicio-pagina-4enLinea{
+        margin-top: 30px; /* Espacio entre el header y el contenido */
+        display: flex; 
+        align-items: center; 
+        gap: 5px; 
+        margin-left: 105px; 
+    }
+
     .inicio-4enLinea-blanco{
         color: white;
         font-size: 13px;
-        margin-top: 20px;
-        margin-left: 98px; /* Espacio entre texto y iconos */
     }
     .videojuego-4enLinea-verde{
         color: #7EEB00;
+        font-size: 13px;
     }
     .game-4enLinea-header{
         border-top-left-radius: 10px;
@@ -1258,10 +1265,10 @@ button.btn-left{
     .icons-4enLinea-header{
         display: flex;
         margin-right: 10px;
-        gap: 10px; /* Espacio entre iconos */
+        gap: 10px; 
     }
     .nav-icon-4enLinea-header{
-        width: 24px; /* Ajusta el tamaño de los iconos */
+        width: 24px; 
         height: auto;
     }
     .title-container-4enLinea{
@@ -1395,7 +1402,7 @@ button.btn-left{
     
     .multimedia-4enLinea-wrapper {
         display: flex;
-        align-items: center; /* Centra verticalmente los elementos */
+        align-items: center; 
         text-align: left;              
         margin-top: 100px;
         margin-bottom: 100px;   
@@ -1409,7 +1416,7 @@ button.btn-left{
     .multimedia-4enLinea-container {
         display: flex;
         scroll-behavior: smooth; /* Desplazamiento suave */
-        list-style: none; /* Elimina los puntos de la lista */
+        list-style: none; 
         gap: 20px;                     
     }
     
@@ -1423,7 +1430,7 @@ button.btn-left{
     
     
     .multimedia-4enLinea-img{
-        border-radius: 0 !important; /* Asegura que se elimine cualquier borde redondeado previo */
+        border-radius: 0 !important; 
         width: 270px;
         height: 205px;   
     }
@@ -1458,7 +1465,8 @@ button.btn-left{
     .footer-comentarios-4enLinea {
         background-color: #242832;       
         height: 20px;                    
-        width: 1144px;                
+        width: 1144px;   
+        margin-bottom: 10px;             
     }
     .nuevoComentario4enLinea {
         display: flex;                     
@@ -1584,7 +1592,7 @@ button.btn-left{
     }
     
     .perdido-4enLinea {
-        color: white;               /* Texto blanco */
+        color: white;               
     }
     
     .redirigir-foro-4enLinea {
@@ -1616,15 +1624,15 @@ button.btn-left{
     .footer {
         background-color: #242832; 
         display: flex;             
-        justify-content: space-between; /* Espacio entre los elementos */
-        align-items: flex-start;   /* Alinear los elementos al principio */
-        padding: 20px;            /* Espacio interno */
-        width: 100%;              /* Asegurar que ocupe todo el ancho */
-        position: relative;       /* Permitir el uso de elementos relativos si es necesario */
-        left: 0;                  /* Alinear a la izquierda */
-        right: 0;                 /* Alinear a la derecha */
+        justify-content: space-between; 
+        align-items: flex-start;   
+        padding: 20px;            
+        width: 100%;              
+        position: relative;       
+        left: 0;                  
+        right: 0;                 
         margin: 0; 
-        margin-top: 60px;
+        margin-top: 85px;
 
     }
     
@@ -1639,25 +1647,25 @@ button.btn-left{
 
     }
 
-    
+    .lista1 li, .lista2 li, .lista3 li, .lista4 li {
+        margin-left: 0%;
+    }
     .lista1, .lista2, .lista3, .lista4 {
         flex: 1;                   /* Permitir que cada lista ocupe espacio flexible */
-        color: white;              /* Color de texto blanco */
-        font-size: 14px;
-    }
-    .lista1 li, .lista2 li, .lista3 li, .lista4 li{
-        margin-bottom: 10px; 
-    }
+        color: white;             
+        font-size: 14px; 
+        margin-left: 0%;
+        }
 
     .footer-links li.Principal {
-        color: #7EEB00;            /* Color verde para el título de la lista */
-        font-weight: bold;         /* Negrita */
-        font-size: 16px;           /* Tamaño de fuente */
-        margin-bottom: 10px;       /* Espacio inferior para separación */
+        color: #7EEB00;           
+        font-weight: bold;         
+        font-size: 16px;           
+        margin-bottom: 10px;       
     }
     
     .footer-links a {
-        color: white;              /* Color blanco para los enlaces */
+        color: white;              
         text-decoration: none;     /* Quitar subrayado de los enlaces */
        
     }
@@ -1667,20 +1675,20 @@ button.btn-left{
     }
     
     .facebook-twitter, .gmail-youtube {
-        display: flex;             /* Usar flexbox para alinear los iconos */
-        margin-top: 10px;         /* Espacio superior para separación */
+        display: flex;             
+        margin-top: 10px;         
         margin-left: 15px;
     }
     
     .iconoRedesFooter {
-        width: 30px;               /* Ancho del icono */
-        height: 30px;              /* Alto del icono */
-        margin-right: 10px;       /* Espacio entre los iconos */
+        width: 30px;               
+        height: 30px;              
+        margin-right: 10px;       
         display: inline-block; /* Permite el ajuste de tamaño del div al contenido */
         border: 2px solid gray; /* Color y grosor del borde */
-        border-radius: 50%; /* Hacer el borde circular */
-        padding: 5px; /* Espacio entre el borde y el icono */
-        width: fit-content; /* Ajustar el ancho al contenido */
+        border-radius: 50%; 
+        padding: 5px; 
+        width: fit-content; 
     }
     
     section.recommended{
@@ -1795,16 +1803,16 @@ button.btn-left{
         background-color: transparent;
         border: none;
         cursor: pointer;
-        z-index: 10; /* Asegúrate de que esté por encima del contenido */
+        z-index: 10; 
     }
     .btn-left-recommended{  
-        top: 50%; /* Centrado verticalmente */
-        transform: translateY(-50%); /* Asegura que esté centrado */
-        left: 10%; /* Ajusta la distancia del borde izquierdo de la pantalla */
+        top: 50%; 
+        transform: translateY(-50%); 
+        left: 10%; 
         background-color: transparent;
-        border: none; /* Elimina el borde si no lo necesitas */
+        border: none; 
         cursor: pointer;
-        z-index: 10; /* Asegúrate de que esté por encima del contenido */
+        z-index: 10; 
     }
 
     h2.name-category{
