@@ -115,7 +115,7 @@ header{
     bottom: 0;
     right: -400px; /* Oculto fuera de la pantalla inicialmente */
     width: 40%;
-    height: 60%;
+    height: 73%;
     background-color: #43464C; 
     color: white; 
     transition: right 0.3s ease; /* Transición suave */
@@ -1851,6 +1851,30 @@ button.btn-left{
     section.category{
         margin-bottom: -130px ;
     }
+    /* Filtro borroso en los extremos del carrusel */
+.div-filter-left, .div-filter-right {
+    position: absolute;
+    top: 23%;
+    bottom: 0;
+    width: 150px;
+    background: linear-gradient(to right, rgba(102, 108, 120, 0), rgba(102, 108, 120, 0));
+    z-index: 7;
+    pointer-events: none; /* Evita que interfiera con la interacción del usuario */
+    transition: opacity 0.3s ease-in-out;
+    height: 210px;
+}
+
+.div-filter-left {
+    left: 4%;
+    background: linear-gradient(to right, #666C78, rgba(102, 108, 120, 0)); /* Difuminación de izquierda a derecha */
+    opacity: 0; /* Comienza invisible */
+}
+
+.div-filter-right {
+    right: 6%;
+    background: linear-gradient(to left, #666C78, rgba(102, 108, 120, 0)); /* Difuminación de derecha a izquierda */
+    opacity: 0; /* Comienza invisible */
+}
     .game-card{
         height: 205px;
         width: 225px;

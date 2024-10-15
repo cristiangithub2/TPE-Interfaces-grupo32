@@ -4,7 +4,7 @@ document.getElementById("login-form").addEventListener("submit", function(event)
     event.preventDefault(); // Evitar el envío del formulario por defecto
 
     const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+    const password = document.gEetElementById("password").value;
 
     // Acá se puede agregar validación o hacer una llamada al backend
     if (email === "grupo32@example.com" && password === "grupo32") {
