@@ -1,5 +1,14 @@
 // scripts.js
 
+// Puedes agregar la clase 'animate' para que se active la animación
+document.querySelector('.btn-iniciarSesion').addEventListener('mouseover', function() {
+    this.classList.add('animate');
+});
+
+document.querySelector('.btn-iniciarSesion').addEventListener('mouseout', function() {
+    this.classList.remove('animate');
+});
+
 document.getElementById("login-form").addEventListener("submit", function(event) {
     event.preventDefault(); // Evitar el envío del formulario por defecto
 
