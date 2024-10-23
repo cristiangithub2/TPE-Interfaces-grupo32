@@ -552,12 +552,7 @@ margin-left: 10px; /* Espacio entre el ícono y el título */
     width: 300px;
     margin-left: 20px;
 }
-.game-recommended h2{
-    width: 20%;
-    overflow: hidden; /* Evita que el texto se desborde */
-    text-overflow: ellipsis; /* Añade "..." si el texto es muy largo */
-    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
-}
+
 .text-card{
     width: 37%;
     overflow: hidden; /* Evita que el texto se desborde */
@@ -594,7 +589,13 @@ margin-left: 10px; /* Espacio entre el ícono y el título */
 
 
 /*panel*/
-
+/*recommended*/
+.game-recommended h2{
+    width: 20%;
+    overflow: hidden; /* Evita que el texto se desborde */
+    text-overflow: ellipsis; /* Añade "..." si el texto es muy largo */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
 /*ul specials*/
 ul.specials{
     height: 230px;
@@ -687,8 +688,37 @@ section.recommended a{
     font-size: 14px;
     border: 0;
 }
+.recommended-card.active-card {
+    transform: scale(1.0); /* Aumenta el tamaño de la tarjeta activa */
+}
 
+.recommended-card.inactive-card {
+    transform: scale(0.4); /* Reduce el tamaño de las tarjetas inactivas */
+}
+.recommended-card {
+    transition: transform 0.9s ease-in-out; /* Aumenta la duración de la transición */
+}
 
+.btn-right-recommended, .btn-left-recommended{
+    background-color: transparent;
+    border: 0;
+}
+.btn-right-recommended img, .btn-left-recommended img{
+    height: 35px;
+    width: 35px;
+}
+.btn-left-recommended{
+    position: absolute;
+    top: 165px;
+    left: 3%;
+    z-index: 3;
+}
+.btn-right-recommended{
+    position: absolute;
+    top: 165px;
+    right: 3%;
+    z-index: 3;
+}
 
 
 
@@ -749,10 +779,6 @@ li.game-card{
     justify-content: flex-start;
     align-items: flex-start;
     margin-left: 18px;
-}
-.game-card:hover{
-    transform: scale(1.1);
-    transition: 0.3s ease-in;
 }
 
 .game-card-img {
@@ -844,10 +870,10 @@ li.game-card{
     padding-bottom:16px ;
 }
 
-
-
-
-
+.animate-card-center {
+    transform: scale(1.1); /* Aumentar tamaño al entrar */
+    transition: transform 0.3s ease-in-out; /* Suave transición */
+}
 
 
 
@@ -872,26 +898,7 @@ a{
 }
 
 
-.btn-right-recommended, .btn-left-recommended{
-    background-color: transparent;
-    border: 0;
-}
-.btn-right-recommended img, .btn-left-recommended img{
-    height: 35px;
-    width: 35px;
-}
-.btn-left-recommended{
-    position: absolute;
-    top: 165px;
-    left: 3%;
-    z-index: 3;
-}
-.btn-right-recommended{
-    position: absolute;
-    top: 165px;
-    right: 3%;
-    z-index: 3;
-}
+
 button.btn-left{
     margin: 0%;
     border: 0px;

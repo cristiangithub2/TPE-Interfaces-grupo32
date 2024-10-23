@@ -14,16 +14,36 @@ function initRecommendedCarousel() {
 
     carruseles.forEach((categoria) => {
         const carrusel = categoria.querySelector(".specials");
+        const cards = carrusel.querySelectorAll(".recommended-card");
         const btnLeft = categoria.querySelector(".btn-left-recommended");
         const btnRight = categoria.querySelector(".btn-right-recommended");
 
+        let currentIndex = 0; // Para rastrear la tarjeta activa
+
+        // Función para actualizar las clases activas y inactivas
+        const updateCardClasses = () => {
+            cards.forEach((card, index) => {
+                if (index === currentIndex) {
+                    card.classList.add("active-card");
+                    card.classList.remove("inactive-card");
+                } else {
+                    card.classList.add("inactive-card");
+                    card.classList.remove("active-card");
+                }
+            });
+        };
+
         // Función para mover el carrusel hacia la derecha
         const moveRightRecommended = () => {
-            const width = carrusel.clientWidth; // Usamos el ancho del carrusel visible
-            const maxScrollLeft = carrusel.scrollWidth - carrusel.clientWidth; // Máximo desplazamiento permitido
+            const width = carrusel.clientWidth; 
+            const maxScrollLeft = carrusel.scrollWidth - carrusel.clientWidth;
 
             if (carrusel.scrollLeft + width <= maxScrollLeft) {
-                carrusel.scrollLeft += width; // Mueve el carrusel a la derecha
+                carrusel.scrollLeft += width; 
+                if (currentIndex < cards.length - 1) {
+                    currentIndex++; // Avanza al siguiente card
+                }
+                updateCardClasses(); // Actualiza las clases después de mover
             } else {
                 console.log("Ya estás en el último elemento.");
             }
@@ -31,14 +51,21 @@ function initRecommendedCarousel() {
 
         // Función para mover el carrusel hacia la izquierda
         const moveLeftRecommended = () => {
-            const width = carrusel.clientWidth; // Usamos el ancho del carrusel visible
+            const width = carrusel.clientWidth; 
 
             if (carrusel.scrollLeft > 0) {
-                carrusel.scrollLeft -= width; // Mueve el carrusel a la izquierda
+                carrusel.scrollLeft -= width; 
+                if (currentIndex > 0) {
+                    currentIndex--; // Retrocede al card anterior
+                }
+                updateCardClasses(); // Actualiza las clases después de mover
             } else {
                 console.log("Ya estás en el primer elemento.");
             }
         };
+
+        // Inicializar las clases en el primer render
+        updateCardClasses();
 
         // Asignar eventos a los botones
         btnRight.addEventListener("click", moveRightRecommended);
@@ -48,51 +75,90 @@ function initRecommendedCarousel() {
 
 // Asegúrate de llamar a la función `load` cuando el DOM esté completamente cargado
 
-
-// Función para inicializar el carrusel de categoría
 function initCategoryCarousel() {
-    const categorias = document.querySelectorAll(".category"); // Seleccionamos todas las categorias
+    const categorias = document.querySelectorAll(".category");
 
     categorias.forEach((categoria) => {
-        const carrusel = categoria.querySelector(".carrusel"); // Seleccionamos el carrusel de la categoria actual
-
+        const carrusel = categoria.querySelector(".carrusel");
+        const cards = carrusel.querySelectorAll(".game-card");
         const btnLeft = categoria.querySelector(".btn-left");
         const btnRight = categoria.querySelector(".btn-right");
         const btnLeftMobile = categoria.querySelector(".btn-left-mobile");
         const btnRightMobile = categoria.querySelector(".btn-right-mobile");
 
-        // Funcion para mover el carrusel hacia la derecha
+        // Función para añadir la clase de animación a las tarjetas que pasan por el centro
+        const addAnimationToCenterCards = () => {
+            const carruselRect = carrusel.getBoundingClientRect();
+            const centerPosition = carruselRect.left + (carruselRect.width / 3);
+            
+            // Eliminar animaciones anteriores
+            cards.forEach((card) => {
+                card.classList.remove("animate-card-center");
+            });
+
+            // Aplicar la animación a los cards que están cerca del centro
+            cards.forEach((card) => {
+                const cardRect = card.getBoundingClientRect();
+
+                // Verificar si el card está cerca del centro
+                if (
+                    cardRect.left < centerPosition && 
+                    cardRect.right > centerPosition
+                ) {
+                    card.classList.add("animate-card-center");
+                }
+            });
+        };
+
         const moveRightCategory = () => {
-            const width = carrusel.clientWidth; // Cambiado a clientWidth para un mejor manejo
-            const maxScrollLeft = carrusel.scrollWidth - carrusel.clientWidth; // Máximo desplazamiento permitido
-        
-            // Comprueba si se puede desplazar hacia la derecha
-            if (carrusel.scrollLeft < maxScrollLeft) {
+            const width = carrusel.clientWidth;
+            const maxScrollLeft = carrusel.scrollWidth - carrusel.clientWidth;
+
+            if (carrusel.scrollLeft < maxScrollLeft ) {
                 carrusel.scrollLeft += width;
+                addAnimationToCenterCards(); // Aplicar animación al mover a la derecha
             } else {
                 console.log("Ya estás en el último elemento.");
             }
         };
 
-        // Función para mover el carrusel hacia la izquierda
         const moveLeftCategory = () => {
-            const width = carrusel.getBoundingClientRect().width;
+            const width = carrusel.clientWidth;
 
             if (carrusel.scrollLeft > 0) {
                 carrusel.scrollLeft -= width;
+                addAnimationToCenterCards(); // Aplicar animación al mover a la izquierda
             } else {
                 console.log("Ya estás en el primer elemento.");
             }
         };
 
         // Asignar eventos a los botones
-        btnRight.addEventListener("click", moveRightCategory);
-        btnLeft.addEventListener("click", moveLeftCategory);
-        btnRightMobile.addEventListener("click", moveRightCategory);
-        btnLeftMobile.addEventListener("click", moveLeftCategory);
+        btnRight.addEventListener("click", () => {
+            moveRightCategory();
+            addAnimationToCenterCards(); // Aplicar animación al mover
+        });
+        btnLeft.addEventListener("click", () => {
+            moveLeftCategory();
+            addAnimationToCenterCards(); // Aplicar animación al mover
+        });
+        btnRightMobile.addEventListener("click", () => {
+            moveRightCategory();
+            addAnimationToCenterCards(); // Aplicar animación al mover
+        });
+        btnLeftMobile.addEventListener("click", () => {
+            moveLeftCategory();
+            addAnimationToCenterCards(); // Aplicar animación al mover
+        });
+
+        // Aplicar animación inicial a los cards visibles al cargar la página
+        addAnimationToCenterCards();
     });
-    
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    initCategoryCarousel();
+});     
 // Selecciona todos los carruseles
 const carruseles = document.querySelectorAll('.carrusel');
 
