@@ -875,7 +875,6 @@ li.game-card{
     transition: transform 1.s ease; /* Suavizar la animación */
 }
 
-
 a{
     text-decoration: none; /*saca la linea*/
     color: inherit;
@@ -1878,7 +1877,7 @@ button.btn-left{
     position: absolute;
     top: 25%;
     bottom: 0;
-    width: 150px;
+    width: 50px;
     background: linear-gradient(to right, rgba(102, 108, 120, 0), rgba(102, 108, 120, 0));
     z-index: 7;
     pointer-events: none; /* Evita que interfiera con la interacción del usuario */
