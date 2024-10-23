@@ -11,42 +11,47 @@
 </head>
 <body class="register-body">
     <div class="login-container">
-        <div class="login-box">
-            <h2>Registro</h2>
+        <div class="login-box-registrate">
+            <h2>¡REGÍSTRATE Y DIVIÉRTETE!</h2>
             <form id="register-form">
                 <label class="input-label" for="name">Nombre</label>
-                <input type="text" id="name" placeholder="Tu nombre" required>
+                <input type="text" id="name" placeholder="" required>
                 
                 <label class="input-label" for="surname">Apellido</label>
-                <input type="text" id="surname" placeholder="Tu apellido" required>
+                <input type="text" id="surname" placeholder="" required>
 
                 <label class="input-label" for="nickname">Nickname</label>
-                <input type="text" id="nickname" placeholder="Tu nickname" required>
+                <input type="text" id="nickname" placeholder="Usuario" required>
+                <label class="input-label-bottom" for="name">(No utilices tu nombre real)</label>
+
+                <label class="input-label" for="birthdate">Fecha de Nacimiento</label>
+                <input type="date" id="birthdate" placeholder="Día                     Mes                     Año" required>
 
                 <label class="input-label" for="email">Email</label>
                 <input type="email" id="reg-email" placeholder="example_email@gmail.com" required>
 
                 <label class="input-label" for="password">Contraseña</label>
                 <input type="password" id="reg-password" placeholder="********" required>
-
-                <label class="input-label" for="birthdate">Fecha de Nacimiento</label>
-                <input type="date" id="birthdate" required>
+                <label class="input-label-bottom" for="name">(Mínimo de ocho caracteres)</label>
 
                 <label class="input-label" for="repeat-password">Repetir Contraseña</label>
                 <input type="password" id="repeat-password" placeholder="********" required>
+                <label class="input-label-bottom" for="name">(Ingresa tu contraseña nuevamente)</label>
                 
                 <!-- Añadir reCAPTCHA -->
                 <div class="g-recaptcha" data-sitekey="TU_CLAVE_DEL_SITIO"></div>
 
                 <p class="terms-text">
-                    Al hacer click en Registrarse, aceptas los <span class="terms-highlight">Términos de uso</span> y la <span class="terms-highlight">Política de Privacidad</span>.
+                    Al hacer click en Regístrate, aceptas los <span class="terms-highlight">Términos de uso</span> y la <span class="terms-highlight">Política de Privacidad</span>.
                 </p>
                 
                 <button type="submit" class="register-btn">Regístrate</button>
             </form>
         </div>
     </div>
-
+    <div>
+        <button class="iniciarSesion">Iniciar Sesion</button>
+    </div>
     <!-- Contenedor para la animación de éxito -->
     <div id="success-notification" class="success-notification">
         ¡Registro exitoso!
@@ -55,4 +60,5 @@
     <script src="scripts.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
+
 </html>
