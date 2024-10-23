@@ -1,17 +1,20 @@
-body{
+html, body{
     font-family: 'Lato', sans-serif;
     background-color:#666C78;  
     margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
 /* Estilos específicos para la sección del formulario de registro */
 .register-body{
-    background-image: url('./img/astronauta.png'); /* URL de la imagen de fondo */
+    background-image: url(./img/wallpaper.jpg); /* URL de la imagen de fondo */
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
-    height: 100vh; /* Asegura que el body cubra toda la pantalla */
+    min-height: 100vh; /* Asegura que el body cubra toda la pantalla */
     margin: 0;
+    background-attachment: fixed;
 }
 /*header*/
 header{
@@ -266,6 +269,8 @@ li{
     justify-content: center;
     align-items: center;
     width: 100%;
+    flex: 1;
+    min-height: 100vh;
 }
 .login-box {
     margin-top: 77px;
@@ -997,7 +1002,9 @@ button.btn-left{
 
 
 @media only screen and (min-width: 1024px) {
-    
+    .register-body {
+        min-height: 100%; /* Usa min-height 100% en lugar de 100vh para que crezca con el contenido */
+    }
     
     .side-nav {
         position: fixed;
