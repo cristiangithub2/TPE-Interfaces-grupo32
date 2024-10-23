@@ -74,7 +74,6 @@ function initRecommendedCarousel() {
 }
 
 // Asegúrate de llamar a la función `load` cuando el DOM esté completamente cargado
-
 function initCategoryCarousel() {
     const categorias = document.querySelectorAll(".category");
 
@@ -86,76 +85,54 @@ function initCategoryCarousel() {
         const btnLeftMobile = categoria.querySelector(".btn-left-mobile");
         const btnRightMobile = categoria.querySelector(".btn-right-mobile");
 
-        // Función para añadir la clase de animación a las tarjetas que pasan por el centro
-        const addAnimationToCenterCards = () => {
-            const carruselRect = carrusel.getBoundingClientRect();
-            const centerPosition = carruselRect.left + (carruselRect.width / 3);
-            
-            // Eliminar animaciones anteriores
+        // Función para achicar las tarjetas mientras el carrusel está en movimiento
+        const shrinkCards = () => {
             cards.forEach((card) => {
-                card.classList.remove("animate-card-center");
-            });
-
-            // Aplicar la animación a los cards que están cerca del centro
-            cards.forEach((card) => {
-                const cardRect = card.getBoundingClientRect();
-
-                // Verificar si el card está cerca del centro
-                if (
-                    cardRect.left < centerPosition && 
-                    cardRect.right > centerPosition
-                ) {
-                    card.classList.add("animate-card-center");
-                }
+                card.classList.add("shrink-card");
             });
         };
 
-        const moveRightCategory = () => {
+        // Función para restaurar las tarjetas a su tamaño original
+        const restoreCards = () => {
+            cards.forEach((card) => {
+                card.classList.remove("shrink-card");
+            });
+        };
+
+        // Función para aplicar la animación al mover las tarjetas
+        const moveCategory = (direction) => {
             const width = carrusel.clientWidth;
             const maxScrollLeft = carrusel.scrollWidth - carrusel.clientWidth;
+            let newScrollLeft;
 
-            if (carrusel.scrollLeft < maxScrollLeft ) {
-                carrusel.scrollLeft += width;
-                addAnimationToCenterCards(); // Aplicar animación al mover a la derecha
-            } else {
-                console.log("Ya estás en el último elemento.");
+            if (direction === "right") {
+                newScrollLeft = Math.min(carrusel.scrollLeft + width, maxScrollLeft);
+            } else if (direction === "left") {
+                newScrollLeft = Math.max(carrusel.scrollLeft - width, 0);
             }
-        };
 
-        const moveLeftCategory = () => {
-            const width = carrusel.clientWidth;
-
-            if (carrusel.scrollLeft > 0) {
-                carrusel.scrollLeft -= width;
-                addAnimationToCenterCards(); // Aplicar animación al mover a la izquierda
-            } else {
-                console.log("Ya estás en el primer elemento.");
+            if (newScrollLeft !== carrusel.scrollLeft) {
+                shrinkCards();  // Achicar las tarjetas al moverse
+                carrusel.scrollLeft = newScrollLeft;
+                setTimeout(restoreCards, 500);  // Restaurar el tamaño de las tarjetas después de la animación
             }
         };
 
         // Asignar eventos a los botones
         btnRight.addEventListener("click", () => {
-            moveRightCategory();
-            addAnimationToCenterCards(); // Aplicar animación al mover
+            moveCategory("right");
         });
         btnLeft.addEventListener("click", () => {
-            moveLeftCategory();
-            addAnimationToCenterCards(); // Aplicar animación al mover
+            moveCategory("left");
         });
         btnRightMobile.addEventListener("click", () => {
-            moveRightCategory();
-            addAnimationToCenterCards(); // Aplicar animación al mover
+            moveCategory("right");
         });
         btnLeftMobile.addEventListener("click", () => {
-            moveLeftCategory();
-            addAnimationToCenterCards(); // Aplicar animación al mover
+            moveCategory("left");
         });
-
-        // Aplicar animación inicial a los cards visibles al cargar la página
-        addAnimationToCenterCards();
     });
 }
-
 document.addEventListener("DOMContentLoaded", () => {
     initCategoryCarousel();
 });     

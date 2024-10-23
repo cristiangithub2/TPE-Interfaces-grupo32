@@ -870,11 +870,10 @@ li.game-card{
     padding-bottom:16px ;
 }
 
-.animate-card-center {
-    transform: scale(1.1); /* Aumentar tamaño al entrar */
-    transition: transform 0.3s ease-in-out; /* Suave transición */
+.shrink-card {
+    transform: scale(0.7); /* Achicar las tarjetas un 10% */
+    transition: transform 1.s ease; /* Suavizar la animación */
 }
-
 
 
 a{
@@ -1853,6 +1852,7 @@ button.btn-left{
     .btn-left, .btn-right{
         display: block;
         position: relative;
+        z-index: 8;
     }
     .btn-left{
         top: 151px;
@@ -1876,7 +1876,7 @@ button.btn-left{
     /* Filtro borroso en los extremos del carrusel */
 .div-filter-left, .div-filter-right {
     position: absolute;
-    top: 23%;
+    top: 25%;
     bottom: 0;
     width: 150px;
     background: linear-gradient(to right, rgba(102, 108, 120, 0), rgba(102, 108, 120, 0));
