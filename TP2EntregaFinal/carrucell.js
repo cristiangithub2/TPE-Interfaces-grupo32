@@ -74,6 +74,7 @@ function initRecommendedCarousel() {
 }
 
 // Asegúrate de llamar a la función `load` cuando el DOM esté completamente cargado
+
 function initCategoryCarousel() {
     const categorias = document.querySelectorAll(".category");
 
@@ -96,17 +97,18 @@ function initCategoryCarousel() {
         const restoreCards = () => {
             cards.forEach((card) => {
                 card.classList.remove("shrink-card");
+                card.classList.remove("origin-card");
             });
         };
 
         // Función para aplicar la animación al mover las tarjetas
         const moveCategory = (direction) => {
             const width = carrusel.clientWidth;
-            const maxScrollLeft = carrusel.scrollWidth - carrusel.clientWidth;
+            const maxScrollLeft = carrusel.scrollWidth  - carrusel.clientWidth;
             let newScrollLeft;
 
             if (direction === "right") {
-                newScrollLeft = Math.min(carrusel.scrollLeft + width, maxScrollLeft);
+                newScrollLeft = Math.min(carrusel.scrollLeft + width , maxScrollLeft );
             } else if (direction === "left") {
                 newScrollLeft = Math.max(carrusel.scrollLeft - width, 0);
             }
@@ -133,6 +135,7 @@ function initCategoryCarousel() {
         });
     });
 }
+
 document.addEventListener("DOMContentLoaded", () => {
     initCategoryCarousel();
 });     

@@ -518,6 +518,9 @@ input:focus {
     width: 80%;
     margin-top: 4px;
 }
+.buscador img{
+    object-fit: contain;
+}
 .side-nav {
     position: fixed;
     bottom: 0;
@@ -548,7 +551,7 @@ input:focus {
 margin-left: 10px; /* Espacio entre el ícono y el título */
 }
 .side-nav.active {
-    left: 12%;
+    left: 0px;
 }
 .side-nav:hover .title-nav {
     display: inline; /* Muestra los títulos al pasar el mouse */
@@ -899,12 +902,19 @@ li.game-card{
     padding-left: 9px;
     padding-bottom:16px ;
 }
+.precio{
+    width: 5px;
+    font-size: 22px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: white;
+    margin-left: -2px;
+}
 
 .shrink-card {
     transform: scale(0.7); /* Achicar las tarjetas un 10% */
     transition: transform 1.s ease; /* Suavizar la animación */
 }
-
 
 a{
     text-decoration: none; /*saca la linea*/
@@ -1020,13 +1030,11 @@ button.btn-left{
     .menu-icon {
         cursor: pointer;
     }
+   
     .buscador{
-        column-gap: 30px;
-        padding-left: 20px;
+       display: none;
     }
-    .buscador-input{
-        width: 60%;
-    }
+    
     /* Efecto de oscurecimiento */
     .overlay {
         position: fixed;
@@ -1908,7 +1916,7 @@ button.btn-left{
     position: absolute;
     top: 25%;
     bottom: 0;
-    width: 150px;
+    width: 50px;
     background: linear-gradient(to right, rgba(102, 108, 120, 0), rgba(102, 108, 120, 0));
     z-index: 7;
     pointer-events: none; /* Evita que interfiera con la interacción del usuario */
