@@ -900,7 +900,7 @@ a{
 
 
 button.btn-left{
-    margin: 0%;
+    margin: 1%;
     border: 0px;
 }
 
@@ -1401,8 +1401,9 @@ button.btn-left{
         margin-right: 10px;
     }
     .titulo-4enLinea-indicaciones{
-        font-size: 15px;
+        font-size: 18px;
         color: white;
+        font-family: lato;
     }
     .description-4enLinea-parrafo{
         font-size: 16px;
@@ -1426,6 +1427,20 @@ button.btn-left{
     .title-4enLinea-multimedia {
         margin-bottom: 20px;   
         color: white;        
+    }
+    .name-category{
+        position: relative;
+        display: flex;
+        width: 100%;
+        font-size: 18px;
+        font-family: lato;
+        padding-left:0 ;
+        margin-bottom: -5px;
+        
+    }
+    h2.name-category{
+        margin-left: 8%;
+    
     }
     
     .multimedia-4enLinea-container {
@@ -1840,7 +1855,7 @@ button.btn-left{
         position: relative;
     }
     .btn-left{
-        top: 154px;
+        top: 151px;
     }
     
     .btn-right{
