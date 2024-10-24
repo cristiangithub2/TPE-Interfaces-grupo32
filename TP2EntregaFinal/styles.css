@@ -734,6 +734,7 @@ section.recommended a{
     border-radius: 30px;
     border:0 ;
     box-shadow: 0 0 0px #4cd02a;
+   
 }
 .btn-jugar-recommended:hover{
     box-shadow: 0 0 20px #4cd02a; /* Añade un resplandor */
@@ -1859,16 +1860,47 @@ button.btn-left{
     }
 
     .btn-jugar-recommended{
+        transform: translate(-50%, -50%);
         position: relative;
-        top:260px;
-        left:78%;
+        top:292px;
+        left:86%;
         width: 17%;
         height: 56px;
         font-size: 18px;
         z-index: 10; 
+        background-color: #4cd02a ;
+        
 
     }
     .btn-jugar-recommended p{
+        background: none;
+        border: none;
+        margin:2px;
+        padding: 5px;
+        font-weight: bold;
+        font-size: 14px;
+        position: relative;
+        
+        &:after {
+            transform: translateY(-50%);
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: white;
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            z-index: -1;
+            transition: 0.3s ease;
+        }
+    
+        &:hover:after {
+            width: 163%;
+            height: 150%;
+            left: 0;
+            border-radius: 30px;
+        }
         font-size: 18px;
         padding-left: 15%;
     }
