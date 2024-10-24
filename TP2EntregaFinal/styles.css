@@ -1911,14 +1911,63 @@ button.btn-left{
     }
 
     .btn-miLista-recommended{
-        top: 290px;
-        left:78%;
+        top: 417px;
+        left:86%;
         width: 17%;
         height: 56px;
         font-size: 18px;
+        transform: translate(-50%, -50%);
+        position: fixed;
     }
     .btn-miLista-recommended p{
-        padding-left: 16%;
+       
+        display: block;
+        width: 250px;
+        height: 50px;
+        line-height: 46px;
+        text-decoration: none;
+        text-align: center;
+        border-radius: 50px;
+        border: none;
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+        font-family: arial;
+        position: relative;
+        overflow: hidden;
+        background: transparent;
+        text-transform: uppercase;
+        transition: all .35s;
+      }
+      
+      .btn-miLista-recommended p:before,
+      .btn-miLista-recommended p:after{
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: -100%;
+        left: 0;
+        background: rgb(255, 255, 255);
+        z-index: -1;
+        transition: all .35s;
+      }
+      
+      .btn-miLista-recommended p:before{
+        opacity: .5;
+      }
+      
+      .btn-miLista-recommended p:after{
+        transition-delay: .2s;
+      }
+      
+      .btn-miLista-recommended p:hover{
+        color: #000000;
+      }
+      
+      .btn-miLista-recommended p:hover:before,
+      .btn-miLista-recommended p:hover:after{
+        top: 0;
+      }
     }
     .game-recommended{
         position: relative;
@@ -1988,7 +2037,7 @@ button.btn-left{
         margin-bottom: -130px ;
     }
     /* Filtro borroso en los extremos del carrusel */
-.div-filter-left, .div-filter-right {
+    .div-filter-left, .div-filter-right {
     position: absolute;
     top: 25%;
     bottom: 0;
@@ -1998,7 +2047,7 @@ button.btn-left{
     pointer-events: none; /* Evita que interfiera con la interacción del usuario */
     transition: opacity 0.3s ease-in-out;
     height: 210px;
-}
+    }
 
 .div-filter-left {
     left: 4%;
@@ -2161,4 +2210,3 @@ button.btn-left{
         margin: 0 auto 10px; 
     
     }
-}
