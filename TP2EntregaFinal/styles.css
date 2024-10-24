@@ -61,7 +61,9 @@ header{
     font-weight: bold;
     color: #fff;
 }
-
+.btn-jugar-recommended{
+    top: 10px;
+}
 /* Estilos para el loader */
 .loader {
     display: flex;
@@ -1385,6 +1387,7 @@ button.btn-left{
     }
     .btn-jugar-4enLinea {
         position: absolute; 
+        display: inline-block;
         top:177px;
         left:89%;
         transform: translate(-50%, -50%); 
@@ -1398,6 +1401,7 @@ button.btn-left{
         z-index: 10; 
         transition: transform 0.3s ease, background-color 0.3s ease; /* Agrega una transición suave */
         animation: pulse 2s infinite; /* Animación continua */
+        
     }
     @keyframes pulse {
         0%, 100% {
@@ -1968,27 +1972,7 @@ button.btn-left{
       .btn-miLista-recommended p:hover:after{
         top: 0;
       }
-    }
-    .game-recommended{
-        position: relative;
-        left: 80%;
-        top:70px;
-        white-space: nowrap; /* Impide que el texto se divida en varias líneas */
-        overflow: hidden;    /* Oculta el texto que desborda el contenedor */
-        text-overflow: ellipsis; /* Añade "..." al final del texto que no cabe */
-        display: block;
-    }
-
-    .btn-right-recommended, .btn-left-recommended{
-        width: 64px;
-        height: 64px;
-    }
-    .btn-right-recommended img, .btn-left-recommended img{
-        width: inherit;
-        height: inherit;
-    }
-
-    .btn-right-recommended{
+      .btn-right-recommended{
         top: 50%; /* Centrado verticalmente */
         transform: translateY(-50%); /* Asegura que esté centrado */
         right: 10%; /* Ajusta la distancia del borde derecho de la pantalla */
@@ -2006,6 +1990,28 @@ button.btn-left{
         cursor: pointer;
         z-index: 10; 
     }
+    .btn-right-recommended, .btn-left-recommended{
+        width: 64px;
+        height: 64px;
+    }
+    .btn-right-recommended img, .btn-left-recommended img{
+        width: inherit;
+        height: inherit;
+    }
+    
+    .game-recommended{
+        position: relative;
+        left: 80%;
+        top:70px;
+        white-space: nowrap; /* Impide que el texto se divida en varias líneas */
+        overflow: hidden;    /* Oculta el texto que desborda el contenedor */
+        text-overflow: ellipsis; /* Añade "..." al final del texto que no cabe */
+        display: block;
+    }
+
+    
+
+    
 
     h2.name-category{
         margin-left: 5.5%;
@@ -2117,7 +2123,7 @@ button.btn-left{
         transform: translate(-50%);
     }
 
-    .see-more{
+    .see-more{ 
         display: block;
         position: relative;
         top: 60px;
@@ -2210,3 +2216,4 @@ button.btn-left{
         margin: 0 auto 10px; 
     
     }
+}
