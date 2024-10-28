@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Registro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet"> <!-- Importar fuente Lato -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM9sYYnM3Z2H1F+dH4G7Gm1G2B9M7kBTVh6ll" crossorigin="anonymous">
+</head>
+<body class="register-body">
+    <div class="login-container">
+        <div class="login-box">
+            <img src="./img/logo-completo.png" alt="Logo" class="logo">
+            <h2>Iniciar Sesión</h2>
+            <div class="social-login">
+                <button class="social-btn facebook"><i class="fab fa-facebook-f"><img src="./img/LogoFace.png" alt="Face" class="LogoFace"></i></button>
+                <button class="social-btn google"><i class="fab fa-google"><img src="./img/LogoGoogle.png" alt="Face" class="LogoGoogle"></i></button>
+                <button class="social-btn discord"><i class="fab fa-discord"><img src="./img/LogoDiscord.png" alt="Face" class="LogoDiscord"></i></button>
+            </div>
+            
+            <!-- Línea divisoria blanca -->
+            <hr class="divider">
+
+            <form id="login-form">
+                <!-- Etiqueta de Email -->
+                <label class="input-label-ini" for="email">Email</label>
+                <input class="input-label-ini" type="email" id="email" placeholder="example_email@gmail.com" required>
+
+                <!-- Etiqueta de Contraseña -->
+                <label class="input-label-ini" for="password">Contraseña</label>
+                <input class="input-label-ini" type="password" id="password" placeholder="********" required>
+                
+                <!-- Pregunta sin link -->
+                <span class="forgot-password">¿Se te olvidó tu contraseña?</span>
+                
+                <button type="submit" class="login-btn"><a href="home.html">Iniciar Sesión</a></button>
+                <!-- Pregunta y botón de registrarse con espaciado -->
+                <div class="register-section">
+                    <span class="register-text">¿No tienes cuenta?</span>
+                    <button class="register-btn-ini" onclick="location.href='register.html'">Regístrate</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

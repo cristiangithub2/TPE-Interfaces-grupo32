@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Diver Juegos</title>
+</head>
+<body>
+     <div id="loading-screen">
+        <div class="loader">
+            <div class="circle-loading"></div>
+            <div id="loading-text">0%</div>
+        </div>
+    </div> 
+    <div class="overlay"></div>
+    <nav class="side-nav">
+        <div class="buscador">
+            <img src="img/buscador.png" alt="">
+            <input type="text" class="buscador-input" value="¿A que jugamos hoy?">
+        </div>
+        <ul class="elementos-nav">
+            <li class="category-nav">
+                <a href="#">
+                    <img src="./img/new.png" alt="" class="icon-nav">
+                    <button class="title-nav">Juegos Nuevos</button>
+                </a>
+            </li>
+            <li class="category-nav">
+                <a href="#">
+                    <img src="./img/recomendado.png" alt="" class="icon-nav">
+                    <button class="title-nav">Recomendados</button>
+                </a>
+            </li>
+            <li class="category-nav">
+                <a href="#">
+                    <img src="./img/recientes.png" alt="" class="icon-nav">
+                    <button class="title-nav">Recientes</button>
+                </a>
+            </li>
+            <li class="category-nav">
+                <a href="#">
+                    <img src="./img/misFavoritos.png" alt="" class="icon-nav">
+                    <button class="title-nav">Mis Favoritos</button>
+                </a>
+            </li>
+            <li class="category-nav">
+                <a href="#">
+                    <img src="./img/multijugador.png" alt="" class="icon-nav">
+                    <button class="title-nav">Multijugador</button>
+                </a>
+            </li>
+            <li class="category-nav">
+                <a href="#">
+                    <img src="./img/2jugadores.png" alt="" class="icon-nav">
+                    <button class="title-nav">Dos Jugadores</button>
+                </a>
+            </li>
+            <li class="category-nav">
+                <a href="#">
+                    <img src="./img/accion.png" alt="" class="icon-nav">
+                    <button class="title-nav">Acción</button>
+                </a>
+            </li>
+            <li class="category-nav">
+                <a href="#">
+                    <img src="./img/flag-icon_34423 2.png" alt="" class="icon-nav">
+                    <button class="title-nav">Aventura</button>
+                </a>
+            </li>
+            <li class="category-nav">
+                <a href="#">
+                    <img src="./img/carreras.png" alt="" class="icon-nav">
+                    <button class="title-nav">Carreras</button>
+                </a>
+            </li>
+            <li class="category-nav">
+                <a href="#">
+                    <img src="./img/clasicos.png" alt="" class="icon-nav">
+                    <button class="title-nav">Clasicos</button>
+                </a>
+            </li>
+            <li class="category-nav">
+                <a href="#">
+                    <img src="./img/futbol.png" alt="" class="icon-nav">
+                    <button class="title-nav">Futbol</button>
+                </a>
+            </li>
+            <li class="category-nav">
+                <a href="#">
+                    <img src="./img/terror.png" alt="" class="icon-nav">
+                    <button class="title-nav">Terror</button>
+                </a>
+            </li>
+            <li class="category-nav">
+                <a href="#">
+                    <img src="./img/guerra.png" alt="" class="icon-nav">
+                    <button class="title-nav">Guerra</button>
+                </a>
+            </li>
+            <li class="category-nav">
+                <a href="#">
+                    <img src="./img/moda.png" alt="" class="icon-nav">
+                    <button class="title-nav">Moda</button>
+                </a>
+            </li>
+            <li class="category-nav">
+                <a href="#">
+                    <img src="./img/cocina.png" alt="" class="icon-nav">
+                    <button class="title-nav">Cocina</button>
+                </a>
+            </li>
+            <li class="category-nav">
+                <a href="#">
+                    <img src="./img/baloncesto.png" alt="" class="icon-nav">
+                    <button class="title-nav">Baloncesto</button>
+                </a>
+            </li>
+            <li class="category-nav">
+                <a href="#">
+                    <img src="./img/mesa.png" alt="" class="icon-nav">
+                    <button class="title-nav">Mesa</button>
+                </a>
+            </li>
+            <li class="category-nav">
+                <a href="#">
+                    <img src="./img/matematicas.png" alt="" class="icon-nav">
+                    <button class="title-nav">Matematicas</button>
+                </a>
+            </li>
+            <li class="category-nav">
+                <a href="#">
+                    <img src="./img/pintar.png" alt="" class="icon-nav">
+                    <button class="title-nav">Pintar</button>
+                </a>
+            </li>
+            <li class="category-nav">
+                <a href="#">
+                    <img src="./img/coches.png" alt="" class="icon-nav">
+                    <button class="title-nav">Coches</button>
+                </a>
+            </li>
+            <li class="category-nav">
+                <a href="#">
+                    <img src="./img/motos.png" alt="" class="icon-nav">
+                    <button class="title-nav">Motos</button>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="profile-panel" >
+        <!-- Contenido del panel de perfil -->
+        <div class="usuario">
+            <div class="icono-usuario">
+                <img src="" alt="">
+            </div>
+            <h2>Nombre  Usuario</h2>
+        </div>
+        <div class="linea-usuario"></div>
+        <div class="usuario-perfil">
+            <div class="icon-usuario-panel">
+                <img src="img/usuario2.png" alt="">
+            </div>
+            <p>Mi perfil</p>
+        </div>
+        <div class="usuario-perfil">
+            <div class="icon-usuario-panel">
+                <img src="img/amigos.png" alt="">
+            </div>
+            <p>Amigos</p>
+        </div>
+        <div class="usuario-perfil">
+            <div class="icon-usuario-panel">
+                <img src="img/carrito.png" alt="">
+            </div>
+            <p>Carrito</p>
+        </div>
+        <div class="usuario-perfil">
+            <div class="icon-usuario-panel">
+                <img src="img/compartir.png" alt="">
+            </div>
+            <p>Compartir Perfil</p>
+        </div>
+        <div class="linea-usuario"></div>
+        <div class="usuario-perfil-salir">
+            <a href="index.html">
+                <div class="icon-usuario-panel-salir">
+                    <img src="img/flecha right.png" alt="">
+                </div>
+            </a>
+            <p>Cerrar sesión</p>
+        </div>
+    </div>
+    <header>
+        <div class="circle">
+            <div class="menu-icon">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+
+        <div class="iconoPrincipal">
+            <img src="./img/logo-completo.png" alt="Logo" class="logo-principal">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="¿A qué jugamos hoy?" class="search-input">
+            <img src="img/iconoLupa.png" alt="Buscar" class="search-icon">
+        </div>
+        <div class="icons">
+            <div class="perfil">
+                <img src="./img/social.png" alt="perfil" class="perfil-img">
+            </div>
+            <div class="notificacion">
+                <img src="./img/iconoNotificacion.png" alt="notificacion" class="notificacion-img">
+            </div>
+            <div class="corazon">
+                <img src="./img/iconoCorazon.png" alt="corazon" class="corazon-img">
+            </div>
+        </div>
+       
+    </header>
+    
+    
+    <section class="recommended">
+        <button class="btn-left-recommended">
+            <!-- flecha para atrás -->
+            <img src="./img/flecha left.png" alt="Flecha izquierda">
+        </button>
+    
+        <ul class="specials">
+            <li class="recommended-card">
+                <a href="">
+                    <div class="card-recommended">
+                        <div class="recommended-card-img">
+                            <img src="img/cardOverwatch.jpg" alt="Overwatch">
+                        </div>
+                        <div class="game-recommended">
+                            <h2>Overwatch</h2>
+                        </div>
+                        <button class="btn-jugar-recommended">
+                            <p>Jugar</p>
+                            <img src="./img/jugar.png" alt="Jugar">
+                        </button>
+                        <button class="btn-miLista-recommended">
+                            <p>+ Mi Lista</p>
+                        </button>
+                    </div>
+                </a>
+            </li>
+            <li class="recommended-card">
+                <a href="">
+                    <div class="card-recommended">
+                        <div class="recommended-card-img">
+                            <img src="img/cardFortnite.jpg" alt="Fortnite">
+                        </div>
+                        <div class="game-recommended">
+                            <h2>Fortnite</h2>
+                        </div>
+                        <button class="btn-jugar-recommended">
+                            <p>Jugar</p>
+                            <img src="./img/jugar.png" alt="Jugar">
+                        </button>
+                        <button class="btn-miLista-recommended">
+                            <p>+ Mi Lista</p>
+                        </button>
+                    </div>
+                </a>
+            </li>
+            <li class="recommended-card">
+                <a href="">
+                    <div class="card-recommended">
+                        <div class="recommended-card-img">
+                            <img src="img/cardGrandTheftAuto.jpg" alt="Grand Theft Auto">
+                        </div>
+                        <div class="game-recommended">
+                            <h2>Grand Theft Auto</h2>
+                        </div>
+                        <button class="btn-jugar-recommended">
+                            <p>Jugar</p>
+                            <img src="./img/jugar.png" alt="Jugar">
+                        </button>
+                        <button class="btn-miLista-recommended">
+                            <p>+ Mi Lista</p>
+                        </button>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    
+        <button class="btn-right-recommended">
+            <img src="./img/flecha right.png" alt="Flecha derecha">
+        </button>
+    </section>
+   
+
+
+    <section class="category">
+        <!-- div que contiene todo el carrucel-->
+        <div class="name-category">
+            <h2 class="name-category">Mi Lista</h2>
+            <button class="see-more">ver mas</button>
+        </div>
+        <button class="btn-left">
+            <!-- flecha para atras-->
+            <img src="./img/flecha left.png" alt="btn-left">
+            <div class="transition"></div>
+        </button>
+        <div class="div-filter-left"></div>
+        <ul class="carrusel">
+            <!--cada lista es un card-->
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/war robots.jpg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">4 En Linea</h3>
+                                <h4 class="category-card">Guerra</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="falta crear la pag del juego">
+                    <div class="etiqueta-premium">
+                        <div class="icono-premium">
+                            <img src="img/premium.png" alt="">    
+                        </div>
+                        <h3 class="title-etiqueta">premium</h3>
+                    </div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                    <div class=" game-card-img">
+                        <!--imagen del card-->
+                        <img src="img/ufo 50.jpg" alt="">
+                    </div>
+                    <div class="game-card-info-premium">
+                        <div class="text-card">
+                            <h3 class="title-card">Ufo 50</h3>
+                            <h4 class="category-card">Acción</h4>
+                        </div>
+                        <div class="precio">
+                            <p>$40,0</p>
+                        </div>
+                        <!--es el boton para jugar-->
+                        <button class="btn-jugar">
+                            <img class="play" src="img/cart.png" alt="">
+                        </button>
+                    </div>                    
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/cardPacMan.jpg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Pac-Man</h3>
+                                <h4 class="category-card">Clasicos</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/dragonball-sparkinZero.jpg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Dragonball sparkin Zero</h3>
+                                <h4 class="category-card">Disparos</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="falta crear la pag del juego">
+                    <div class="etiqueta-premium">
+                        <div class="icono-premium">
+                            <img src="img/premium.png" alt="">    
+                        </div>
+                        <h3 class="title-etiqueta">premium</h3>
+                    </div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                    <div class=" game-card-img">
+                        <!--imagen del card-->
+                        <img src="img/planet Crafter.jpeg" alt="">
+                    </div>
+                    <div class="game-card-info-premium">
+                        <div class="text-card">
+                            <h3 class="title-card">Planet Crafter</h3>
+                            <h4 class="category-card">Aventura</h4>
+                        </div>
+                        <div class="precio">
+                            <p>$50,0</p>
+                        </div>
+                        <!--es el boton para jugar-->
+                        <button class="btn-jugar">
+                            <img class="play" src="img/cart.png" alt="">
+                        </button>
+                    </div>                    
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="falta crear la pag del juego">
+                    <div class="etiqueta-pliegue">
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/dota 2.jpg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Dota 2</h3>
+                                <h4 class="category-card">Acción</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/iconoJugar.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/sims 4.png" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Sims 4</h3>
+                                <h4 class="category-card">Multijugador</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/super mario.jpg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Super Mario</h3>
+                                <h4 class="category-card">Aventura</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/sonic superStars.jpeg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Sonic SuperStars</h3>
+                                <h4 class="category-card">Carreras</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            
+        </ul>
+        <div class="div-filter-right"></div>
+        <div class="btns-mobile">
+            <button class="btn-left-mobile">
+                <img src="./img/flecha left.png" alt="btn-right-mobile">
+            </button>
+            <button class="btn-right-mobile">
+                <img src="./img/flecha right.png" alt="btn-left-mobile">
+            </button>
+        </div>
+       
+        <button class="btn-right">
+            <img src="./img/flecha right.png" alt="btn-right">
+        </button>
+        
+    </section>
+    
+    <section class="category">
+        <!-- div que contiene todo el carrucel-->
+        <div class="name-category">
+            <h2 class="name-category">Continuar Jugando</h2>
+            <button class="see-more">ver mas</button>
+        </div>
+        <button class="btn-left">
+            <!-- flecha para atras-->
+            <img src="./img/flecha left.png" alt="btn-left">
+            <div class="transition"></div>
+        </button>
+        <div class="div-filter-left"></div>
+        <ul class="carrusel">
+            <!--cada lista es un card-->
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/metal slug.jpg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Metal Slug</h3>
+                                <h4 class="category-card">Disparos</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/wingman.jpg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Wingman</h3>
+                                <h4 class="category-card">Aviones</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/brotato.jpg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Brotato</h3>
+                                <h4 class="category-card">Disparos</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/wukong.jpeg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Wukong</h3>
+                                <h4 class="category-card">Aventura</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="falta crear la pag del juego">
+                    <div class="etiqueta-pliegue">
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/fc 24.jpg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">FC 24</h3>
+                                <h4 class="category-card">Futbol</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/iconoJugar.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/resident evil 4.jpg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Resident Evil 4</h3>
+                                <h4 class="category-card">Terror</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/street fighter 6.jpg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Street Fighter 6</h3>
+                                <h4 class="category-card">Acción</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/minecraft.jpg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Minecraft</h3>
+                                <h4 class="category-card">Aventura</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            
+        </ul>
+        <div class="div-filter-right"></div>
+        <div class="btns-mobile">
+            <button class="btn-left-mobile">
+                <img src="./img/flecha left.png" alt="btn-right-mobile">
+            </button>
+            <button class="btn-right-mobile">
+                <img src="./img/flecha right.png" alt="btn-left-mobile">
+        </div>
+        <button class="btn-right">
+            <img src="./img/flecha right.png" alt="btn-right">
+        </button>
+    </section>
+    <section class="category">
+        <!-- div que contiene todo el carrucel-->
+        <div class="name-category">
+            <h2 class="name-category">Juegos Nuevos</h2>
+            <button class="see-more">ver mas</button>
+        </div>
+        <button class="btn-left">
+            <!-- flecha para atras-->
+            <img src="./img/flecha left.png" alt="btn-left">
+            <div class="transition"></div>
+        </button>
+        <div class="div-filter-left"></div>
+        <ul class="carrusel">
+            <!--cada lista es un card-->
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/days gone.jpg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Days gone</h3>
+                                <h4 class="category-card">Disparos</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div class="etiqueta-premium">
+                        <div class="icono-premium">
+                            <img src="img/premium.png" alt="">    
+                        </div>
+                        <h3 class="title-etiqueta">premium</h3>
+                    </div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                    <div class=" game-card-img">
+                        <!--imagen del card-->
+                        <img src="img/spiderman.jpeg" alt="">
+                    </div>
+                    <div class="game-card-info-premium">
+                        <div class="text-card">
+                            <h3 class="title-card">Spider-Man</h3>
+                            <h4 class="category-card">Aventura</h4>
+                        </div>
+                        <div class="precio">
+                            <p>$10,0</p>
+                        </div>
+                        <!--es el boton para jugar-->
+                        <button class="btn-jugar">
+                            <img class="play" src="img/cart.png" alt="">
+                        </button>
+                    </div>                    
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/age of empires 2.jpg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Age of Empires 2</h3>
+                                <h4 class="category-card">Guerra</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="falta crear la pag del juego">
+                    <div class="etiqueta-premium">
+                        <div class="icono-premium">
+                            <img src="img/premium.png" alt="">    
+                        </div>
+                        <h3 class="title-etiqueta">premium</h3>
+                    </div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                    <div class=" game-card-img">
+                        <!--imagen del card-->
+                        <img src="img/injustice 2.jpeg" alt="">
+                    </div>
+                    <div class="game-card-info-premium">
+                        <div class="text-card">
+                            <h3 class="title-card">Injustice 2</h3>
+                            <h4 class="category-card">Acción</h4>
+                        </div>
+                        <div class="precio">
+                            <p>$15,0</p>
+                        </div>
+                        <!--es el boton para jugar-->
+                        <button class="btn-jugar">
+                            <img class="play" src="img/cart.png" alt="">
+                        </button>
+                    </div>                    
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="falta crear la pag del juego">
+                    <div class="etiqueta-pliegue">
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/fallout 4.jpeg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Fallout 4</h3>
+                                <h4 class="category-card">Aventura</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/iconoJugar.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/need for speed underground2.jpeg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Need For Speed Underground 2</h3>
+                                <h4 class="category-card">Autos</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/league of legends.jpg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">League Of Legens</h3>
+                                <h4 class="category-card">Aventura</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/mortal kombat.jpeg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Mortal Kombat</h3>
+                                <h4 class="category-card">Acción</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/doom.jpg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Doom</h3>
+                                <h4 class="category-card">Disparos</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/Terraria.jpg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Terraria</h3>
+                                <h4 class="category-card">Aventura</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            
+        </ul>
+        <div class="div-filter-right"></div>
+        <div class="btns-mobile">
+            <button class="btn-left-mobile">
+                <img src="./img/flecha left.png" alt="btn-right-mobile">
+            </button>
+            <button class="btn-right-mobile">
+                <img src="./img/flecha right.png" alt="btn-left-mobile">
+        </div>
+        <button class="btn-right">
+            <img src="./img/flecha right.png" alt="btn-right">
+        </button>
+    </section>
+    <section class="category">
+        <!-- div que contiene todo el carrucel-->
+        <div class="name-category">
+            <h2 class="name-category">Acción</h2>
+            <button class="see-more">ver mas</button>
+        </div>
+        <button class="btn-left">
+            <!-- flecha para atras-->
+            <img src="./img/flecha left.png" alt="btn-left">
+            <div class="transition"></div>
+        </button>
+        <div class="div-filter-left"></div>
+        <ul class="carrusel">
+            <!--cada lista es un card-->
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/lost ember.jpg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Lost Ember</h3>
+                                <h4 class="category-card">Acción</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/karate Survivor.jpg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Karate Survivor</h3>
+                                <h4 class="category-card">Acción</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/tekken 8.jpeg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Tekken 8</h3>
+                                <h4 class="category-card">Acción</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/royal revolt.jpg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Royal Revolt</h3>
+                                <h4 class="category-card">Acción</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/party animals.jpg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Party Animals</h3>
+                                <h4 class="category-card">Acción</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div class="etiqueta-premium">
+                        <div class="icono-premium">
+                            <img src="img/premium.png" alt="">    
+                        </div>
+                        <h3 class="title-etiqueta">premium</h3>
+                    </div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                    <div class=" game-card-img">
+                        <!--imagen del card-->
+                        <img src="img/tomb raider.jpeg" alt="">
+                    </div>
+                    <div class="game-card-info-premium">
+                        <div class="text-card">
+                            <h3 class="title-card">Tomb Raider</h3>
+                            <h4 class="category-card">Acción</h4>
+                        </div>
+                        <div class="precio">
+                            <p>$25,0</p>
+                        </div>
+                        <!--es el boton para jugar-->
+                        <button class="btn-jugar">
+                            <img class="play" src="img/cart.png" alt="">
+                        </button>
+                    </div>                    
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div class="etiqueta-pliegue">
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/destiny.jpeg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Destiny</h3>
+                                <h4 class="category-card">Acción</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/iconoJugar.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/space Marine 2.jpeg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Space Marine 2</h3>
+                                <h4 class="category-card">Disparos</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/team fortress.jpg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Team Fortress 2</h3>
+                                <h4 class="category-card">Acción</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            <li class="game-card">
+                <a class="card" href="game.html">
+                    <div>
+                    <!--la etiqueta pliegue es para que se ve al free que va para atraso el premium-->    
+                        <div class=" game-card-img">
+                            <!--imagen del card-->
+                            <img src="img/warframe.jpg" alt="">
+                        </div>
+                        <div class="game-card-info">
+                            <div class="text-card">
+                                <h3 class="title-card">Warframe</h3>
+                                <h4 class="category-card">Acción</h4>
+                            </div>
+                            <!--es el boton para jugar-->
+                            <button class="btn-jugar">
+                                <img class="play" src="img/jostcick.png" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+                </a>                
+
+            </li>
+            
+        </ul>
+        <div class="div-filter-right"></div>
+        <div class="btns-mobile">
+            <button class="btn-left-mobile">
+                <img src="./img/flecha left.png" alt="btn-right-mobile">
+            </button>
+            <button class="btn-right-mobile">
+                <img src="./img/flecha right.png" alt="btn-left-mobile">
+        </div>
+        <button class="btn-right">
+            <img src="./img/flecha right.png" alt="btn-right">
+        </button>
+    </section>
+    <footer class="footer">
+        <div class="footer-diverJuegos-logo">
+            <img src="./img/logo.png" alt="Logo" class="logo-sinLetras">
+        </div>
+        <div class="lista1">
+            <ul class="footer-links">
+                <li class="Principal">Links</li>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="index.html">Mi Perfil</a></li>
+                <li><a href="#">Recomendados</a></li>
+                <li><a href="#">Mi Lista</a></li>
+            </ul>
+        </div>
+        <div class="lista2">
+            <ul class="footer-links">
+                <li class="Principal">Empresa</li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Términos y Condiciones</a></li>
+                <li><a href="#">Cookies</a></li>
+                <li><a href="#">Políticas de Privacidad</a></li>
+            </ul>
+        </div>
+        <div class="lista3">
+            <ul class="footer-links">
+                <li class="Principal">Asistencia</li>
+                <li><a href="#">Ayuda</a></li>
+                <li><a href="#">Preguntas Frecuentes</a></li>
+                <li><a href="#">Cancelar suscripción</a></li>
+            </ul>
+        </div>
+        <div class="lista4">
+            <ul class="footer-links">
+                <li class="Principal">Redes</li>
+            </ul>
+            <div class="facebook-twitter">
+                <img src="img/iconFacebook.png" alt="Facebook" class="iconoRedesFooter">
+                <img src="img/iconTwitter.png" alt="Twitter" class="iconoRedesFooter">
+            </div>
+            <div class="gmail-youtube">
+                <img src="img/iconGmail.png" alt="Gmail" class="iconoRedesFooter">
+                <img src="img/iconYoutube.png" alt="Youtube" class="iconoRedesFooter">
+            </div>
+        </div>
+    </footer>
+    <script src="carrucell.js"></script>
+    <script src="loader.js"></script>
+</body>
+</html>
+

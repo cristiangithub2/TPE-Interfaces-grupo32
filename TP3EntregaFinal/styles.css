@@ -1,0 +1,2223 @@
+html, body{
+    font-family: 'Lato', sans-serif;
+    background-color:#666C78;  
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Estilos específicos para la sección del formulario de registro */
+.register-body{
+    background-image: url(./img/wallpaper.jpg); /* URL de la imagen de fondo */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    min-height: 100vh; /* Asegura que el body cubra toda la pantalla */
+    margin: 0;
+    background-attachment: fixed;
+}
+/*header*/
+header{
+    padding: 0;
+    margin:0;
+    background-color: #242832;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    width: 100%;
+}
+.icons {
+    margin-top: 10px;
+    margin-right: 15px;
+}
+/*search*/
+.search-bar{
+    display: none;
+}
+.logo-principal {
+        height: 70px;
+        width: 70px;
+        object-fit: contain;
+        margin-top: -10px;
+    
+}
+/*loader*/
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./img/astronauta.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    text-align: center;
+    padding: 20px;
+}
+#loading-text {
+    font-size: 6vw; /* Tamaño del texto basado en el ancho de la pantalla */
+    font-weight: bold;
+    color: #fff;
+}
+.btn-jugar-recommended{
+    top: 10px;
+}
+/* Estilos para el loader */
+.loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Círculo que gira*/
+.circle-loading {
+    width: 15vw; /* 15% del ancho de la pantalla */
+    height: 15vw; /* 15% del ancho de la pantalla para mantenerlo cuadrado */
+    max-width: 120px; /* Tamaño máximo del círculo */
+    max-height: 120px;  /*lo mismo pero en alto*/
+    border:15px solid rgba(0, 0, 0, 0.2);
+    border-top: 15px solid #7EEB00;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/*footer*/
+.footer{
+    background-color: #242832 ;
+}
+.footer-links{
+    color: white;
+}
+.logo-sinLetras{
+    margin-left: 20%;
+    width: 100px;
+    height: 100px;
+}
+.lista1 li, .lista2 li, .lista3 li, .lista4 li{
+    
+    margin-left: 20%;
+}
+.lista1 , .lista2 , .lista3 , .lista4 {
+    margin-bottom: 10px; 
+}
+.Principal{
+    color: #7EEB00;
+}
+.facebook-twitter, .gmail-youtube {
+    display: flex;             
+    margin-top: 10px;         /* Espacio superior para separación */
+    margin-left: 27%;
+}
+/*panel*/
+.profile-panel {
+    position: fixed; /* Fija el panel al viewport */
+    bottom: 0;
+    right: -400px; /* Oculto fuera de la pantalla inicialmente */
+    width: 40%;
+    height: 73%;
+    background-color: #43464C; 
+    color: white; 
+    transition: right 0.3s ease; /* Transición suave */
+    z-index: 16; 
+    padding: 20px;
+    border-radius: 5px;
+}
+.profile-icon {
+    cursor: pointer;
+}
+.profile-panel.active {
+    right: 1%; /* Muestra el panel al hacer clic */
+    top: 70px;
+}
+.icono-usuario{
+    width: 50px;
+    height: 50px;
+    background-color: #CFFDC4;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+.usuario{
+    display: flex;
+    column-gap: 20px;
+    margin-left: 10px;
+}
+
+.usuario h2{
+    padding-top: 10px;
+    font-size: 16px;
+}
+.linea-usuario{
+    margin-top: 20px;
+    margin-left: 9%;
+    height: 1px;
+    width: 80%;
+    background-color: white;
+}
+.usuario-perfil{
+    display: flex;
+    column-gap: 24px;
+    margin-left: 46px;
+    margin-top: 20px;
+}
+.icon-usuario-panel, .icon-usuario-panel-salir{
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+}
+.icon-usuario-panel img{
+    object-fit: contain;
+    width: 46px;
+    height: 46px;
+
+}
+.profile-panel p{
+    padding-top: 1px;
+    font-size: 14px;
+}
+.usuario-perfil-salir{
+    display: flex;
+    column-gap: 24px;
+    margin-left: 6%;
+    margin-top: 33px;
+
+}
+.icon-usuario-panel-salir:hover{
+    background-color: #FF700F;
+    
+    
+}
+.usuario-perfil{
+    margin-left: 6%;
+}
+
+li{
+    list-style: none;
+}
+
+
+
+
+
+.perfil-img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    
+    
+}
+.notificacion, .corazon{
+    display: none;
+}
+
+/* icono menu */ 
+.circle{
+    margin-left: 3px;
+    margin-top: 0%;
+    position: relative;
+    border: solid 2px #d2cfcfed;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: #242832;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+    width: 10px; 
+    height: 10px;
+}
+
+
+.line {
+    height: 2px; 
+    background-color: #d2cfcfed; 
+    border-radius: 2px; 
+    transition: all 0.3s;
+}
+
+
+
+
+/*icono perfil*/
+.perfil{
+    margin-top: 0%;
+    width: 26px;
+    height: 26px;
+    
+}
+
+/*icon pagina*/
+.iconoPrincipal{
+    margin-top: 0%;
+    width: 26px;
+    height: 26px;
+}
+
+/*login*/
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    min-height: 100vh;
+}
+.login-box {
+    margin-top: 77px;
+    background-color: #242832; /* Fondo gris (neutro+2) */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ocupa todo el ancho disponible del contenedor */
+    max-width: 300px;
+    text-align: center;
+}
+.login-box-registrate{
+    margin-top: 8px;
+    background-color: #242832; /* Fondo gris (neutro+2) */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 665px;
+    height: 690px;
+}
+
+.logo {
+    width: 100px; 
+    height: auto; /* Asegura que la altura se ajuste proporcionalmente */
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.social-login {
+    display: flex;
+    justify-content: center; /* Centrar los iconos horizontalmente */
+    gap: 20px; 
+    margin-bottom: 10px;
+}
+.social-btn {
+    width: 50px;  
+    height: 50px; 
+    border: none;
+    border-radius: 5px; /* Bordes redondeados */
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+/* Estilo de cada red social */
+.facebook {
+    background-color: #267CEC;
+}
+
+.google {
+    background-color: #fff;
+}
+
+.discord {
+    background-color: #7289da;
+}
+
+/* Asegurando que los iconos dentro de los botones tengan el mismo tamaño */
+.social-btn img {
+    max-height: 30px; 
+    max-width: 30px;  
+}
+
+.social-btn i {
+    font-size: 30px; 
+}
+
+.discord img {
+    max-height: 30px; 
+    max-width: 30px;  
+}
+/* Línea divisoria blanca */
+.divider {
+    border: none;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 10px;
+}
+
+/* Estilo del formulario */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Etiquetas para los inputs */
+.input-label {
+    font-family: 'Lato', sans-serif;
+    color: #fff; 
+    font-size: 13px;
+    text-align: left; 
+    margin-bottom: 5px; /* Espacio entre etiqueta e input */
+    margin-left: 70px;
+    margin-top: 10px;
+}
+.input-label-ini{
+    font-family: 'Lato', sans-serif;
+    color: #fff; 
+    font-size: 13px;
+    text-align: left; 
+    margin-bottom: 5px; /* Espacio entre etiqueta e input */
+    margin-left: 70px;
+    margin-top: 10px;
+    width: 152px;
+    height: 24px;
+}
+.input-label-bottom{
+    font-size: 11px;
+    color: #908C8C;
+    margin-left: 70px;
+    margin-bottom: -8px;
+    margin-top: -7px;
+    text-align: left;
+    font-family: 'Lato', sans-serif;
+
+}
+/* Inputs */
+input {
+    width: 512px;
+    height: 24px;
+    padding: 6px; 
+    margin-bottom: 6px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: 70px;
+    background-color: #D9D9D9;
+}
+
+input:focus {
+    outline: none;
+    border-color: #7EEB00; /* Color primario */
+    box-shadow: 0 0 8px rgba(126, 235, 0, 0.5);
+}
+/* Estilo para "¿Se te olvidó tu contraseña?" */
+.forgot-password {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px; 
+    color: #fff;
+    text-align: right;
+    margin-bottom: 10px; 
+}
+/* Estilo del botón de inicio de sesión */
+.login-btn {
+    background-color: #fff; 
+    color: #242832; 
+    padding: 8px; 
+    border: none;
+    border-radius: 25px; 
+    font-size: 14px; 
+    cursor: pointer;
+    font-weight: bold;
+    width: 130px; /* Mismo tamaño que el botón de REGÍSTRATE */
+    margin: 0 auto 10px; /* Centrado y con margen inferior */
+}
+.login-btn:hover {
+    background-color: #e0e0e0;
+}
+/* Sección de registro */
+.register-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+.container-form{
+    background-color: white;
+    width: 78%;
+    margin-left: 11%;
+    margin-top: 2%;
+    display: flex;
+    height: 70px;
+    
+}
+.checkbox-container { 
+    display: flex;
+    margin-left: 30%;
+}
+.checkbox-container p{
+    width: 150px;
+}
+.container-form img{
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-left: 10px;
+}
+#captchaCheckbox{
+    width: 30px;
+    margin-left: 0px;
+    margin-top: 14px;
+}
+.register-text {
+    font-family: 'Lato', sans-serif;
+    color: #fff; 
+    font-size: 12px; 
+    margin-bottom: 5px; 
+}
+.register-btn {
+    font-family: 'Lato', sans-serif;
+    background-color: #7EEB00; /* Botón de registrarse color primario */
+    color: #242832;
+    padding: 8px; 
+    border: none;
+    border-radius: 5px; 
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 523px;
+    height: 36px;
+    margin: 0 auto 10px; 
+}
+.register-btn:hover {
+    background-color: #69c500; /* Color primario al pasar el ratón */
+}
+/* Estilo para la animación de éxito */
+.success-animation {
+    background-color: #FF700F; /* Color de fondo acento */
+    transition: background-color 0.5s ease; /* Transición suave */
+    animation: pulse 1s infinite; /* Efecto de pulso */
+}
+
+/* Animación de pulso */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05); /* Escala el botón al 105% */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.terms-text {
+    color: #fff;
+    font-size: 10px; 
+    margin: 5px 0; 
+}
+
+.terms-highlight {
+    color: #7EEB00; /* Color primario para los términos y políticas */
+}
+
+
+/* Estilos para la notificación de éxito */
+.success-notification {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 40px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Mostrar la notificación de éxito con animación */
+.success-notification.show {
+    display: block;
+    opacity: 1;
+}
+
+
+/*nav*/
+.buscador{
+    width: 100%;
+    display: flex;
+    background-color: white;
+}
+.buscador-input{
+    width: 80%;
+    margin-top: 4px;
+}
+.buscador img{
+    object-fit: contain;
+}
+.side-nav {
+    position: fixed;
+    bottom: 0;
+    left: -1000px; /* Oculto inicialmente fuera de la pantalla */
+    width: 75%;
+    height: 94.3%;
+    background-color: #242832;
+    color: white;
+    transition: left 0.3s ease;
+    z-index: 1000; /* Superpone el resto de la página */
+    padding: 0px;
+    overflow-y: auto; /* Permitir desplazamiento vertical */
+}
+.side-nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.side-nav ul li {
+    margin: 20px 0;
+}
+
+.side-nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+.side-nav .title-nav {
+margin-left: 10px; /* Espacio entre el ícono y el título */
+}
+.side-nav.active {
+    left: 0px;
+}
+.side-nav:hover .title-nav {
+    display: inline; /* Muestra los títulos al pasar el mouse */
+}
+.menu-icon {
+    cursor: pointer;
+}
+/* Efecto de oscurecimiento */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 14; /* Debe estar detrás del menú */
+}
+/* Cuando el menú está activo */
+
+
+.overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/*iconos del navegador*/
+.elementos-nav{
+    width: 300px;
+    margin-left: 20px;
+}
+
+.text-card{
+    width: 37%;
+    overflow: hidden; /* Evita que el texto se desborde */
+    text-overflow: ellipsis; /* Añade "..." si el texto es muy largo */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+.category-nav{
+    width: 300px;
+    display: flex;
+    align-items: center;
+}
+.icon-nav{
+    width: 34px;
+    height: 34px ;
+    background-color: #CFFDC4;
+    object-fit: contain;
+    border-radius: 50%;
+}
+.icon-nav img{
+    width: 34px;
+    height: 34px ;
+    object-fit: contain;
+}
+.title-nav{
+    position: relative;
+    top:-12px;
+    width: 214px;
+    height: 34px;
+    border-radius: 30px;
+    background-color:#242832;
+    border: none;
+    color: white;
+}
+
+
+/*panel*/
+/*recommended*/
+.game-recommended h2{
+    width: 20%;
+    overflow: hidden; /* Evita que el texto se desborde */
+    text-overflow: ellipsis; /* Añade "..." si el texto es muy largo */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+/*ul specials*/
+ul.specials{
+    height: 230px;
+    width: 94%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 13px;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    position: relative;
+    margin-bottom: 40px;
+    margin-left: 1%;
+    padding-left: 0px;
+}
+section.recommended a{
+    margin: 0;
+    padding: 0;
+    width: inherit;
+}
+
+
+/*card recommended*/
+
+.card-recommended{
+    background-color: #242832;
+    height: 230px;
+    width: 380px;
+    border-radius: 15px;
+    margin-left: 7.2%;
+}
+.game-recommended{
+    display: none;
+}
+
+.recommended-card-img{
+    position: absolute;
+    padding-left: 5%;
+    padding-top: 5%;
+}
+.recommended-card-img img{
+    position: absolute;
+    border-radius: 10px 10px 10px 10px;
+    width: 348px;
+    height: 200px;
+    object-fit: cover; /* para que no se deforme la imagen*/
+    left: 17px;
+    top: 15px;
+}
+
+.btn-jugar-recommended{
+    column-gap: 15px;
+    width: 80px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    background-color: #4cd02a ; /* Fondo semi-transparente para destacar la etiqueta */
+    position: relative;
+    top: 185px;
+    left:58%;
+    z-index: 10;
+    border-radius: 30px;
+    border:0 ;
+    box-shadow: 0 0 0px #4cd02a;
+   
+}
+.btn-jugar-recommended:hover{
+    box-shadow: 0 0 20px #4cd02a; /* Añade un resplandor */
+}
+.btn-jugar-recommended img{
+    width: 17px;
+    height: 17px;
+}
+.btn-jugar-recommended p{
+    position: relative;
+    top: -1px;
+    left: 7px;
+    font-size: 14px;
+}
+.btn-miLista-recommended{
+    column-gap: 6px;
+    width: 80px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    background-color: #DCFA00 ; /* Fondo semi-transparente para destacar la etiqueta */
+    position: relative;
+    top:157px;
+    left:25%;
+    z-index: 10;
+    border-radius: 30px;
+    font-size: 14px;
+    border: 0;
+}
+.recommended-card.active-card {
+    transform: scale(1.0); /* Aumenta el tamaño de la tarjeta activa */
+}
+
+.recommended-card.inactive-card {
+    transform: scale(0.4); /* Reduce el tamaño de las tarjetas inactivas */
+}
+.recommended-card {
+    transition: transform 0.9s ease-in-out; /* Aumenta la duración de la transición */
+}
+
+.btn-right-recommended, .btn-left-recommended{
+    background-color: transparent;
+    border: 0;
+}
+.btn-right-recommended img, .btn-left-recommended img{
+    height: 35px;
+    width: 35px;
+}
+.btn-left-recommended{
+    position: absolute;
+    top: 165px;
+    left: 3%;
+    z-index: 3;
+}
+.btn-right-recommended{
+    position: absolute;
+    top: 165px;
+    right: 3%;
+    z-index: 3;
+}
+
+
+
+/*titulo de la categoria*/
+.name-category{
+    position: relative;
+    display: flex;
+    width: 100%;
+    font-size: 18px;
+    font-family: lato;
+    padding-left:0 ;
+    margin-bottom: -5px;
+    
+}
+h2.name-category{
+    margin-left: 8%;
+
+}
+.see-more{
+    display: none;
+}
+
+/*el carrusel */
+
+.category{
+color: #D2CFCF;
+position: relative;
+margin-bottom: 40;
+}
+
+ul.carrusel{
+
+    height: 160px;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    position: relative;
+    padding-bottom: 0px;
+    margin-left: 4%;
+    padding-left: 0px;
+    margin-bottom: 0;
+}
+
+li.game-card{    
+    list-style: none;
+    flex-shrink: 0;
+    
+}
+/*card*/
+.game-card{
+    height: 150px;
+    width: 170px;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 18px;
+}
+
+.game-card-img {
+    height: 90px;
+    
+}
+.game-card-img  img{
+    position: absolute;
+    border-radius: 10px 10px 0px 0px;
+    width: 170px;
+    height: 90px;
+    object-fit: cover; /* para que no se deforme la imagen*/
+}
+.game-card-info{
+    height: 65px;
+    background-color: #242832;
+    display: flex;
+    align-items: center;
+    border-radius: 0px 0px 10px 10px;
+    width: 170px;
+    position: absolute;
+    
+
+}
+.game-card-info-premium{
+    height: 65px;
+    background-color: #242832;
+    display: flex;
+    align-items: center;
+    border-radius: 0px 0px 10px 10px;
+    width: 170px;
+    position: absolute;
+}
+.etiqueta-premium{
+    width: 46px;
+    height: 19px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para destacar la etiqueta */
+    position: absolute;
+    top: 80px;
+    left: 115px;
+    z-index: 10;
+
+}
+
+.title-etiqueta{
+    color: white;
+    margin-left: 8px;
+    font-size: 12px;
+    position: absolute;
+    left: 23px;
+    top: -90%;
+    transform: translate(-50%);
+    z-index:15;
+}
+.icono-premium{
+    position: relative;
+
+}
+.icono-premium img{
+    width: 70px;
+    height: auto;
+    object-fit: contain;
+
+}
+.title-card{
+    font-size: 14px;
+    margin: 0px;
+    color: white;
+    padding-top: 0px;
+    white-space: nowrap; /* Impide que el texto se divida en varias líneas */
+        overflow: hidden;    /* Oculta el texto que desborda el contenedor */
+        text-overflow: ellipsis; /* Añade "..." al final del texto que no cabe */
+}
+.category-card{
+    font-size: 12px;
+    margin: 0px;
+    color: white;
+    opacity: 0.7;
+}
+
+.text-card{
+    
+    display: flex;             
+    flex-direction: column;    
+    gap: 4px;  /*es el empacio entre en un elemento y otro pero aun  no se aplico*/
+    padding-left: 9px;
+    padding-bottom:16px ;
+}
+.precio{
+    width: 5px;
+    font-size: 22px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: white;
+    margin-left: -2px;
+}
+
+.shrink-card {
+    transform: scale(0.7); /* Achicar las tarjetas un 10% */
+    transition: transform 1.s ease; /* Suavizar la animación */
+}
+
+a{
+    text-decoration: none; /*saca la linea*/
+    color: inherit;
+}
+
+/*botones*/
+.btn-jugar {
+    background-color: transparent;
+    height: 44px;
+    width: 44px;
+    border: 0px;
+
+    margin-top: 8px;
+    margin-left: 34px;
+}
+.btn-jugar img{
+    height: 44px;
+    width: 44px;
+}
+
+
+
+button.btn-left{
+    margin: 1%;
+    border: 0px;
+}
+
+.btn-left, .btn-right{
+    background-color: transparent;
+    display: none;
+    border: 0px;
+
+}
+
+.btn-left-mobile, .btn-right-mobile{
+    width: 25px;
+    height: 25px;
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    cursor: pointer;
+    border: 0px;
+
+}
+.btns-mobile{
+    width: 100%;
+    height: 25px;
+    margin-bottom: 30px;
+    margin-top: 0;
+    padding-top: 0;
+}
+.btn-left-mobile img, .btn-right-mobile img{
+    width: 25px;
+    height: 25px;
+} 
+
+.btn-left-mobile{
+    left: 40%;
+}
+
+
+.btn-right-mobile{
+    right: 40%;
+}
+
+
+
+@media only screen and (min-width: 1024px) {
+    .register-body {
+        min-height: 100%; /* Usa min-height 100% en lugar de 100vh para que crezca con el contenido */
+    }
+    
+    .side-nav {
+        position: fixed;
+        bottom: 0;
+        left: -400px; /* Oculto inicialmente fuera de la pantalla */
+        width: 78px;
+        height: 90%;
+        background-color: #242832;
+        color: white;
+        transition: left 0.3s ease;
+        z-index: 1000; /* Superpone el resto de la página */
+        padding: 0px;
+        overflow-y: auto; /* Permitir desplazamiento vertical */
+    }
+    .side-nav ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .side-nav ul li {
+        margin: 20px 0;
+    }
+    
+    .side-nav ul li a {
+        color: white;
+        text-decoration: none;
+    }
+    .side-nav .title-nav {
+    display: none; /* Oculto inicialmente */
+    margin-left: 10px; /* Espacio entre el ícono y el título */
+    }
+    .side-nav:hover {
+        width: 300px; /* Ancho al pasar el mouse */
+    }
+    .side-nav.active {
+        left: 0;
+    }
+    .side-nav:hover .title-nav {
+        display: inline; /* Muestra los títulos al pasar el mouse */
+    }
+    .menu-icon {
+        cursor: pointer;
+    }
+   
+    .buscador{
+       display: none;
+    }
+    
+    /* Efecto de oscurecimiento */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 14; /* Debe estar detrás del menú */
+    }
+    /* Cuando el menú está activo */
+    
+    
+    .overlay.active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /*iconos del navegador*/
+    .elementos-nav{
+        width: 300px;
+        margin-left: 20px;
+    }
+
+    .category-nav{
+        width: 300px;
+        display: flex;
+        align-items: center;
+    }
+    .icon-nav{
+        width: 34px;
+        height: 34px ;
+        background-color: #CFFDC4;
+        object-fit: contain;
+        border-radius: 50%;
+    }
+    .icon-nav img{
+        width: 34px;
+        height: 34px ;
+        object-fit: contain;
+    }
+    .title-nav{
+        position: relative;
+        top:-12px;
+        width: 214px;
+        height: 34px;
+        border-radius: 30px;
+        background-color:#242832 ;
+        border: none;
+    }
+
+    /*perfil desplegable */
+    .profile-icon {
+        cursor: pointer;
+    }
+    .profile-panel {
+        position: fixed; /* Fija el panel al viewport */
+        top: 0;
+        right: -400px; /* Oculto fuera de la pantalla inicialmente */
+        width: 330px;
+        height: 490px;
+        background-color: #43464C;
+        color: white;
+        transition: right 0.3s ease; /* Transición suave */
+        z-index: 16; 
+        padding: 20px;
+        border-radius: 5px;
+    }
+    .profile-panel.active {
+        right: 0; /* Muestra el panel al hacer clic */
+        top: 70px;
+    }
+    
+    /*usuario perfil*/
+    .icono-usuario{
+        width: 60px;
+        height: 60px;
+        background-color: #CFFDC4;
+        border-radius: 50%;
+    }
+    .usuario{
+        display: flex;
+        column-gap: 20px;
+        margin-left: 35px;
+    }
+    
+    .usuario h2{
+        padding-top: 10px;
+        font-size: 16px;
+    }
+    .linea-usuario{
+        margin-top: 20px;
+        margin-left: 38px;
+        height: 1px;
+        width: 204px;
+        background-color: white;
+    }
+    .usuario-perfil{
+        display: flex;
+        column-gap: 24px;
+        margin-left: 46px;
+        margin-top: 20px;
+    }
+    .icon-usuario-panel, .icon-usuario-panel-salir{
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+    }
+    .icon-usuario-panel img{
+        object-fit: contain;
+        width: 46px;
+        height: 46px;
+
+    }
+    .profile-panel p{
+        padding-top: 1px;
+        font-size: 14px;
+    }
+    .usuario-perfil-salir{
+        display: flex;
+        column-gap: 24px;
+        margin-left: 46px;
+        margin-top: 33px;
+
+    }
+    .icon-usuario-panel-salir:hover{
+        background-color: #FF700F;
+        
+    }
+    /*header*/
+    header {
+        height: 70px;
+        margin-bottom: 0px;
+        position: sticky;
+        top: 0;
+        z-index: 15;
+        width: 100%;
+        display: flex;
+        justify-content: space-between; 
+        align-items: center; 
+        padding: 0px; 
+    }
+    .logo-principal{
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        margin-top: 0;
+    }
+    
+    /*menu hamburguesa*/
+    .circle {
+        height: 46px;
+        width: 46px;
+        border: solid 3px #D2CFCF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+
+    .menu-icon {
+        display: flex;
+        flex-direction: column; 
+        justify-content: space-between;
+        width: 18px; 
+        height: 15px;
+    }
+
+    .line {
+        height: 3px; 
+        background-color: #D2CFCF; 
+        border-radius: 0px; 
+        transition: all 0.3s;
+    }
+    .search-bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #666C78; 
+        border-radius: 50px; 
+        padding: 10px 15px;
+        width: 300px; 
+        height: 30px;
+        margin: 0 auto; 
+    }
+    
+    /* Estilo del input */
+    .search-input {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        font-size: 16px;
+        margin-right: 30px; /* Espacio entre el input y la lupa */
+    }
+    /* Cambiar el color del placeholder */
+    .search-input::placeholder {
+        color: white; /* Cambia el color del texto del placeholder a blanco */
+        opacity: 1; 
+    }
+
+    /* Estilo del icono de búsqueda */
+    .search-icon {
+        width: 20.44px;
+        height: 20.44px;
+    }
+    /*perfil*/
+    .icons {
+        display: flex; /* Usar flexbox para alinear los iconos a la derecha */
+        gap: 5px; 
+        align-items: center;
+        margin-top: 4px;
+        margin-right: 8px;
+    }
+    .notificacion, .corazon{
+        display: block;
+    }
+    
+    .perfil, .perfil-img, .notificacion-img, .corazon-img{
+        width: 46px;
+        height: 46px;
+    }
+    .perfil, .notificacion, .corazon {
+        margin-left: 10px; 
+    }
+    /*logo*/
+    .iconoPrincipal{
+        width: 87px;
+        height: 55px;
+        margin-left: 10px;
+        display: flex;
+        align-items: center; 
+        text-align: center; 
+    }
+    .logo-principal {
+        width: 100%; 
+        height: auto; 
+    }
+    /*4enLinea*/
+    body, header, footer {
+        margin: 0; 
+        padding: 0; 
+    }
+    .inicio-pagina-4enLinea{
+        margin-top: 30px; /* Espacio entre el header y el contenido */
+        display: flex; 
+        align-items: center; 
+        gap: 5px; 
+        margin-left: 105px; 
+    }
+
+    .inicio-4enLinea-blanco{
+        color: white;
+        font-size: 13px;
+    }
+    .videojuego-4enLinea-verde{
+        color: #7EEB00;
+        font-size: 13px;
+    }
+    .game-4enLinea-header{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        margin-top:10px;
+        margin: 0 auto;
+        width: 1144px;
+        height: 50px;
+        background-color: #242832; 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 0px;
+        color: white;
+    }
+    .logo-4enLinea, .game-title-4enLinea{
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .icons-4enLinea-header{
+        display: flex;
+        margin-right: 10px;
+        gap: 10px; 
+    }
+    .nav-icon-4enLinea-header{
+        width: 24px; 
+        height: auto;
+    }
+    .title-container-4enLinea{
+        text-align: left;
+        flex: 1; /* Para centrar el título en el header */
+        margin: 10px;
+    }
+    .banner-4enLinea{
+        position: relative;
+        width: 1144px;
+        margin: 0 auto;
+    }
+    .banner-4enLinea-image{
+        width: 1144px;
+        height: 720px;
+        display:block;
+    }
+    .btn-jugar-4enLinea {
+        position: absolute; 
+        display: inline-block;
+        top:177px;
+        left:89%;
+        transform: translate(-50%, -50%); 
+        width: 137.59px;
+        height: 56px;
+        font-size: 18px;
+        background-color: #4cd02a ;
+        border: none; 
+        border-radius: 30px;
+        cursor: pointer; 
+        z-index: 10; 
+        transition: transform 0.3s ease, background-color 0.3s ease; /* Agrega una transición suave */
+        animation: pulse 2s infinite; /* Animación continua */
+        
+    }
+    @keyframes pulse {
+        0%, 100% {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        50% {
+            transform: translate(-50%, -50%) scale(1.1); /* Aumenta ligeramente el tamaño */
+        }
+    }
+    .btn-jugar-4enLinea:hover {
+        transform: translate(-50%, -50%) scale(1.1); /* Aumenta el tamaño al pasar el mouse */
+        background-color: #45ba28; /* Cambia el color de fondo al hacer hover */
+    }
+   
+    .btn-jugar-4enLinea p{
+        position: absolute;
+        font-size: 19px;
+        margin: 0px 7px;
+        padding: 7px 10px 3px 17px;
+    }
+    .btn-jugar-4enLinea img{
+        width: 27px;
+        height: 27px;
+        margin: 1px 0px;
+        padding: 3px 0px 0px 74.26px;
+    }
+
+  
+    .footer-4enLinea{
+        margin: 0 auto;
+        width: 1144px;
+        height: 50px;
+        background-color: #242832; 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 0px;
+        color: white;
+    }
+    .footer-4enLinea-left{
+        display: flex;
+        align-items: center;
+    }
+    .logo-4enLinea{
+        height: auto;
+        margin-right: 10px; /* Espacio entre logo y título */
+        margin-left: 10px;
+    }
+    .title-4enLinea-footer{
+        font-size: 18px;
+    }
+    .footer-4enLinea-icons{
+        display: flex;
+        gap: 10px; 
+        margin-right: 10px;
+    }
+    .footer-icon-4enLinea{
+        width: 24px; 
+        height: auto;
+    }
+    .description-game-4enlinea{
+        background-color:#3a3a4a;
+        text-align: left;
+        margin: 0 auto; 
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        width: 1144px;
+        height: 150px;
+        background-color:#3a3a4a; 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 0px;
+        color: white;
+    }
+    .left-description-4enLinea{
+        margin-left: 10px;
+        display: block;
+        align-items: center;
+    }
+    
+    .imagen-4enLinea-ejemplo{
+        margin-right: 10px;
+    }
+    .titulo-4enLinea-indicaciones{
+        font-size: 18px;
+        color: white;
+        font-family: lato;
+    }
+    .description-4enLinea-parrafo{
+        font-size: 16px;
+        margin-top: 10px;
+        max-width: 400px;
+    }
+    .multimedia-4enLinea {
+        position: relative;
+        width: 100%;
+        overflow: hidden; /* Oculta el contenido que excede el contenedor */
+    }
+    
+    .multimedia-4enLinea-wrapper {
+        display: flex;
+        align-items: center; 
+        text-align: left;              
+        margin-top: 100px;
+        margin-bottom: 100px;   
+    }
+    
+    .title-4enLinea-multimedia {
+        margin-bottom: 20px;   
+        color: white;        
+    }
+    .name-category{
+        position: relative;
+        display: flex;
+        width: 100%;
+        font-size: 18px;
+        font-family: lato;
+        padding-left:0 ;
+        margin-bottom: -5px;
+        
+    }
+    h2.name-category{
+        margin-left: 8%;
+    
+    }
+    
+    .multimedia-4enLinea-container {
+        display: flex;
+        scroll-behavior: smooth; /* Desplazamiento suave */
+        list-style: none; 
+        gap: 20px;                     
+    }
+    
+    .multimedia-4enLinea-item{
+         
+        width: 238px !important; 
+        height: 130px !important; 
+        border-radius: 0 !important; 
+        margin: 10px;
+        }
+    
+    
+    .multimedia-4enLinea-img{
+        border-radius: 0 !important; 
+        width: 270px;
+        height: 205px;   
+    }
+    .game-card-img-container, .multimedia-4enLinea-img {
+        width: 270px !important;
+        height: 205px !important;
+        border-radius: 0 !important;
+    }
+    .btn-left-4enLinea, .btn-right-4enLinea {
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1; /* Asegura que los botones estén por encima de las imágenes */
+        margin-right: 10px;
+    }
+    .game-card-img-bordes img{
+        border-radius: 0px;
+    }
+
+    .comentarios-4enLinea {  
+        background-color: #43464C;       
+        color: white;                    
+        width: 1144px;                  
+        height: 853px;                   
+        margin: 40px auto;                         
+        display: flex;                           
+        flex-direction: column;                  
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+    
+    .footer-comentarios-4enLinea {
+        background-color: #242832;       
+        height: 20px;                    
+        width: 1144px;   
+        margin-bottom: 10px;             
+    }
+    .nuevoComentario4enLinea {
+        display: flex;                     
+        flex-direction: row;              
+        justify-content:flex-start;        
+        align-items: flex-start;       
+        background-color: none;       
+        margin-bottom: 10px;          
+        width: 100%;
+        position: relative;
+    }
+    .nuevoComentario {
+        background-color: #666C78;      
+        color: white;                    
+        border-radius: 10px;              
+        margin-bottom: 10px;            
+        width: 890px;
+        height: 220px;
+        margin: 0 15px;            
+        padding-left: 0;
+        padding: 20px;             
+        position: relative;
+        display: flex;                      
+        align-items: flex-start;            
+        justify-content: flex-start;
+        font-size: 14px;
+    }
+    
+    .title-comentarios-4enLinea h2 {
+        margin-top: 30px;
+        margin-left: 50px;
+        padding-bottom: 10px;           
+        font-size: 15px;                 
+    }
+    
+    .iconoComentario4enLinea, .iconoComentario4enLineaAnterior {
+        float: left;                     /* Alinea los iconos de usuario a la izquierda */
+        margin-left: 50px;              
+    }
+    .iconoComentario4enLineaAnterior{
+        margin-right: 15px;
+    }
+    .comentarioAnterior4enLinea {
+        overflow: hidden;                /* Para asegurarse de que el contenido se mantenga alineado con el icono */
+        width: 358px;                 
+        height: 44px;                   
+        font-size: 14px;                 
+        color: white;                    
+        margin-right: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .comentario-4enLinea-item {
+        width: 40px;                    
+        height: 40px;
+    }
+    
+    .botones-derecha-comentarios-4enLinea {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;                       
+        margin-top: 10px;
+        width: 100%;                       
+        position: absolute;                 /* Posición absoluta para situar debajo del comentario */
+        bottom: -37px;                      /* Ajusta la posición debajo del nuevoComentario */
+        right: 110px;                          
+    
+    }
+    
+    .cancelarComentario {
+        background-color: #DEDBDB;     
+        color: black;                   
+        border-radius: 30px;           
+        width: 113px;
+        height: 31px;
+        border: none;                 
+        transition: all 0.3s ease;
+    }
+    
+    .enviarComentario {
+        background-color: #DCFA00;     
+        color: black;                  
+        border-radius: 30px;            
+        width: 113px;
+        height: 31px;
+        border: none;               
+        transition: all 0.3s ease;  
+    }
+    /* Hover botones*/
+    .cancelarComentario:hover {
+    background-color: #C0BEBE;   
+    transform: scale(1.05);        /* Aumenta ligeramente el tamaño */
+    }
+
+    .enviarComentario:hover {
+    background-color: #C4F500;   
+    transform: scale(1.05);        
+    }
+    .nombreUsuario4enLinea{
+        font-weight: bold;
+    }
+    .usuario-4enLinea {
+        font-weight: normal;
+        font-size: 12px;
+    }
+    
+    .usuario-comentario-4enLinea, .usuario-4enLinea {
+        display: block;                  /* El comentario también aparece en una nueva línea */
+        color: white;
+        margin-top: 5px;                /* Espaciado con el nombre de usuario */
+    }
+    .redirigir-4enLinea {
+        background-color: #666C78;  
+        margin: 49px auto;          
+        width: 544px;
+        height: 110px;
+        display: flex;              
+        justify-content: center;    
+        align-items: center;        
+        text-align: center;         
+        border-radius: 10px;
+    }
+    
+    .perdido-4enLinea {
+        color: white;               
+    }
+    
+    .redirigir-foro-4enLinea {
+        color: #7EEB00;           
+        text-decoration: none;     
+        margin-left: 5px;
+
+    }
+    
+    .comentario1-4enLinea, 
+    .comentario2-4enLinea, 
+    .comentario3-4enLinea, 
+    .comentario4-4enLinea {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 33px;             /* Espaciado entre los comentarios */
+    }
+    .comentario-4enLinea-linea{
+        margin-top: 3px;
+        height: 2px;
+    }
+
+    
+    .footer-comentarios-4enLinea{
+        margin: -40px auto;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    .footer {
+        background-color: #242832; 
+        display: flex;             
+        justify-content: space-between; 
+        align-items: flex-start;   
+        padding: 20px;            
+        width: 100%;              
+        position: relative;       
+        left: 0;                  
+        right: 0;                 
+        margin: 0; 
+        margin-top: 85px;
+
+    }
+    
+    .footer-diverJuegos-logo {
+        flex: 1;                   /* Permitir que el logo ocupe espacio flexible */
+    }
+    .logo-sinLetras{
+        width: 93px;
+        height: 90px;
+        margin-left: 70px;
+        margin-top: 1%;
+
+    }
+
+    .lista1 li, .lista2 li, .lista3 li, .lista4 li {
+        margin-left: 0%;
+    }
+    .lista1, .lista2, .lista3, .lista4 {
+        flex: 1;                   /* Permitir que cada lista ocupe espacio flexible */
+        color: white;             
+        font-size: 14px; 
+        margin-left: 0%;
+        }
+
+    .footer-links li.Principal {
+        color: #7EEB00;           
+        font-weight: bold;         
+        font-size: 16px;           
+        margin-bottom: 10px;       
+    }
+    
+    .footer-links a {
+        color: white;              
+        text-decoration: none;     /* Quitar subrayado de los enlaces */
+       
+    }
+    
+    .footer-links a:hover {
+        text-decoration: underline; /* Subrayar al pasar el mouse */
+    }
+    
+    .facebook-twitter, .gmail-youtube {
+        display: flex;             
+        margin-top: 10px;         
+        margin-left: 15px;
+    }
+    
+    .iconoRedesFooter {
+        width: 30px;               
+        height: 30px;              
+        margin-right: 10px;       
+        display: inline-block; /* Permite el ajuste de tamaño del div al contenido */
+        border: 2px solid gray; /* Color y grosor del borde */
+        border-radius: 50%; 
+        padding: 5px; 
+        width: fit-content; 
+    }
+    
+    section.recommended{
+        margin-top: 30px;
+        margin-bottom: 0;
+        position: relative;
+    
+    }
+    ul.specials{
+        display: flex;
+        margin: 0;
+        padding: 0;
+        padding-left: 20%;
+        width: 60%;
+        height: 500px;
+        transition: transform 0.5s ease-in-out;
+        overflow: hidden;
+        flex-wrap: nowrap; /* No permite que las tarjetas se muevan a una nueva línea */
+        column-gap: 33%;
+        scroll-behavior: smooth;
+        position: relative;
+    }
+
+    
+    .recommended-card{
+        flex: 0 0 100%; /* Cada tarjeta ocupará todo el ancho del contenedor */
+        height: 500px;
+        padding-left: 0;
+        margin-left: 0px;
+        margin-left: 0%;
+        position: relative;
+        justify-content: flex-start; 
+        align-items: flex-start;
+        
+    }
+    
+    .card-recommended{
+        flex-direction: column;
+        position: relative;
+        height: 500px;
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+    }
+    .recommended-card-img{
+        height: 350px;
+        width: 65%;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    .recommended-card-img img{
+        width: 100%;      
+        height: 450px;    
+        object-fit: cover;
+        border-radius: 10px 0px 0px 10px;
+    }
+
+    .btn-jugar-recommended{
+        transform: translate(-50%, -50%);
+        position: relative;
+        top:292px;
+        left:86%;
+        width: 17%;
+        height: 56px;
+        font-size: 18px;
+        z-index: 10; 
+        background-color: #4cd02a ;
+        
+
+    }
+    .btn-jugar-recommended p{
+        background: none;
+        border: none;
+        margin:2px;
+        padding: 5px;
+        font-weight: bold;
+        font-size: 14px;
+        position: relative;
+        
+        &:after {
+            transform: translateY(-50%);
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: white;
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            z-index: -1;
+            transition: 0.3s ease;
+        }
+    
+        &:hover:after {
+            width: 163%;
+            height: 150%;
+            left: 0;
+            border-radius: 30px;
+        }
+        font-size: 18px;
+        padding-left: 15%;
+    }
+    .btn-jugar-recommended img{
+        width: 27px;
+        height: 27px;
+        padding-left: 5%;
+    }
+
+    .btn-miLista-recommended{
+        top: 417px;
+        left:86%;
+        width: 17%;
+        height: 56px;
+        font-size: 18px;
+        transform: translate(-50%, -50%);
+        position: fixed;
+    }
+    .btn-miLista-recommended p{
+       
+        display: block;
+        width: 250px;
+        height: 50px;
+        line-height: 46px;
+        text-decoration: none;
+        text-align: center;
+        border-radius: 50px;
+        border: none;
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+        font-family: arial;
+        position: relative;
+        overflow: hidden;
+        background: transparent;
+        text-transform: uppercase;
+        transition: all .35s;
+      }
+      
+      .btn-miLista-recommended p:before,
+      .btn-miLista-recommended p:after{
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: -100%;
+        left: 0;
+        background: rgb(255, 255, 255);
+        z-index: -1;
+        transition: all .35s;
+      }
+      
+      .btn-miLista-recommended p:before{
+        opacity: .5;
+      }
+      
+      .btn-miLista-recommended p:after{
+        transition-delay: .2s;
+      }
+      
+      .btn-miLista-recommended p:hover{
+        color: #000000;
+      }
+      
+      .btn-miLista-recommended p:hover:before,
+      .btn-miLista-recommended p:hover:after{
+        top: 0;
+      }
+      .btn-right-recommended{
+        top: 50%; /* Centrado verticalmente */
+        transform: translateY(-50%); /* Asegura que esté centrado */
+        right: 10%; /* Ajusta la distancia del borde derecho de la pantalla */
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 10; 
+    }
+    .btn-left-recommended{  
+        top: 50%; 
+        transform: translateY(-50%); 
+        left: 10%; 
+        background-color: transparent;
+        border: none; 
+        cursor: pointer;
+        z-index: 10; 
+    }
+    .btn-right-recommended, .btn-left-recommended{
+        width: 64px;
+        height: 64px;
+    }
+    .btn-right-recommended img, .btn-left-recommended img{
+        width: inherit;
+        height: inherit;
+    }
+    
+    .game-recommended{
+        position: relative;
+        left: 80%;
+        top:70px;
+        white-space: nowrap; /* Impide que el texto se divida en varias líneas */
+        overflow: hidden;    /* Oculta el texto que desborda el contenedor */
+        text-overflow: ellipsis; /* Añade "..." al final del texto que no cabe */
+        display: block;
+    }
+
+    
+
+    
+
+    h2.name-category{
+        margin-left: 5.5%;
+        bottom: -50px;
+
+    }
+    .btn-left, .btn-right{
+        display: block;
+        position: relative;
+        z-index: 8;
+    }
+    .btn-left{
+        top: 151px;
+    }
+    
+    .btn-right{
+        top: -179px;
+        left: 94.5%;
+    }
+
+    .btn-left-mobile, .btn-right-mobile{
+        display: none;
+    }
+    ul.carrusel{
+        height: 205px;
+        width: 90%;
+    }
+    section.category{
+        margin-bottom: -130px ;
+    }
+    /* Filtro borroso en los extremos del carrusel */
+    .div-filter-left, .div-filter-right {
+    position: absolute;
+    top: 25%;
+    bottom: 0;
+    width: 50px;
+    background: linear-gradient(to right, rgba(102, 108, 120, 0), rgba(102, 108, 120, 0));
+    z-index: 7;
+    pointer-events: none; /* Evita que interfiera con la interacción del usuario */
+    transition: opacity 0.3s ease-in-out;
+    height: 210px;
+    }
+
+.div-filter-left {
+    left: 4%;
+    background: linear-gradient(to right, #666C78, rgba(102, 108, 120, 0)); /* Difuminación de izquierda a derecha */
+    opacity: 0; /* Comienza invisible */
+}
+
+.div-filter-right {
+    right: 6%;
+    background: linear-gradient(to left, #666C78, rgba(102, 108, 120, 0)); /* Difuminación de derecha a izquierda */
+    opacity: 0; /* Comienza invisible */
+}
+    .game-card{
+        height: 205px;
+        width: 225px;
+    }
+
+    .game-card-info{
+        height: 86px;
+        background-color: #242832;
+        display: flex;
+        align-items: center;
+        border-radius: 0px 0px 10px 10px;
+        width: 230px;
+        position: absolute;
+        
+    
+    }
+    .game-card-img {
+        height: 119px;
+        width: 230px;
+        
+    }
+    .game-card-img img{
+        width: 230px;
+        height: 119px;
+    }
+    .game-card-info-premium{
+        height: 86px;
+        background-color: #242832;
+        display: flex;
+        align-items: center;
+        border-radius: 0px 0px 10px 10px;
+        width: 230px;
+        position: absolute;
+    }
+    .etiqueta-premium{
+        top:110px;
+        left: 173px;
+        width: 68;
+        height: 19px;
+        background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para destacar la etiqueta */
+    }
+    .icono-premium img{
+        width: 80px;
+        height: auto;
+    
+    }
+
+    .title-etiqueta{
+        color: white;
+        margin-left: 8px;
+        font-size: 14px;
+        position: absolute;
+        left: 28px;
+        top: -110%;
+        transform: translate(-50%);
+    }
+
+    .see-more{ 
+        display: block;
+        position: relative;
+        top: 60px;
+        right: 6%;
+        font-size: 14px;
+        width: 113px;
+        height: 31px;
+        border-radius: 20px;
+        border: none;
+        background-color: #DCFA00;
+    }
+    .see-more:hover{
+        transform: scale(1.1);
+        background-color: #DCFA00;
+    }
+    .btn-jugar{
+        width: 56px;
+        height: 56px;
+        margin-left: 60px;
+    }
+    .btn-jugar img{
+        width: 56px;
+        height: 56px;
+        object-fit: contain;
+    }
+    .title-card{
+        font-size: 18px;
+    }
+    .category-card{
+        font-size: 14px;
+    }
+    /*loader*/
+    .circle-loading {
+        width: 100px;
+        height: 100px;
+    }
+
+    #loading-text {
+        font-size: 24px;
+    }
+    .btn-iniciarSesion{
+        width: 200px;
+        height: 50px;
+        color: black;
+        font-size: 20px;
+        font-family: "Lato", sans-serif;
+        background-color: #908C8C;
+        border-radius: 25px;
+        padding: 0%;
+        border: none;
+        transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones para el hover */
+    }
+    .botonIni{
+        margin-left: 1135px;
+        margin-top: -714px;
+    }
+
+
+    /* Efecto hover */
+    .btn-iniciarSesion:hover {
+        background-color: #6F6B6B; /* Cambia el color al hacer hover */
+        transform: scale(1.05); /* Agranda ligeramente el botón */
+    }
+
+    /* Animación personalizada */
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    /* Aplicar la animación al botón */
+    .btn-iniciarSesion.animate {
+        animation: bounce 0.5s ease-in-out;
+    }
+    .forgot-password{
+        text-align: center;
+    }
+    .register-btn-ini{
+        font-family: 'Lato', sans-serif;
+        background-color: #7EEB00; /* Botón de registrarse color primario */
+        color: #242832;
+        padding: 8px; 
+        border: none;
+        border-radius: 5px; 
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: bold;
+        width: 130px;
+        height: 36px;
+        margin: 0 auto 10px; 
+    
+    }
+    canvas{
+        background-color: #4caf50;
+        margin-left: 190px;
+    }
+}
