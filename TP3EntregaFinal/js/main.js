@@ -63,6 +63,7 @@ canvas.addEventListener("mouseup", () =>{
         console.log(juego1.getFichaActual().getPosY());
         //recorro todos los dropzone
         juego1.tirarFicha(x,y);
+        juego1.draw(); 
         //si la ficha no estaba en ningun dropzone vuelve a su pos inicial
         if(juego1.getFichaActual() != null){
             juego1.getFichaActual().posInicial();

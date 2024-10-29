@@ -91,7 +91,10 @@ class Juego{
             let col=this.Receptor.colReceptor(x);
             console.log("Columna calculada:", col); // Agrega esto
             let row=this.Tablero.dropFicha(col,this.turno);
-            console.log(row +"esta calcula row")
+            console.log(row +"esta calcula row");
+            let posX = this.Tablero.offset_X + col * this.Tablero.cellSize + this.Tablero.cellSize / 2;
+            let posY = this.Tablero.offset_Y + row * this.Tablero.cellSize + this.Tablero.cellSize / 2;
+            this.fichaActual.move(posX, posY);
             if(row != -1){
                 if(this.checkWin(row,col)){
                     console.log("gano el jugador turno");
