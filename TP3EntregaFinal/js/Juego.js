@@ -9,6 +9,8 @@ class Juego{
         this.fichaActual=null;
         this.jugador1=jugador1;
         this.jugador2 = jugador2;
+        this.fichaMobimiento=null;
+        this.tamañoFicha= this.Tablero.getCuadradoSize()/3;
     }
     
     getReceptor(){
@@ -54,7 +56,7 @@ class Juego{
             color = "blue";
         }
      
-        let ficha = new Ficha(posX,posY, color,this.ctx,30,player);
+        let ficha = new Ficha(posX,posY, color,this.ctx,this.tamañoFicha,player);
         this.fichas.push(ficha);
       
     }
@@ -87,14 +89,17 @@ class Juego{
     }
     tirarFicha(x,y){
         if(this.Receptor.detectarFicha(x,y)){
-            console.log("x para calcualar colReceptor"+x);
+           
             let col=this.Receptor.colReceptor(x);
-            console.log("Columna calculada:", col); // Agrega esto
+            
             let row=this.Tablero.dropFicha(col,this.turno);
-            console.log(row +"esta calcula row");
+           
             let posX = this.Tablero.offset_X + col * this.Tablero.cellSize + this.Tablero.cellSize / 2;
             let posY = this.Tablero.offset_Y + row * this.Tablero.cellSize + this.Tablero.cellSize / 2;
+           
             this.fichaActual.move(posX, posY);
+            this.fichaMobimiento = this.fichaActual;
+            
             if(row != -1){
                 if(this.checkWin(row,col)){
                     console.log("gano el jugador turno");
@@ -110,4 +115,5 @@ class Juego{
 
         }
     }
+    
 }

@@ -4,7 +4,6 @@ class Ficha extends Figura{
         this.radio=radio;
         this.recorridoCirc = 2;
         this.player=player;
-      
         this.puedeMoverse=true;
         this.xInicial=this.posX;
         this.yInicial=this.posY;

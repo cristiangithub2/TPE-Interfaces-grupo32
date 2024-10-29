@@ -6,7 +6,7 @@ let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
 
 
-let tablero7= new Tablero(6, 7, 80, ctx);
+let tablero7= new Tablero(6, 7, ctx,4,60);
 let juego1= new Juego(tablero7,ctx,"juan","pedro");
 
 
@@ -25,8 +25,7 @@ canvas.addEventListener("mousedown", (event) => {
     let mouseX = event.clientX - rect.left;      // Ajusta la posición X
     let mouseY = event.clientY - rect.top;       // Ajusta la posición Y
 
-    console.log("Posición del mouse dentro del canvas:", mouseX, mouseY);
- 
+    
     
     //recore todas las fichas         
     for(let i = juego1.cantFichas()-1; i>=0; i--){
@@ -59,8 +58,7 @@ canvas.addEventListener("mouseup", () =>{
         //se obtiene la pos de la ficha
         let x = juego1.getFichaActual().getPosX();
         let y = juego1.getFichaActual().getPosY();
-        console.log(juego1.getFichaActual().getPosX());
-        console.log(juego1.getFichaActual().getPosY());
+       
         //recorro todos los dropzone
         juego1.tirarFicha(x,y);
         juego1.draw(); 
