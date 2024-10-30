@@ -21,7 +21,7 @@ class Tablero {
     
 
     cargarTablero(){
-        console.log("cargartablero")
+       
         let posicionTableroX = this.offset_X;
         let posicionTableroY = this.offset_Y;
         let widthMatriz=this.cols* this.cuadradoSize;
@@ -61,7 +61,7 @@ class Tablero {
     draw() {
         //console.log(this.cuadrados.length)
         if(this.cuadrados.length == 0){
-            console.log("this.cuadrados")
+           
             this.cargarTablero();
         }
         for(let i =0; i <this.cuadrados.length;i++){
@@ -78,14 +78,14 @@ class Tablero {
         for(let i = this.matriz.length-1; i >=  0; i--){
             let fila = this.matriz[i];
             //si la posicion en la matriz esta libre
-            console.log(i)
-            console.log(fila[columna].estaOcupada())
+          
             if(!fila[columna].estaOcupada()){
                 fila[columna].setFicha(fichaActual);
                 return i;
                 break;
             }
-            else if(i === 0){
+            else if(i ===0){
+                console.log(-1)
                 return -1;
             }
         }
@@ -94,7 +94,7 @@ class Tablero {
 
     //si se cumple alguno de los checkeos termina el juego
     checkGanador(fila,columna,turno){
-        console.log(this.checkDiagonales(fila,columna,turno),this.checkFila(fila,columna,turno),this.checkColumna(fila,columna,turno));
+        //console.log(this.checkDiagonales(fila,columna,turno),this.checkFila(fila,columna,turno),this.checkColumna(fila,columna,turno));
         if(this.checkDiagonales(fila,columna,turno) || this.checkFila(fila,columna,turno) || this.checkColumna(fila,columna,turno)){
             //inalizarJuego();
             console.log("Gano "+turno)

@@ -1,31 +1,36 @@
 class Ficha extends Figura{
-    constructor(posX,posY, fill,ctx,radio,player){
-        super(posX,posY,fill,ctx);
+    constructor(posX,posY,ctx,radio,player){
+        super(posX,posY,"trasparent",ctx);
         this.radio=radio;
         this.recorridoCirc = 2;
         this.player=player;
         this.puedeMoverse=true;
         this.xInicial=this.posX;
         this.yInicial=this.posY;
+        this.image= new Image();
     }
     getJugador(){
         return this.player
     }
 
 
-    draw(){
+    draw(imgSrc){
         super.draw();
         this.ctx.beginPath(); // Usar this.ctx para iniciar el dibujo en el contexto del canvas
         this.ctx.arc(this.posX, this.posY, this.radio, 0, this.recorridoCirc * Math.PI);
         this.ctx.fill();
-        
-
-        if(this.resaltado === true){
-            this.ctx.strokeStyle = this.resaltadoEstado;
-            this.ctx.lineWidth = 5;
-            this.ctx.stroke();
+        if (this.image.src === "" ) {
+            this.image.src = imgSrc;
+            this.image.onload = () => {
+                this.ctx.drawImage(this.image, this.posX - this.radio, this.posY - this.radio, this.radio / 0.5, this.radio / 0.5);
+            };
+            this.image.onerror = () => {
+                console.error("Error al cargar la imagen:", imgSrc);
+            };
+        } else if (this.image.complete) {
+            // Dibuja la imagen si ya se cargó previamente
+            this.ctx.drawImage(this.image, this.posX - this.radio, this.posY - this.radio, this.radio / 0.5, this.radio / 0.5);
         }
-        this.ctx.closePath();
     }
 
     setResaltado(resaltado){
@@ -89,6 +94,31 @@ class Ficha extends Figura{
     }
     getX(){
         return this.posX;
+    }
+    getPosition(){
+        return{
+            x:this.getPosX(),
+            y:this.getPosY()
+        };
+    }
+
+    getPosX(){
+        return this.posX;
+    }
+
+    getPosY(){
+        return this.posY;
+    }
+    getFill(){
+        return this.fill;
+    }
+    setFill(fill){
+        this.fill=fill;
+    }
+    
+    setPosition(x,y){
+        this.posX=x;
+        this.posY=y;
     }
 }
 

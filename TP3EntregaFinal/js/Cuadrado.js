@@ -43,7 +43,7 @@ class Cuadrado {
         // Verifica si la imagen ya está cargada
        
         if (this.image.src === "") {
-           console.log("entro")
+          
             this.image.src = imgSrc;
     
             // Maneja la carga de la imagen

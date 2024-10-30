@@ -5,9 +5,14 @@ let ctx = canvas.getContext("2d");
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
 
-
-let tablero7= new Tablero(6, 7, ctx,4,60);
-let juego1= new Juego(tablero7,ctx,"juan","pedro");
+let imgFicha1 = "./img/robotPrueba1.png";
+let imgFicha2 = "./img/robot_circ6.png";
+let imgFicha3 = "./img/robot_circ3.png";
+let imgFicha4 = "../img/robot_circ4.png";
+let imgFicha5 = "../img/robot_circ5.png";
+let imgFicha6 = "../img/robot_circ6.png";
+let tablero7= new Tablero(6, 7, ctx,4,80);
+let juego1= new Juego(tablero7,ctx,"juan","pedro",imgFicha1,imgFicha2);
 
 
 function drawJuego(){
@@ -30,7 +35,7 @@ canvas.addEventListener("mousedown", (event) => {
     for(let i = juego1.cantFichas()-1; i>=0; i--){
         let ficha = juego1.getFicha(i);
         //le pregunta a ficha si esta clickeada
-        if(ficha.isPointInside(mouseX,mouseY) && ficha.getPlayer()=== juego1.getTurno()){
+        if(ficha.isPointInside(mouseX,mouseY) && ficha.getJugador()=== juego1.getTurno()){
             //setea la ficha actual
             juego1.setFichaActual(ficha);
             break;
@@ -74,7 +79,7 @@ canvas.addEventListener("mouseleave", ()=>{
     if(juego1.getFichaActual()!=null){
         juego1.getFichaActual().posInicial();
         juego1.setFichaActual(null) ;
-        juego1.draw();
+        
         juego1.draw();
     }
 })

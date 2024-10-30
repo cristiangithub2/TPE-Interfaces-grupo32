@@ -1,5 +1,5 @@
 class Juego{
-    constructor(Tablero,ctx,jugador1,jugador2){
+    constructor(Tablero,ctx,jugador1,jugador2,img1,img2){
         this.Tablero=Tablero;
         this.Receptor=this.Tablero.getReceptor();
         this.fichas = []; // Define fichas como un array
@@ -10,10 +10,14 @@ class Juego{
         this.jugador1=jugador1;
         this.jugador2 = jugador2;
         this.fichaMobimiento=null;
-        this.tamañoFicha= this.Tablero.getCuadradoSize()/3;
+        this.tamañoFicha= this.Tablero.getCuadradoSize()/2.5;
         this.fichaAnimada = null
         this.intervalo = 0;
         this.pos=0;
+        this.img1=img1;
+        this.img2=img2;
+        
+
     }
     
     getReceptor(){
@@ -50,17 +54,18 @@ class Juego{
     addFicha(player){
         let posX, posY, color;
         if(player===1){
-            posX= 200;
+            posX= 95;
             posY= 100;
             color = "red";
         }else{
-            posX = 900;
+            posX = 1050;
             posY = 100;
             color = "blue";
         }
      
-        let ficha = new Ficha(posX,posY, color,this.ctx,this.tamañoFicha,player);
+        let ficha = new Ficha(posX,posY,this.ctx,this.tamañoFicha,player);
         this.fichas.push(ficha);
+      
       
     }
 
@@ -72,9 +77,16 @@ class Juego{
         this.clearCanvas();
         this.Receptor.draw();
         // Cambia esta línea para usar 'this.fichas'
+            
         for (let i = 0; i < this.fichas.length; i++) {
-            this.fichas[i].draw(); // Ahora usa 'this.fichas'
+      
+            if(this.getFicha(i).getJugador()===1){
+            this.fichas[i].draw(this.img1);
+            }else{
+                this.fichas[i].draw(this.img2);
+            }
         }
+       
         this.Tablero.draw();
     }
     checkWin(row, col) {
@@ -86,21 +98,25 @@ class Juego{
         this.turno = this.turno === 1 ? 2 : 1; // Cambia el turno de jugador
     }
     tirarFicha(x,y){
-        console.log("solta")
+        
         if(this.Receptor.detectarFicha(x,y)) {
 
             let col = this.Receptor.colReceptor(x);
 
             let row=this.Tablero.dropFicha(col,this.fichaActual);
-            //console.log(col,row)
+            console.log(row)
             let posX = this.Tablero.offset_X + col * this.Tablero.getCuadradoSize() + this.Tablero.getCuadradoSize() / 2;
             let posY = this.Tablero.offset_Y + row * this.Tablero.getCuadradoSize() + this.Tablero.getCuadradoSize() / 2;
             //console.log(posX,posY)
-            this.fichaAnimada = this.fichaActual;
-
-            this.fichaActual=null;
-            this.pos = 0;
-            this.caer(posX,posY);
+           
+            if(row !== -1){
+                this.fichaAnimada = this.fichaActual;
+                this.fichaActual=null;
+                this.pos = 0;
+                this.caer(posX,posY);
+            }else{
+                this.fichaActual.posInicial();
+            }
             //this.fichaAnimada.move(posX, posY);
             //console.log(col,row)
             //this.fichaMobimiento = this.fichaActual;
@@ -110,7 +126,6 @@ class Juego{
                     console.log("gano el jugador turno");
                 }else{
                     this.switchPlayer();
-                    this.fichaActual=null;
                 }
             }else{
                 this.fichaActual.posInicial();

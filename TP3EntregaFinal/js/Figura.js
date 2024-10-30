@@ -6,6 +6,7 @@ class Figura {
         this.resaltado = false;
         this.resaltadoEstado = "red"; //con un metodo se puede cambiar el color
         this.ctx=ctx;
+        
       
     }
 
@@ -37,7 +38,7 @@ class Figura {
         return this.fill;
     }
 
-    draw(){
+    draw(img){
         this.ctx.fillStyle = this.fill;
     }
 
