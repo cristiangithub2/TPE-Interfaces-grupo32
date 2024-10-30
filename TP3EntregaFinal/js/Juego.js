@@ -21,14 +21,26 @@ class Juego{
         this.imgFondo.onload = () => {
             this.draw(); // Llama a `draw` una vez que la imagen de fondo está cargada
         };
-        
 
+    }
+    getImg1(){
+        return this.img1;
+    }
+    getImg2(){
+        return this.img2;
+    }
+    
+    setJugador1(texto){
+        this.jugador1=texto;
+    }
+    setJugador2(texto){
+        this.jugador2=texto;
     }
     setImage1(img){
         this.img1=img;
     }
     
-    setImage1(img){
+    setImage2(img){
         this.img2=img;
     }
     getReceptor(){
@@ -53,7 +65,7 @@ class Juego{
         //deberia pasar una copia?? encontraria bien si es clickeada o no?
         return this.fichas[i];
     }
-    
+
     addFichas(){
         let contador=0;
         for(let i = 0; i< this.cantCells/2;i++){
@@ -97,9 +109,9 @@ class Juego{
         for (let i = 0; i < this.fichas.length; i++) {
       
             if(this.getFicha(i).getJugador()===1){
-            this.fichas[i].draw(this.img1);
+            this.fichas[i].draw(this.getImg1());
             }else{
-                this.fichas[i].draw(this.img2);
+                this.fichas[i].draw(this.getImg2());
             }
         }
        
