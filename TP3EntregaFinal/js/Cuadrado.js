@@ -6,7 +6,31 @@ class Cuadrado {
         this.size = size; // Tamaño del cuadrado
         this.ficha=null;
         this.image= new Image();
-        
+    }
+    getTipoDeFicha(){
+        if(this.ficha != null){
+            return this.ficha.getJugador();
+        }
+        else{
+            return null;
+        }
+    }
+    getX(){
+        return this.posX
+    }
+    getY(){
+        return this.posY
+    }
+    setFicha(ficha){
+        this.ficha=ficha;
+    }
+    estaOcupada(){
+        if(this.ficha==null){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
     setContenido(contenido){
         this.contenido=contenido;
@@ -18,8 +42,8 @@ class Cuadrado {
     draw(imgSrc) {
         // Verifica si la imagen ya está cargada
        
-        if (this.image.src !== imgSrc) {
-           
+        if (this.image.src === "") {
+           console.log("entro")
             this.image.src = imgSrc;
     
             // Maneja la carga de la imagen

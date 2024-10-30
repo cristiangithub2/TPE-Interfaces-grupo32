@@ -8,7 +8,9 @@ class Ficha extends Figura{
         this.xInicial=this.posX;
         this.yInicial=this.posY;
     }
-
+    getJugador(){
+        return this.player
+    }
 
 
     draw(){
@@ -78,6 +80,15 @@ class Ficha extends Figura{
     posInicial(){
         this.move(this.xInicial,this.yInicial);
         
+    }
+    ponerEnTablero(){
+        this.puedeMoverse=true;
+    }
+    getY(){
+        return this.posY;
+    }
+    getX(){
+        return this.posX;
     }
 }
 

@@ -12,7 +12,6 @@ let juego1= new Juego(tablero7,ctx,"juan","pedro");
 
 function drawJuego(){
     juego1.draw();
-
 }
 juego1.addFichas();
 
