@@ -24,7 +24,13 @@ class Juego{
         
 
     }
+    setImage1(img){
+        this.img1=img;
+    }
     
+    setImage1(img){
+        this.img2=img;
+    }
     getReceptor(){
         return this.Receptor;
     }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="canvas.css">
     <title>War Robots</title>
 </head>
 <body>
@@ -52,8 +53,96 @@
        
         
     </div>
-    
-    <canvas id="myCanvas" width="1140" height="600"></canvas>
+    <section> 
+        <div class="canvas-form">
+                <div>
+                    <h2>Elige tu nombre y tu ficha</h2>
+                </div>
+                <div class="player">
+                    <input type="text" value="" class="inputCanvas" id="namePlayer1" placeholder="jugador 1">
+                    <div class="token" id="ficha1">
+                        <img src="./img/robotPrueba1.png" alt="ficha1" width="80px">
+                    </div>
+                    <div class="token" id="ficha3">
+                        <img src="./img/robot_circ3.png" alt="ficha1" width="80px">
+                    </div>
+                    <div class="token" id="ficha5">
+                        <img src="./img/robot_circ5.png" alt="ficha1" width="80px">
+                    </div>
+                </div>
+                <div class="player">
+                    <input type="text" value="" class="inputCanvas" id="namePlayer2" placeholder="jugador 2">
+                    <div class="token" id="ficha2">
+                        <img src="./img/robot_circ2.png" alt="ficha2" width="80px">
+                    </div>
+                    <div class="token" id="ficha4">
+                        <img src="./img/robot_circ4.png" alt="ficha1" width="80px">
+                    </div>
+                    <div class="token" id="ficha6">
+                        <img src="./img/robot_circ6.png" alt="ficha1" width="80px">
+                    </div>
+                </div>
+                <button class="button-play-play" id="play-game">Jugar
+                    <span id="span1"></span>
+                    <span id="span2"></span>
+                    <span id="span3"></span>
+                    <span id="span4"></span>
+                </button>
+                <h2 class="cantLinea">Cantidad en linea:</h2>
+            <section class="menuCantLinea">
+                <ul class="cantLinea-ul">
+                    <li id="linea4">
+                        <button id="linea4" class="btn-x-inLine">4</button>
+                    </li>
+                    <li id="linea5">
+                        <button class="btn-x-inLine" >5</button>
+                    </li>
+                    <li id="linea6">
+                        <button class="btn-x-inLine" >6</button>
+                    </li>
+                    <li id="linea7">
+                        <button class="btn-x-inLine" >7</button>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <div class="canvas">
+            
+            <div class="titles-canvas">
+                <h1 class="namePlayer1" id="titulo1"></h1>
+                <h1 class="namePlayer2" id="titulo2"></h1>
+            </div>
+            <h1 id="turno"></h1>
+            <h1 id="ganador"></h1>
+            <canvas id="myCanvas" width="1140" height="600"></canvas>
+
+            <p id="tiempo"></p>
+            <div class="menusGame">
+                <a id="restartGame">Reiniciar</a>
+                <a id="menuGame">Menu</a>
+            </div>
+
+            
+        </div>
+        <div class="section-image">
+            <img class="bk-game-image" src="./img/fianalBorronedooo.jpg" alt="game-background">
+            <div class="play-section">
+                
+                <div >
+                    <button class="button-play" id="play-canvas">
+                    Jugar
+                    <span id="span1"></span>
+                    <span id="span2"></span>
+                    <span id="span3"></span>
+                    <span id="span4"></span>
+                    </button>
+                </div> 
+            </div>           
+        </div>
+        
+             
+    </section> 
+ 
        
     </div>
     <div class="footer-4enLinea">
