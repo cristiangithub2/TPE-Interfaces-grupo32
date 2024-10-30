@@ -1,4 +1,5 @@
 class Cuadrado {
+    static color = "#FFFFFF";
     constructor(posX, posY, size, ctx) {
         this.posX=posX;
         this.posY= posY

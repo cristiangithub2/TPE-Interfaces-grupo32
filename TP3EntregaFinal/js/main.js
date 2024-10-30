@@ -5,6 +5,7 @@ let ctx = canvas.getContext("2d");
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
 
+
 let imgFicha1 = "./img/robotPrueba1.png";
 let imgFicha2 = "./img/robot_circ6.png";
 let imgFicha3 = "./img/robot_circ3.png";

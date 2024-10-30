@@ -1,5 +1,5 @@
 class Juego{
-    constructor(Tablero,ctx,jugador1,jugador2,img1,img2){
+    constructor(Tablero,ctx,jugador1,jugador2,img1,img2,){
         this.Tablero=Tablero;
         this.Receptor=this.Tablero.getReceptor();
         this.fichas = []; // Define fichas como un array
@@ -10,12 +10,17 @@ class Juego{
         this.jugador1=jugador1;
         this.jugador2 = jugador2;
         this.fichaMobimiento=null;
-        this.tamañoFicha= this.Tablero.getCuadradoSize()/2.5;
+        this.tamañoFicha= this.Tablero.getCuadradoSize()/2.3;
         this.fichaAnimada = null
         this.intervalo = 0;
         this.pos=0;
         this.img1=img1;
         this.img2=img2;
+        this.imgFondo = new Image();
+        this.imgFondo.src = "./img/fondoFinal.png";
+        this.imgFondo.onload = () => {
+            this.draw(); // Llama a `draw` una vez que la imagen de fondo está cargada
+        };
         
 
     }
@@ -44,22 +49,23 @@ class Juego{
     }
     
     addFichas(){
+        let contador=0;
         for(let i = 0; i< this.cantCells/2;i++){
-            this.addFicha(1);
-            this.addFicha(2);
-           
+            this.addFicha(1,contador);
+            this.addFicha(2,contador);
+           contador+=8;
         }
        
     }
-    addFicha(player){
+    addFicha(player,cc){
         let posX, posY, color;
         if(player===1){
             posX= 95;
-            posY= 100;
+            posY= 400-cc;
             color = "red";
         }else{
             posX = 1050;
-            posY = 100;
+            posY = 400-cc;
             color = "blue";
         }
      
@@ -75,6 +81,10 @@ class Juego{
     }
     draw() {
         this.clearCanvas();
+        if (this.imgFondo.complete) {
+            this.ctx.drawImage(this.imgFondo, 0, 0, canvasWidth, canvasHeight);
+        }
+    
         this.Receptor.draw();
         // Cambia esta línea para usar 'this.fichas'
             
@@ -117,13 +127,11 @@ class Juego{
             }else{
                 this.fichaActual.posInicial();
             }
-            //this.fichaAnimada.move(posX, posY);
-            //console.log(col,row)
-            //this.fichaMobimiento = this.fichaActual;
-            
+
             if(row !== -1){
                 if(this.checkWin(row,col)){
                     console.log("gano el jugador turno");
+                    //terminarJuego();
                 }else{
                     this.switchPlayer();
                 }
