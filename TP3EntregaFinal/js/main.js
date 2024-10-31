@@ -6,8 +6,8 @@ let cronometro = 0;
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
 
-let imgFichaJugador1 = "./img/robotPrueba1.png";
-let imgFichaJugador2 = "./img/robot_circ2.png";
+let imgFichaJugador1 ;
+let imgFichaJugador2  ;
 let imgFicha1 = "./img/robotPrueba1.png";
 let imgFicha2 = "./img/robot_circ2.png";
 let imgFicha3 = "./img/robot_circ3.png";
@@ -18,6 +18,10 @@ let ganador = document.querySelector("#ganador");
 let titulo = document.querySelector("#turno");
 let jugador1;
 let jugador2;
+let cantEnLinea ;
+let numColumn ;
+let numFilas ;
+let TAMESPACIO ;
 
 
 
@@ -35,9 +39,8 @@ document.querySelector('#menuGame').addEventListener('click',()=>{
 });
 //reiniciar Juego
 document.querySelector('#restartGame').addEventListener('click',()=>{
-    for( let i = juego1.cantFichas()-1; i>=0; i--){
-        juego1.getFicha(i).posInicial();
-    }
+   
+    cargarJuego();
     juego1.draw();
 });
 
@@ -56,10 +59,46 @@ document.querySelector('#play-canvas').addEventListener('click',()=>{
     document.querySelector('.canvas-form').style.display="flex";
 });
 document.querySelector("#play-game").addEventListener('click',()=>{
+    if (validarConfiguracionJuego()) {
     document.querySelector('.canvas').style.display="flex";
     document.querySelector('.canvas-form').style.display="none";
+    cargarJuego();
+    }
     //reiniciarJuego();
 });
+function validarConfiguracionJuego() {
+    // Variables para verificar que todo esté configurado
+    let mensajeError = "";
+    let fichaJugador1Seleccionada = imgFichaJugador1 !== '';
+    let fichaJugador2Seleccionada = imgFichaJugador2 !== '';
+    let nombreJugador1Valido = jugador1 && jugador1.trim() !== "";
+    let nombreJugador2Valido = jugador2 && jugador2.trim() !== "";
+    let modoJuegoSeleccionado = cantEnLinea >= 4;  // Solo se activa si se selecciona un modo
+
+    // Verificar cada campo
+    if (!nombreJugador1Valido) {
+        mensajeError += "⚠️ Ingrese el nombre del Jugador 1.\n";
+    }
+    if (!nombreJugador2Valido) {
+        mensajeError += "⚠️ Ingrese el nombre del Jugador 2.\n";
+    }
+    if (!fichaJugador1Seleccionada) {
+        mensajeError += "⚠️ Seleccione una ficha para el Jugador 1.\n";
+    }
+    if (!fichaJugador2Seleccionada) {
+        mensajeError += "⚠️ Seleccione una ficha para el Jugador 2.\n";
+    }
+    if (!modoJuegoSeleccionado) {
+        mensajeError += "⚠️ Seleccione un modo de juego.\n";
+    }
+
+    // Mostrar mensaje de error si falta algo
+    if (mensajeError) {
+        alert(mensajeError);
+        return false;  // Evita cargar el juego si falta algo
+    }
+    return true;  // Todos los campos están completos
+}
 function seleccionarFichaJugador2(ficha){
     ficha2.style.scale = "1.0"
     ficha4.style.scale = "1.0"
@@ -109,7 +148,8 @@ ficha5.addEventListener('click',()=>{
 })
 ficha6.addEventListener('click',()=>{
     imgFichaJugador2 = imgFicha6;
-    seleccionarFichaJugador2(ficha6);
+    seleccionarFichaJug
+    ador2(ficha6);
 })
 });
 document.addEventListener("DOMContentLoaded", () => {
@@ -117,7 +157,7 @@ document.querySelector("#linea4").addEventListener('click',()=>{
     cantEnLinea = 4;
     numColumn = 7;
     numFilas = 6;
-    TAMESPACIO = 60;
+    TAMESPACIO = 80;   
     cargarJuego();
     //reiniciarJuego();
 })
@@ -147,11 +187,8 @@ document.querySelector('#linea7').addEventListener('click',()=>{
     //reiniciarJuego();
 })
 });
-let cantEnLinea = 4;
-let numColumn = 7;
-let numFilas = 6;
-let TAMESPACIO = 70;
-cargarJuego();
+
+
 
 //funcion de cronometro
 function iniciarTiempo(boolean){
@@ -284,12 +321,7 @@ canvas.addEventListener("mouseleave", ()=>{
 })
 
 function cargarJuego(){
-    if(jugador1==="[object HTMLHeadingElement]"){
-        jugador1= "player 1";
-    }
-    if(jugador2==="[object HTMLHeadingElement]"){
-        jugador2 = "player 2";
-    }
+
     let tablero7= new Tablero(numFilas, numColumn, ctx,cantEnLinea,TAMESPACIO);
     juego1 = new Juego(tablero7, ctx, jugador1, jugador2, imgFichaJugador1, imgFichaJugador2);
     juego1.addFichas();
