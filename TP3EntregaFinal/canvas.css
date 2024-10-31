@@ -1,6 +1,6 @@
 .canvas{
     display: none;
-    background-color: white;
+    background-color: #666C78;
   }
   .menusGame{
     right: 10px;
@@ -23,11 +23,12 @@
   }
   #tiempo{
     position: absolute;
-    top: 10px;
+    top: 150px;
     left: 47.8%;
     color: #ffffff;
     margin-left: 10px;
     width: 1px;
+    z-index: 20;
   }
   .canvas-form{
     display: none;

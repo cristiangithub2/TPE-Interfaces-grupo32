@@ -21,7 +21,8 @@ class Juego{
         this.imgFondo.onload = () => {
             this.draw(); // Llama a `draw` una vez que la imagen de fondo está cargada
         };
-
+        this.gano=false;
+        
     }
     getImg1(){
         return this.img1;
@@ -117,13 +118,23 @@ class Juego{
        
         this.Tablero.draw();
     }
+    
     checkWin(row, col) {
-        return (
-            this.Tablero.checkGanador(row,col,this.turno)
-        );
+        console.log("entra a check win??")
+        if( this.Tablero.checkGanador(row,col,this.turno)){
+            console.log("retorna 1")
+            return true;
+        }else{
+            return 0;
+        }
+           
+        ;
     }
     switchPlayer() {
         this.turno = this.turno === 1 ? 2 : 1; // Cambia el turno de jugador
+    }
+    ganador() {
+        return this.gano; // Cambia aquí para que devuelva el estado de ganar
     }
     tirarFicha(x,y){
         
@@ -132,11 +143,11 @@ class Juego{
             let col = this.Receptor.colReceptor(x);
 
             let row=this.Tablero.dropFicha(col,this.fichaActual);
-            console.log(row)
+            console.log("al menos al detectar ficha si")
             let posX = this.Tablero.offset_X + col * this.Tablero.getCuadradoSize() + this.Tablero.getCuadradoSize() / 2;
             let posY = this.Tablero.offset_Y + row * this.Tablero.getCuadradoSize() + this.Tablero.getCuadradoSize() / 2;
             //console.log(posX,posY)
-           
+            
             if(row !== -1){
                 this.fichaAnimada = this.fichaActual;
                 this.fichaActual=null;
@@ -149,7 +160,7 @@ class Juego{
             if(row !== -1){
                 if(this.checkWin(row,col)){
                     console.log("gano el jugador turno");
-                    //terminarJuego();
+                    return -2;
                 }else{
                     this.switchPlayer();
                 }

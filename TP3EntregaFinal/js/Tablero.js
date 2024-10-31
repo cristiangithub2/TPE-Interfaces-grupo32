@@ -1,3 +1,4 @@
+
 class Tablero {
     constructor(rows, cols, ctx,cantLineas,cuadradoSize) {
         this.rows = rows;       // Número de filas
@@ -96,9 +97,12 @@ class Tablero {
     checkGanador(fila,columna,turno){
         //console.log(this.checkDiagonales(fila,columna,turno),this.checkFila(fila,columna,turno),this.checkColumna(fila,columna,turno));
         if(this.checkDiagonales(fila,columna,turno) || this.checkFila(fila,columna,turno) || this.checkColumna(fila,columna,turno)){
-            //inalizarJuego();
             console.log("Gano "+turno)
+            return true;
+            
+            
         }
+        else{return false;}
     }
     checkDiagonales(fila,columna,turno){
         //llama a las funciones que checkean en las distintas diagonales
@@ -292,75 +296,6 @@ class Tablero {
             return suma;
         }
     }
-  /*
-    // Verificamos 4 en línea horizontal
-    checkHorizontal(row, playerTurn) {
-        let contador = 0;
-        for (let c = 0; c < this.cols; c++) {
-            if (this.matriz[row][c] === playerTurn) {
-                contador++;
-                if (contador >=this.cantLineas) return true;
-            } else {
-                contador = 0;
-            }
-        }
-        return false;
-    }
-
-    // Verificamos 4 en línea vertical
-    checkVertical(col,playerTurn) {
-        let contador = 0;
-        for (let r = 0; r < this.rows; r++) {
-            if (this.matriz[r][col] === playerTurn) {
-                contador++;
-                if (contador >=this.cantLineas) return true;
-            } else {
-                contador = 0;
-            }
-        }
-        return false;
-    }
-
-    // Verificamos diagonal primaria
-    checkDiagonalPrimaria(row, col,playerTurn) {
-        let startRow = row - Math.min(row, col);
-        let startCol = col - Math.min(row, col);
-
-        let contador = 0;
-        while (startRow < this.rows && startCol < this.cols) {
-            if (this.matriz[startRow][startCol] === playerTurn) {
-                contador++;
-                if (contador >= this.cantLineas) return true;
-            } else {
-                contador = 0;
-            }
-            startRow++;
-            startCol++;
-        }
-        return false;
-    }
-
-    // Verificamos diagonal secundaria
-    checkDiagonalSecundario(row, col, playerTurn) {
-        let startRow = row - Math.min(row, this.cols - 1 - col);
-        let startCol = col + Math.min(row, this.cols - 1 - col);
-
-        let contador = 0;
-        while (startRow < this.rows && startCol >= 0) {
-            if (this.matriz[startRow][startCol] === playerTurn) {
-                contador++;
-                if (contador >=this.cantLineas) return true;
-            } else {
-                contador = 0;
-            }
-            startRow++;
-            startCol--;
-        }
-        return false;
-    }
-
-   
-  */
     getCols(){
         return this.cols;
     }

@@ -1,7 +1,8 @@
+
 let juego1;  // Declaración global de juego1
 let canvas = document.getElementById("myCanvas");
 let ctx = canvas.getContext("2d");
-
+let cronometro = 0;
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
 
@@ -13,7 +14,7 @@ let imgFicha3 = "./img/robot_circ3.png";
 let imgFicha4 = "./img/robot_circ4.png";
 let imgFicha5 = "./img/robot_circ5.png";
 let imgFicha6 = "./img/robot_circ6.png";
-
+let ganador = document.querySelector("#ganador");
 
 
 
@@ -173,8 +174,69 @@ let cantEnLinea = 4;
 let numColumn = 7;
 let numFilas = 6;
 let TAMESPACIO = 80;
+
 cargarJuego();
 
+//funcion de cronometro
+function iniciarTiempo(boolean){
+    let element = document.getElementById("tiempo");
+
+    //setea la cantidad de minutos
+    let cantminutos = 3;
+    //se pasa a segundos
+    let tiempo = cantminutos * 60;
+    //si se recibio un true
+    if(boolean){
+        cronometro = setInterval(()=>{
+            let minutos = Math.floor(tiempo / 60);
+            let segundos = tiempo % 60;
+            //si segundos es < 10 coloca un 0 adelante
+            segundos = segundos < 10 ? '0' + segundos : segundos;
+            element.innerHTML = `${minutos}:${segundos}`;
+            //si llega a cero finaliza el juego como Empate
+           
+            if(minutos == 0 && segundos == 0){
+                clearInterval();
+                finalizarJuegoEmpate();
+
+            }
+            else{
+                tiempo--;
+           
+            }
+        }, 1000);
+    }
+    else{
+        //si se recibe un false termina el intervalo
+        clearInterval(cronometro);
+    }
+}
+function finalizarJuego(){
+    //frena el tiempo
+    console.log("finalize el jeugo")
+    iniciarTiempo(false);
+    titulo.style.display ="none";
+    ganador.style.display = "block";
+    ganador.innerHTML = `Gano `+ turno.getNombre();
+    //setea a las fichas para q no se puedan mover
+    for(let i = 0; i < fichasJugador1.length; i++){
+        fichasJugador1[i].ponerEnTablero(false);
+        fichasJugador2[i].ponerEnTablero(false);
+    }
+}
+
+function finalizarJuegoEmpate(){
+    //frena el tiempo
+    iniciarTiempo(false);
+    titulo.style.display ="none";
+    ganador.style.display = "block";
+    ganador.innerHTML = `Empate, Se acabo el tiempo`;
+    //setea a las fichas para q no se puedan mover
+    for(let i = 0; i < fichasJugador1.length; i++){
+        fichasJugador1[i].ponerEnTablero(false);
+        fichasJugador2[i].ponerEnTablero(false);
+    }
+}
 
 canvas.addEventListener("mousedown", (event) => {
     const rect = canvas.getBoundingClientRect(); // Obtén las coordenadas del canvas en la pantalla
@@ -216,9 +278,14 @@ canvas.addEventListener("mouseup", () =>{
         let y = juego1.getFichaActual().getPosY();
        
         //recorro todos los dropzone
-        juego1.tirarFicha(x,y);
+        let gano =juego1.tirarFicha(x,y);
+        console.log(gano)
+        if(gano=== -2){
+            finalizarJuego();
+        }
         juego1.draw(); 
-        //si la ficha no estaba en ningun dropzone vuelve a su pos inicial
+        
+        //si la ficha no estaba en ningun receptor vuelve a su pos inicial
         if(juego1.getFichaActual() != null){
             juego1.getFichaActual().posInicial();
             juego1.setFichaActual(null) ;
@@ -241,6 +308,6 @@ function cargarJuego(){
     juego1 = new Juego(tablero7, ctx, "juan", "pedro", imgFichaJugador1, imgFichaJugador2);
     juego1.addFichas();
     juego1.draw();
+    iniciarTiempo(true);
     return juego1;
 }
-
