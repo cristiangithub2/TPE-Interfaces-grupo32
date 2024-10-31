@@ -1,4 +1,4 @@
-
+let juego1;  // Declaración global de juego1
 let canvas = document.getElementById("myCanvas");
 let ctx = canvas.getContext("2d");
 
@@ -18,6 +18,162 @@ let imgFicha6 = "./img/robot_circ6.png";
 
 
 
+
+
+// Crea un array para los receptores
+
+
+
+
+document.querySelector('#menuGame').addEventListener('click',()=>{
+    //reiniciarJuego();
+    document.querySelector('.canvas-form').style.display="flex";
+    document.querySelector('.canvas').style.display="none";
+});
+//reiniciar Juego
+document.querySelector('#restartGame').addEventListener('click',()=>{
+    //reiniciarJuego();
+});
+//nombre de los jugadores
+document.querySelector('#namePlayer1').addEventListener('keyup', ()=>{
+    juego1.setNombre(document.querySelector('#namePlayer1').value);
+});
+document.querySelector('#namePlayer2').addEventListener('keyup', ()=>{
+    jugador2.setNombre(document.querySelector('#namePlayer2').value);
+});
+
+//juegar 4 en linea
+document.querySelector('#play-canvas').addEventListener('click',()=>{
+    document.querySelector('.section-image').style.display="none";
+    document.querySelector('.canvas-form').style.display="flex";
+});
+document.querySelector("#play-game").addEventListener('click',()=>{
+    document.querySelector('.canvas').style.display="flex";
+    document.querySelector('.canvas-form').style.display="none";
+    //reiniciarJuego();
+});
+function seleccionarFichaJugador2(ficha){
+    ficha2.style.scale = "1.0"
+    ficha4.style.scale = "1.0"
+    ficha6.style.scale = "1.0"
+    ficha.style.scale = "1.2"
+}
+function seleccionarFichaJugador1(ficha){
+    ficha1.style.scale = "1.0"
+    ficha3.style.scale = "1.0"
+    ficha5.style.scale = "1.0"
+    ficha.style.scale = "1.2"
+}
+ficha1 = document.querySelector("#ficha1");
+ficha2 = document.querySelector("#ficha2");
+ficha3 = document.querySelector("#ficha3");
+ficha4 = document.querySelector("#ficha4");
+ficha5 = document.querySelector("#ficha5");
+ficha6 = document.querySelector("#ficha6");
+console.log(imgFichaJugador1 );
+console.log(imgFichaJugador2);
+document.addEventListener("DOMContentLoaded", () => {
+ficha1.addEventListener('click',()=>{
+   
+    console.log(imgFichaJugador1 );
+    imgFichaJugador1 = imgFicha1;
+    console.log(imgFichaJugador1);
+    seleccionarFichaJugador1(ficha1);
+    
+})
+ficha2.addEventListener('click',()=>{
+    console.log(imgFichaJugador2);
+    imgFichaJugador2 = imgFicha2;
+    console.log(imgFichaJugador2); 
+    seleccionarFichaJugador2(ficha2);
+   
+})
+ficha3.addEventListener('click',()=>{
+    
+    console.log(imgFichaJugador1 );
+    imgFichaJugador1 = imgFicha3;
+    console.log(imgFichaJugador1 );
+   
+ 
+    seleccionarFichaJugador1(ficha3);
+})
+ficha4.addEventListener('click',()=>{
+
+    console.log(imgFichaJugador2);
+    imgFichaJugador2 = imgFicha4;
+    console.log(imgFichaJugador2);
+
+    seleccionarFichaJugador2(ficha4);
+    
+})
+ficha5.addEventListener('click',()=>{
+    console.log(imgFichaJugador1 );
+    imgFichaJugador1 = imgFicha5;
+    console.log(imgFichaJugador1 );
+    
+    
+    seleccionarFichaJugador1(ficha5);
+    
+})
+ficha6.addEventListener('click',()=>{
+   
+        
+
+    console.log(imgFichaJugador2);
+    imgFichaJugador2 = imgFicha6;
+    console.log(imgFichaJugador2);
+    
+    
+    seleccionarFichaJugador2(ficha6);
+    
+})
+});
+console.log(imgFichaJugador1 );
+console.log(imgFichaJugador2);
+document.addEventListener("DOMContentLoaded", () => {
+document.querySelector("#linea4").addEventListener('click',()=>{
+    console.log(cantEnLinea);
+    cantEnLinea = 4;
+    numColumn = 7;
+    numFilas = 6;
+    TAMESPACIO = 60;
+    cargarJuego();
+    //reiniciarJuego();
+})
+document.querySelector('#linea5').addEventListener('click',()=>{
+    console.log("entro a #linea5");
+    console.log(cantEnLinea);
+    cantEnLinea = 5;
+    numColumn = 8;
+    numFilas = 7;
+    TAMESPACIO = 50;   
+    console.log(cantEnLinea);
+    cargarJuego();
+    //reiniciarJuego();
+})
+console.log(cantEnLinea);
+document.querySelector('#linea6').addEventListener('click',()=>{
+    cantEnLinea = 6;
+    numColumn = 9;
+    numFilas = 8;
+    TAMESPACIO = 45;
+    cargarJuego();
+    //reiniciarJuego();
+})
+document.querySelector('#linea7').addEventListener('click',()=>{
+    cantEnLinea = 7;
+    numColumn = 10;
+    numFilas = 9;
+    TAMESPACIO = 40;
+    cargarJuego();
+    //reiniciarJuego();
+})
+});
+let cantEnLinea = 4;
+let numColumn = 7;
+let numFilas = 6;
+let TAMESPACIO = 80;
+cargarJuego();
 
 
 canvas.addEventListener("mousedown", (event) => {
@@ -80,163 +236,11 @@ canvas.addEventListener("mouseleave", ()=>{
     }
 })
 
-// Crea un array para los receptores
-
-
-
-
-document.querySelector('#menuGame').addEventListener('click',()=>{
-    //reiniciarJuego();
-    document.querySelector('.canvas-form').style.display="flex";
-    document.querySelector('.canvas').style.display="none";
-});
-//reiniciar Juego
-document.querySelector('#restartGame').addEventListener('click',()=>{
-    //reiniciarJuego();
-});
-//nombre de los jugadores
-document.querySelector('#namePlayer1').addEventListener('keyup', ()=>{
-    juego1.setNombre(document.querySelector('#namePlayer1').value);
-});
-document.querySelector('#namePlayer2').addEventListener('keyup', ()=>{
-    jugador2.setNombre(document.querySelector('#namePlayer2').value);
-});
-
-//juegar 4 en linea
-document.querySelector('#play-canvas').addEventListener('click',()=>{
-    document.querySelector('.section-image').style.display="none";
-    document.querySelector('.canvas-form').style.display="flex";
-});
-document.querySelector("#play-game").addEventListener('click',()=>{
-    document.querySelector('.canvas').style.display="flex";
-    document.querySelector('.canvas-form').style.display="none";
-    //reiniciarJuego();
-});
-function seleccionarFichaJugador2(ficha){
-    ficha2.style.scale = "1.0"
-    ficha4.style.scale = "1.0"
-    ficha6.style.scale = "1.0"
-    ficha.style.scale = "1.2"
-}
-function seleccionarFichaJugador1(ficha){
-    ficha1.style.scale = "1.0"
-    ficha3.style.scale = "1.0"
-    ficha5.style.scale = "1.0"
-    ficha.style.scale = "1.2"
-}
-ficha1 = document.querySelector("#ficha1");
-ficha2 = document.querySelector("#ficha2");
-ficha3 = document.querySelector("#ficha3");
-ficha4 = document.querySelector("#ficha4");
-ficha5 = document.querySelector("#ficha5");
-ficha6 = document.querySelector("#ficha6");
-
-function FgetJugador1(img){
-    this.imgFichaJugador1=img;
-}
-function FgetJugador2(img){
-    this.imgFichaJugador2=img;
-
-}
-ficha1.addEventListener('click',()=>{
-   
-    FgetJugador1(imgFicha1);
-    imgFichaJugador1 = imgFicha1;
-    juego1.setImage1(imgFicha1);
-    seleccionarFichaJugador1(ficha1);
-
-
-})
-ficha2.addEventListener('click',()=>{
-   
-    FgetJugador2(imgFicha2);
-    imgFichaJugador2 = imgFicha2;
-    juego1.setImage2(imgFicha2);
-
-    seleccionarFichaJugador2(ficha2);
-
-})
-ficha3.addEventListener('click',()=>{
-    
-    FgetJugador1(imgFicha3);
-    imgFichaJugador1 = imgFicha3;
-    juego1.setImage1(imgFicha3);
- 
-    seleccionarFichaJugador1(ficha3);
-    
-})
-ficha4.addEventListener('click',()=>{
-
-    FgetJugador2(imgFicha4);
-    imgFichaJugador2 = imgFicha4;
-    juego1.setImage2(imgFicha4);
-
-    seleccionarFichaJugador2(ficha4);
-   
-    
-})
-ficha5.addEventListener('click',()=>{
-    FgetJugador1(imgFicha5);
-    imgFichaJugador1 = imgFicha5;
-    juego1.setImage1(imgFicha5);
-    
-    seleccionarFichaJugador1(ficha5);
-   
-})
-ficha6.addEventListener('click',()=>{
-   
-        
-    FgetJugador2(imgFicha6);
-    imgFichaJugador2 = imgFicha6;
-    juego1.setImage2(imgFicha6);
-    
-    seleccionarFichaJugador2(ficha6);
-    
-})
-console.log(imgFichaJugador2);
-document.addEventListener("DOMContentLoaded", () => {
-document.querySelector("#linea4").addEventListener('click',()=>{
-    cantEnLinea = 4;
-    numColumn = 7;
-    numFilas = 6;
-    TAMESPACIO = 60;
-    console.log("entro a #linea4");
-    //reiniciarJuego();
-})
-document.querySelector('#linea5').addEventListener('click',()=>{
-    cantEnLinea = 5;
-    numColumn = 8;
-    numFilas = 7;
-    TAMESPACIO = 50;   
-    //reiniciarJuego();
-})
-document.querySelector('#linea6').addEventListener('click',()=>{
-    cantEnLinea = 6;
-    numColumn = 9;
-    numFilas = 8;
-    TAMESPACIO = 45;
-    //reiniciarJuego();
-})
-document.querySelector('#linea7').addEventListener('click',()=>{
-    cantEnLinea = 7;
-    numColumn = 10;
-    numFilas = 9;
-    TAMESPACIO = 40;
-    //reiniciarJuego();
-})
-});
-let cantEnLinea = 4;
-let numColumn = 7;
-let numFilas = 6;
-let TAMESPACIO = 80;
-
 function cargarJuego(){
     let tablero7= new Tablero(numFilas, numColumn, ctx,cantEnLinea,TAMESPACIO);
-    let juego1= new Juego(tablero7,ctx,"juan","pedro",imgFichaJugador1,imgFichaJugador2);
+    juego1 = new Juego(tablero7, ctx, "juan", "pedro", imgFichaJugador1, imgFichaJugador2);
+    juego1.addFichas();
     juego1.draw();
     return juego1;
 }
-juego1 = cargarJuego();
-juego1.addFichas();
 
-cargarJuego();
