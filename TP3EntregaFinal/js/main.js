@@ -16,8 +16,8 @@ let imgFicha5 = "./img/robot_circ5.png";
 let imgFicha6 = "./img/robot_circ6.png";
 let ganador = document.querySelector("#ganador");
 let titulo = document.querySelector("#turno");
-let nombre1=document.querySelector("#titulo1");
-let nombre2=document.querySelector("#titulo2");
+let jugador1;
+let jugador2;
 
 
 
@@ -40,14 +40,16 @@ document.querySelector('#restartGame').addEventListener('click',()=>{
     }
     juego1.draw();
 });
+
 //nombre de los jugadores
+document.addEventListener("DOMContentLoaded", () => {
 document.querySelector('#namePlayer1').addEventListener('keyup', ()=>{
-    juego1.setNombre(document.querySelector('#namePlayer1').value);
+    jugador1=document.querySelector('#namePlayer1').value;
 });
 document.querySelector('#namePlayer2').addEventListener('keyup', ()=>{
-    jugador2.setNombre(document.querySelector('#namePlayer2').value);
+    jugador2=document.querySelector('#namePlayer2').value;
 });
-
+});
 //juegar 4 en linea
 document.querySelector('#play-canvas').addEventListener('click',()=>{
     document.querySelector('.section-image').style.display="none";
@@ -149,7 +151,6 @@ let cantEnLinea = 4;
 let numColumn = 7;
 let numFilas = 6;
 let TAMESPACIO = 70;
-
 cargarJuego();
 
 //funcion de cronometro
@@ -283,8 +284,14 @@ canvas.addEventListener("mouseleave", ()=>{
 })
 
 function cargarJuego(){
+    if(jugador1==="[object HTMLHeadingElement]"){
+        jugador1= "player 1";
+    }
+    if(jugador2==="[object HTMLHeadingElement]"){
+        jugador2 = "player 2";
+    }
     let tablero7= new Tablero(numFilas, numColumn, ctx,cantEnLinea,TAMESPACIO);
-    juego1 = new Juego(tablero7, ctx, "juan", "pedro", imgFichaJugador1, imgFichaJugador2);
+    juego1 = new Juego(tablero7, ctx, jugador1, jugador2, imgFichaJugador1, imgFichaJugador2);
     juego1.addFichas();
     juego1.draw();
     iniciarTiempo(true);
