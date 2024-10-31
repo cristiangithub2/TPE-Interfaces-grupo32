@@ -8,6 +8,7 @@ class Ficha extends Figura{
         this.xInicial=this.posX;
         this.yInicial=this.posY;
         this.image= new Image();
+        this.enMovimiento = false; 
     }
     getJugador(){
         return this.player
@@ -58,7 +59,19 @@ class Ficha extends Figura{
     getPlayer(){
         return this.player;
     }
+    iniciarMovimiento() {
+        this.enMovimiento = true;
+    }
 
+    // Llama a esta función para detener el movimiento
+    detenerMovimiento() {
+        this.enMovimiento = false;
+    }
+
+    // Verifica si la ficha sigue en movimiento
+    estaEnMovimiento() {
+        return this.enMovimiento;
+    }
     isPointInside(x, y) {
         if(this.getPuedeMoverse()){
             let _x = this.posX - x;

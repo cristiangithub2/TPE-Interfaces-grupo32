@@ -15,7 +15,9 @@ let imgFicha4 = "./img/robot_circ4.png";
 let imgFicha5 = "./img/robot_circ5.png";
 let imgFicha6 = "./img/robot_circ6.png";
 let ganador = document.querySelector("#ganador");
-
+let titulo = document.querySelector("#turno");
+let nombre1=document.querySelector("#titulo1");
+let nombre2=document.querySelector("#titulo2");
 
 
 
@@ -33,7 +35,10 @@ document.querySelector('#menuGame').addEventListener('click',()=>{
 });
 //reiniciar Juego
 document.querySelector('#restartGame').addEventListener('click',()=>{
-    //reiniciarJuego();
+    for( let i = juego1.cantFichas()-1; i>=0; i--){
+        juego1.getFicha(i).posInicial();
+    }
+    juego1.draw();
 });
 //nombre de los jugadores
 document.querySelector('#namePlayer1').addEventListener('keyup', ()=>{
@@ -71,69 +76,42 @@ ficha3 = document.querySelector("#ficha3");
 ficha4 = document.querySelector("#ficha4");
 ficha5 = document.querySelector("#ficha5");
 ficha6 = document.querySelector("#ficha6");
-console.log(imgFichaJugador1 );
-console.log(imgFichaJugador2);
+
 document.addEventListener("DOMContentLoaded", () => {
 ficha1.addEventListener('click',()=>{
    
-    console.log(imgFichaJugador1 );
     imgFichaJugador1 = imgFicha1;
-    console.log(imgFichaJugador1);
     seleccionarFichaJugador1(ficha1);
     
 })
 ficha2.addEventListener('click',()=>{
-    console.log(imgFichaJugador2);
     imgFichaJugador2 = imgFicha2;
-    console.log(imgFichaJugador2); 
     seleccionarFichaJugador2(ficha2);
-   
 })
+
 ficha3.addEventListener('click',()=>{
     
-    console.log(imgFichaJugador1 );
     imgFichaJugador1 = imgFicha3;
-    console.log(imgFichaJugador1 );
-   
- 
     seleccionarFichaJugador1(ficha3);
 })
 ficha4.addEventListener('click',()=>{
 
-    console.log(imgFichaJugador2);
     imgFichaJugador2 = imgFicha4;
-    console.log(imgFichaJugador2);
-
     seleccionarFichaJugador2(ficha4);
     
 })
 ficha5.addEventListener('click',()=>{
-    console.log(imgFichaJugador1 );
     imgFichaJugador1 = imgFicha5;
-    console.log(imgFichaJugador1 );
-    
-    
     seleccionarFichaJugador1(ficha5);
     
 })
 ficha6.addEventListener('click',()=>{
-   
-        
-
-    console.log(imgFichaJugador2);
     imgFichaJugador2 = imgFicha6;
-    console.log(imgFichaJugador2);
-    
-    
     seleccionarFichaJugador2(ficha6);
-    
 })
 });
-console.log(imgFichaJugador1 );
-console.log(imgFichaJugador2);
 document.addEventListener("DOMContentLoaded", () => {
 document.querySelector("#linea4").addEventListener('click',()=>{
-    console.log(cantEnLinea);
     cantEnLinea = 4;
     numColumn = 7;
     numFilas = 6;
@@ -142,17 +120,14 @@ document.querySelector("#linea4").addEventListener('click',()=>{
     //reiniciarJuego();
 })
 document.querySelector('#linea5').addEventListener('click',()=>{
-    console.log("entro a #linea5");
-    console.log(cantEnLinea);
     cantEnLinea = 5;
     numColumn = 8;
     numFilas = 7;
     TAMESPACIO = 50;   
-    console.log(cantEnLinea);
     cargarJuego();
     //reiniciarJuego();
 })
-console.log(cantEnLinea);
+
 document.querySelector('#linea6').addEventListener('click',()=>{
     cantEnLinea = 6;
     numColumn = 9;
@@ -173,7 +148,7 @@ document.querySelector('#linea7').addEventListener('click',()=>{
 let cantEnLinea = 4;
 let numColumn = 7;
 let numFilas = 6;
-let TAMESPACIO = 80;
+let TAMESPACIO = 70;
 
 cargarJuego();
 
@@ -211,18 +186,19 @@ function iniciarTiempo(boolean){
         clearInterval(cronometro);
     }
 }
+function cambiarTurno(){
+   let turno= juego1.getTurno();
+   titulo.innerHTML = "Turno de " + juego1.getJugadorEnTurno(turno);
+}
 function finalizarJuego(){
     //frena el tiempo
-    console.log("finalize el jeugo")
     iniciarTiempo(false);
     titulo.style.display ="none";
     ganador.style.display = "block";
-    ganador.innerHTML = `Gano `+ turno.getNombre();
-    //setea a las fichas para q no se puedan mover
-    for(let i = 0; i < fichasJugador1.length; i++){
-        fichasJugador1[i].ponerEnTablero(false);
-        fichasJugador2[i].ponerEnTablero(false);
-    }
+    ganador.innerHTML = "Gano "+ juego1.getJugadorEnTurno(juego1.getTurno());
+    
+    //setea a las fichas para q no se puedan mover  
+  
 }
 
 function finalizarJuegoEmpate(){
@@ -278,10 +254,13 @@ canvas.addEventListener("mouseup", () =>{
         let y = juego1.getFichaActual().getPosY();
        
         //recorro todos los dropzone
+        
         let gano =juego1.tirarFicha(x,y);
-        console.log(gano)
+        cambiarTurno();
         if(gano=== -2){
-            finalizarJuego();
+           
+                console.log("Este mensaje aparece después de 2 segundos");
+                finalizarJuego(); 
         }
         juego1.draw(); 
         
@@ -309,5 +288,6 @@ function cargarJuego(){
     juego1.addFichas();
     juego1.draw();
     iniciarTiempo(true);
+    cambiarTurno();
     return juego1;
 }

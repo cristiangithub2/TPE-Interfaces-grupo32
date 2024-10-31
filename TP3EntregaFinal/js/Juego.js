@@ -27,8 +27,17 @@ class Juego{
     getImg1(){
         return this.img1;
     }
+    getFichaAnimada(){
+        return this.fichaAnimada;
+    }
     getImg2(){
         return this.img2;
+    }
+    getJugador1(){
+        return this.jugador1;
+    }
+    getJugador2(){
+        return this.jugador2;
     }
     
     setJugador1(texto){
@@ -39,6 +48,14 @@ class Juego{
     }
     setImage1(img){
         this.img1=img;
+    }
+
+    getJugadorEnTurno(turno){
+        if(turno===1){
+            return this.getJugador1();
+        }else{
+            return this.getJugador2();
+        }
     }
     
     setImage2(img){
@@ -120,9 +137,8 @@ class Juego{
     }
     
     checkWin(row, col) {
-        console.log("entra a check win??")
         if( this.Tablero.checkGanador(row,col,this.turno)){
-            console.log("retorna 1")
+          
             return true;
         }else{
             return 0;
@@ -143,10 +159,9 @@ class Juego{
             let col = this.Receptor.colReceptor(x);
 
             let row=this.Tablero.dropFicha(col,this.fichaActual);
-            console.log("al menos al detectar ficha si")
             let posX = this.Tablero.offset_X + col * this.Tablero.getCuadradoSize() + this.Tablero.getCuadradoSize() / 2;
             let posY = this.Tablero.offset_Y + row * this.Tablero.getCuadradoSize() + this.Tablero.getCuadradoSize() / 2;
-            //console.log(posX,posY)
+    
             
             if(row !== -1){
                 this.fichaAnimada = this.fichaActual;
@@ -159,7 +174,6 @@ class Juego{
 
             if(row !== -1){
                 if(this.checkWin(row,col)){
-                    console.log("gano el jugador turno");
                     return -2;
                 }else{
                     this.switchPlayer();

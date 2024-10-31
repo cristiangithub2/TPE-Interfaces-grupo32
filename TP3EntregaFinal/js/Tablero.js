@@ -60,14 +60,14 @@ class Tablero {
         return cuadrado;
     }
     draw() {
-        //console.log(this.cuadrados.length)
+      
         if(this.cuadrados.length == 0){
            
             this.cargarTablero();
         }
         for(let i =0; i <this.cuadrados.length;i++){
             this.cuadrados[i].draw(this.imgCuadrado);
-            //console.log("3")
+            
         }
        
         
@@ -86,7 +86,6 @@ class Tablero {
                 break;
             }
             else if(i ===0){
-                console.log(-1)
                 return -1;
             }
         }
@@ -97,10 +96,7 @@ class Tablero {
     checkGanador(fila,columna,turno){
         //console.log(this.checkDiagonales(fila,columna,turno),this.checkFila(fila,columna,turno),this.checkColumna(fila,columna,turno));
         if(this.checkDiagonales(fila,columna,turno) || this.checkFila(fila,columna,turno) || this.checkColumna(fila,columna,turno)){
-            console.log("Gano "+turno)
             return true;
-            
-            
         }
         else{return false;}
     }
