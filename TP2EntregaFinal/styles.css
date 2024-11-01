@@ -1404,6 +1404,8 @@ button.btn-left{
         animation: pulse 2s infinite; /* Animación continua */
         
     }
+
+   
     @keyframes pulse {
         0%, 100% {
             transform: translate(-50%, -50%) scale(1);

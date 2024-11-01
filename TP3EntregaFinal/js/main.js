@@ -2,7 +2,7 @@
 let juego1;  // Declaración global de juego1
 let canvas = document.getElementById("myCanvas");
 let ctx = canvas.getContext("2d");
-
+let win= new Audio('./audio/win.mp3')
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
 let tablero7;
@@ -42,6 +42,8 @@ document.querySelector('#menuGame').addEventListener('click',()=>{
     menu.style.top= 173 +"px";
     menu.style.left= 70.8+"%";
     iniciarTiempo(false);
+    win.pause();
+    win.currentTime=0;
 });
 //reiniciar Juego
 document.querySelector('#restartGame').addEventListener('click',()=>{
@@ -51,6 +53,8 @@ document.querySelector('#restartGame').addEventListener('click',()=>{
     juego1.draw();
     menu.style.top= 173 +"px";
     menu.style.left= 70.8+"%";
+    win.pause();
+    win.currentTime=0;
 });
 
 //nombre de los jugadores
@@ -75,10 +79,23 @@ document.querySelector("#play-game").addEventListener('click',()=>{
     }
     //reiniciarJuego();
 });
+document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll(".btn-x-inLine");
+    
+    buttons.forEach(button => {
+        button.addEventListener("click", function() {
+            // Remueve la clase 'active' de todos los botones
+            buttons.forEach(btn => btn.classList.remove("active"));
+            
+            // Agrega la clase 'active' solo al botón clickeado
+            this.classList.add("active");
+        });
+    });
+});
 function validarConfiguracionJuego() {
     // Variables para verificar que todo esté configurado
     let mensajeError = "";
-    let fichaJugador1Seleccionada = imgFichaJugador1 !== '';
+    let fichaJugador1Seleccionada = imgFichaJugador1 !== '' ;
     let fichaJugador2Seleccionada = imgFichaJugador2 !== '';
     let nombreJugador1Valido = jugador1 && jugador1.trim() !== "";
     let nombreJugador2Valido = jugador2 && jugador2.trim() !== "";
@@ -91,10 +108,10 @@ function validarConfiguracionJuego() {
     if (!nombreJugador2Valido) {
         mensajeError += "⚠️ Ingrese el nombre del Jugador 2.\n";
     }
-    if (!fichaJugador1Seleccionada) {
+    if (imgFichaJugador1 == null) {
         mensajeError += "⚠️ Seleccione una ficha para el Jugador 1.\n";
     }
-    if (!fichaJugador2Seleccionada) {
+    if (imgFichaJugador2 == null) {
         mensajeError += "⚠️ Seleccione una ficha para el Jugador 2.\n";
     }
     if (!modoJuegoSeleccionado) {
@@ -103,11 +120,25 @@ function validarConfiguracionJuego() {
 
     // Mostrar mensaje de error si falta algo
     if (mensajeError) {
-        alert(mensajeError);
+        showNotification(mensajeError);
         return false;  // Evita cargar el juego si falta algo
     }
     return true;  // Todos los campos están completos
 }
+function showNotification(message) {
+    const notification = document.getElementById('notification');
+    notification.innerText = message;
+    notification.style.display = 'block';
+    notification.style.opacity = 1;
+
+    setTimeout(() => {
+        notification.style.opacity = 0;
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 500);
+    }, 2000);
+}
+
 function seleccionarFichaJugador2(ficha){
     ficha2.style.scale = "1.0"
     ficha4.style.scale = "1.0"
@@ -325,7 +356,7 @@ canvas.addEventListener("mouseup", () =>{
         let gano =juego1.tirarFicha(x,y);
         cambiarTurno();
         if(gano=== -2){
-           
+            win.play();
                 
                 finalizarJuego(); 
         }

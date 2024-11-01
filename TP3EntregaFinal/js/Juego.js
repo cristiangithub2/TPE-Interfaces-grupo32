@@ -22,7 +22,9 @@ class Juego{
             this.draw(); // Llama a `draw` una vez que la imagen de fondo está cargada
         };
         this.gano=false;
-        
+        this.sonidoCaida= new Audio('./audio/caidaFinal.mp3');
+        this.sonidoFinal= new Audio('./audio/explosionFinal.mp3');
+        this.sonidoActivado = false;
     }
     getTablero(){
         return this.Tablero;
@@ -171,6 +173,12 @@ class Juego{
                 this.fichaAnimada = this.fichaActual;
                 this.fichaActual=null;
                 this.pos = 0;
+                this.sonidoActivado=true;
+                if(this.sonidoActivado){
+                    this.sonidoFinal.pause();
+                    this.sonidoFinal.currentTime=0;
+                    this.sonidoCaida.play();
+                }
                 this.caer(posX,posY);
             }else{
                 this.fichaActual.posInicial();
@@ -192,6 +200,7 @@ class Juego{
     }
     caer(x,y){
         //comienza un intervalo
+        
         this.intervalo = setInterval(() => {
             this.pos += 1;
             //mueve la ficha sumandole pos
@@ -210,6 +219,10 @@ class Juego{
         },10)
     }
     revotarFicha(x,y){
+        this.sonidoActivado=true;
+        if(this.sonidoActivado){
+            this.sonidoFinal.play();
+        }
         let posicion = 0;
         this.intervalo2 = setInterval(() => {
             //incrementa la pos en Y hasta cierta altura
@@ -224,6 +237,7 @@ class Juego{
                 this.bajarFicha(x,y);
             }
         },10)
+        this.sonidoActivado=false;
     }
         //mueve la ficha de a poco hacia la posicion
     bajarFicha(x,y){
