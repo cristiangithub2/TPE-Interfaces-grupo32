@@ -8,7 +8,7 @@
   top: 173px;
   left: 70.8%;
 
-  z-index: 0;
+  z-index: 3;
  
   
 }
@@ -135,7 +135,7 @@
   width: 43%;
   text-align: center;
   color: #02eb2d;
-  z-index: 20;
+  z-index: 2;
   background-color: #242832;
   height: 14%;
   left: 28.4%;

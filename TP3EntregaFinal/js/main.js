@@ -2,11 +2,11 @@
 let juego1;  // Declaración global de juego1
 let canvas = document.getElementById("myCanvas");
 let ctx = canvas.getContext("2d");
-let cronometro = 0;
+
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
 let tablero7;
-
+let cronometroInterval;  // Cambia el nombre para mayor claridad
 let imgFichaJugador1 ;
 let imgFichaJugador2  ;
 let imgFicha1 = "./img/robotPrueba1.png";
@@ -25,7 +25,7 @@ let numFilas ;
 let TAMESPACIO ;
 const arrowIndicator = document.getElementById("arrow-indicator");
 let fichaSostenida = false; // Activa la flecha al agarrar la ficha
-
+let menu=document.querySelector(".menusGame");
 
 
 
@@ -39,15 +39,18 @@ document.querySelector('#menuGame').addEventListener('click',()=>{
     document.querySelector('.canvas-form').style.display="flex";
     document.querySelector('.canvas').style.display="none";
     ganador.style.display = "none";
-
+    menu.style.top= 173 +"px";
+    menu.style.left= 70.8+"%";
+    iniciarTiempo(false);
 });
 //reiniciar Juego
 document.querySelector('#restartGame').addEventListener('click',()=>{
-   
+    iniciarTiempo(false);
     cargarJuego();
     ganador.style.display = "none";
     juego1.draw();
-    cronometro=0;
+    menu.style.top= 173 +"px";
+    menu.style.left= 70.8+"%";
 });
 
 //nombre de los jugadores
@@ -198,35 +201,28 @@ document.querySelector('#linea7').addEventListener('click',()=>{
 //funcion de cronometro
 function iniciarTiempo(boolean){
     let element = document.getElementById("tiempo");
-
-    //setea la cantidad de minutos
     let cantminutos = 3;
-    //se pasa a segundos
     let tiempo = cantminutos * 60;
-    //si se recibio un true
-    if(boolean){
-        cronometro = setInterval(()=>{
-            let minutos = Math.floor(tiempo / 60);
-            let segundos = tiempo % 60;
-            //si segundos es < 10 coloca un 0 adelante
-            segundos = segundos < 10 ? '0' + segundos : segundos;
-            element.innerHTML = `${minutos}:${segundos}`;
-            //si llega a cero finaliza el juego como Empate
-           
-            if(minutos == 0 && segundos == 0){
-                clearInterval();
-                finalizarJuegoEmpate();
 
-            }
-            else{
-                tiempo--;
-           
-            }
-        }, 1000);
-    }
-    else{
-        //si se recibe un false termina el intervalo
-        clearInterval(cronometro);
+    if (boolean === true) {
+        if (!cronometroInterval) { // Solo iniciar si no está corriendo
+            cronometroInterval = setInterval(() => {
+                let minutos = Math.floor(tiempo / 60);
+                let segundos = tiempo % 60;
+                segundos = segundos < 10 ? '0' + segundos : segundos;
+                element.innerHTML = `${minutos}:${segundos}`;
+
+                if (tiempo <= 0) {
+                    clearInterval(cronometroInterval);
+                    finalizarJuegoEmpate();
+                } else {
+                    tiempo--;
+                }
+            }, 1000);
+        }
+    } else {
+        clearInterval(cronometroInterval);
+        cronometroInterval = null; // Resetear la variable del intervalo
     }
 }
 function cambiarTurno(){
@@ -239,6 +235,9 @@ function finalizarJuego(){
     titulo.style.display ="none";
     ganador.style.display = "block";
     ganador.innerHTML = "Gano "+ juego1.getJugadorEnTurno(juego1.getTurno());
+    menu.style.top= 360 +"px";
+    menu.style.left= 43.8+"%";
+
     
     //setea a las fichas para q no se puedan mover  
   
@@ -250,11 +249,8 @@ function finalizarJuegoEmpate(){
     titulo.style.display ="none";
     ganador.style.display = "block";
     ganador.innerHTML = `Empate, Se acabo el tiempo`;
-    //setea a las fichas para q no se puedan mover
-    for(let i = 0; i < fichasJugador1.length; i++){
-        fichasJugador1[i].ponerEnTablero(false);
-        fichasJugador2[i].ponerEnTablero(false);
-    }
+    menu.style.top= 360 +"px";
+    menu.style.left= 43.8+"%";
 }
 
 canvas.addEventListener("mousedown", (event) => {
