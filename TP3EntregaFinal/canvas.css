@@ -109,8 +109,9 @@
   cursor: text;
 }
 .canvas-form {
-    position: relative;
-    left: -2%;
+  position: relative;
+  width: 75%;
+  left: 2%;
 }
 .token{
   cursor: pointer;
@@ -195,8 +196,8 @@
   margin-top: -31px;
 }
 .bk-game-image{
-    width: 82.5%;
-    margin-left: 8.8%;
+    width: 75%;
+    margin-left: 12.5%;
 }
 .button-play{
     position: relative;
