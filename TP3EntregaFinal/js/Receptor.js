@@ -11,7 +11,7 @@ class Receptor{
 
     detectarFicha(x, y) {
         return x >= this.posX && x <= this.posX + (this.cellSize * this.cols) &&
-               y >= this.posY && y <= this.posY + this.cellSize;
+               y >= this.posY && y <= this.posY + this.cellSize ;
     }
 
     colReceptor(x) {
@@ -20,7 +20,7 @@ class Receptor{
     return Math.max(0, Math.min(col, this.cols - 1)); // Limita el resultado entre 0 y cols-1
     }
     draw() {
-        this.ctx.fillStyle = "grey";
+        this.ctx.fillStyle = "blue";
         for (let col = 0; col < this.cols; col++) {
             const posX = this.posX + col * this.cellSize;
             const posY = this.posY;
@@ -30,5 +30,13 @@ class Receptor{
     cantReceptor(){
         return this.recept.length;
     }
-
+    getPosX(){
+        return this.posX;
+    }
+    getPosY(){
+        return this.posY;
+    }
+    getCellSize(){
+        return this.cellSize;
+    }
 }

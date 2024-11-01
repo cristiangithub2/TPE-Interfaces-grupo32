@@ -24,6 +24,9 @@ class Juego{
         this.gano=false;
         
     }
+    getTablero(){
+        return this.Tablero;
+    }
     getImg1(){
         return this.img1;
     }
@@ -117,11 +120,12 @@ class Juego{
     }
     draw() {
         this.clearCanvas();
+        this.Receptor.draw();
         if (this.imgFondo.complete) {
             this.ctx.drawImage(this.imgFondo, 0, 0, canvasWidth, canvasHeight);
         }
     
-        this.Receptor.draw();
+        
         // Cambia esta línea para usar 'this.fichas'
             
         for (let i = 0; i < this.fichas.length; i++) {

@@ -5,6 +5,7 @@ let ctx = canvas.getContext("2d");
 let cronometro = 0;
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
+let tablero7;
 
 let imgFichaJugador1 ;
 let imgFichaJugador2  ;
@@ -22,7 +23,8 @@ let cantEnLinea ;
 let numColumn ;
 let numFilas ;
 let TAMESPACIO ;
-
+const arrowIndicator = document.getElementById("arrow-indicator");
+let fichaSostenida = false; // Activa la flecha al agarrar la ficha
 
 
 
@@ -36,12 +38,16 @@ document.querySelector('#menuGame').addEventListener('click',()=>{
     //reiniciarJuego();
     document.querySelector('.canvas-form').style.display="flex";
     document.querySelector('.canvas').style.display="none";
+    ganador.style.display = "none";
+
 });
 //reiniciar Juego
 document.querySelector('#restartGame').addEventListener('click',()=>{
    
     cargarJuego();
+    ganador.style.display = "none";
     juego1.draw();
+    cronometro=0;
 });
 
 //nombre de los jugadores
@@ -148,8 +154,7 @@ ficha5.addEventListener('click',()=>{
 })
 ficha6.addEventListener('click',()=>{
     imgFichaJugador2 = imgFicha6;
-    seleccionarFichaJug
-    ador2(ficha6);
+    seleccionarFichaJugador1(ficha6);
 })
 });
 document.addEventListener("DOMContentLoaded", () => {
@@ -157,7 +162,7 @@ document.querySelector("#linea4").addEventListener('click',()=>{
     cantEnLinea = 4;
     numColumn = 7;
     numFilas = 6;
-    TAMESPACIO = 80;   
+    TAMESPACIO = 70;   
     cargarJuego();
     //reiniciarJuego();
 })
@@ -257,7 +262,7 @@ canvas.addEventListener("mousedown", (event) => {
     let mouseX = event.clientX - rect.left;      // Ajusta la posición X
     let mouseY = event.clientY - rect.top;       // Ajusta la posición Y
 
-    
+    fichaSostenida = true; // Activa la flecha al agarrar la ficha
     
     //recore todas las fichas         
     for(let i = juego1.cantFichas()-1; i>=0; i--){
@@ -273,8 +278,34 @@ canvas.addEventListener("mousedown", (event) => {
 })
 canvas.addEventListener("mousemove", (event) => {
     // Si hay una ficha agarrada
+    
     if (juego1.getFichaActual() != null) {
         const rect = canvas.getBoundingClientRect(); // Vuelve a obtener el rectángulo del canvas
+        const x = event.clientX - canvas.getBoundingClientRect().left;
+        const col = juego1.Receptor.colReceptor(x); //
+        if (fichaSostenida) { // Solo muestra la flecha cuando la ficha esté agarrada
+            console.log("pos x recetor"+juego1.Receptor.getPosX()+ col * juego1.Receptor.getCellSize()+ juego1.Receptor.getCellSize()*2)
+            console.log("boca" )
+            arrowIndicator.style.display = "block";
+            if(juego1.getTablero().getCantLineas() === 4){
+            arrowIndicator.style.left = juego1.Receptor.getPosX() + col * juego1.Receptor.getCellSize()+ juego1.Receptor.getCellSize()*2 + "px";
+            arrowIndicator.style.top = rect.top + juego1.Receptor.getPosY() - arrowIndicator.offsetHeight +juego1.Receptor.getCellSize() + 10 + "px";
+            }
+            if(juego1.getTablero().getCantLineas() === 5){
+                arrowIndicator.style.left = juego1.Receptor.getPosX() + col * juego1.Receptor.getCellSize()+ juego1.Receptor.getCellSize()*2+ 27 + "px";
+                arrowIndicator.style.top = rect.top + juego1.Receptor.getPosY() - arrowIndicator.offsetHeight +juego1.Receptor.getCellSize() + 40 + "px";
+            }
+            if(juego1.getTablero().getCantLineas() === 6){
+                arrowIndicator.style.left = juego1.Receptor.getPosX() + col * juego1.Receptor.getCellSize()+ juego1.Receptor.getCellSize()*2+ 37 + "px";
+                arrowIndicator.style.top = rect.top + juego1.Receptor.getPosY() - arrowIndicator.offsetHeight +juego1.Receptor.getCellSize() + 42 + "px";
+            }
+            if(juego1.getTablero().getCantLineas() === 7){
+                arrowIndicator.style.left = juego1.Receptor.getPosX() + col * juego1.Receptor.getCellSize()+ juego1.Receptor.getCellSize()*2+ 47 + "px";
+                arrowIndicator.style.top = rect.top + juego1.Receptor.getPosY() - arrowIndicator.offsetHeight +juego1.Receptor.getCellSize() + 45 + "px";
+            }
+        } else {
+            arrowIndicator.style.display = "none";
+        }
         let mouseX = event.clientX - rect.left;      // Ajusta la posición X
         let mouseY = event.clientY - rect.top;       // Ajusta la posición Y
 
@@ -286,18 +317,20 @@ canvas.addEventListener("mousemove", (event) => {
 });
 canvas.addEventListener("mouseup", () =>{
     //si hay una ficha agarrada
+    fichaSostenida = false;
+    arrowIndicator.style.display = "none"; // Oculta la flecha al soltar la ficha
     if(juego1.getFichaActual()!=null){
         //se obtiene la pos de la ficha
         let x = juego1.getFichaActual().getPosX();
         let y = juego1.getFichaActual().getPosY();
-       
+       console.log(juego1.getFichaActual().getPosX() )
         //recorro todos los dropzone
         
         let gano =juego1.tirarFicha(x,y);
         cambiarTurno();
         if(gano=== -2){
            
-                console.log("Este mensaje aparece después de 2 segundos");
+                
                 finalizarJuego(); 
         }
         juego1.draw(); 

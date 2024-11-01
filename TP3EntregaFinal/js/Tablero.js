@@ -13,13 +13,18 @@ class Tablero {
         this.cuadradoSize=cuadradoSize;
         this.imgCuadrado= "./img/cuadradoImg.png";
     }
+    getCantLineas(){
+        return this.cantLineas;
+    }
     getReceptor() {
         return this.receptor;
     }
     getCuadradoSize(){
         return this.cuadradoSize;
     }
-    
+    getOffSet_Y(){
+        return this.offset_Y;
+    }
 
     cargarTablero(){
        
