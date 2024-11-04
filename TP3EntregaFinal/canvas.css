@@ -110,8 +110,8 @@
 }
 .canvas-form {
   position: relative;
-  width: 75%;
-  left: 2%;
+  width: 82.8%;
+  left: -2%;
 }
 .token{
   cursor: pointer;
@@ -196,24 +196,23 @@
   margin-top: -31px;
 }
 .bk-game-image{
-    width: 75%;
-    margin-left: 12.5%;
+    width: 1144px;
+    margin-left: 119px;
 }
 .button-play{
-    position: relative;
-    left: 52%;
-    top: -400px;
-    transform: translate(-50%, -50%); 
-    width: 137.59px;
-    height: 56px;
-    font-size: 18px;
-    background-color: #4cd02a ;
-    border: none; 
-    border-radius: 30px;
-    cursor: pointer; 
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Agrega una transición suave */
-    animation: pulse 2s infinite; /* Animación continua */
-
+  position: absolute;
+  left: 52%;
+  top: 493px;
+  transform: translate(-50%, -50%);
+  width: 137.59px;
+  height: 56px;
+  font-size: 18px;
+  background-color: #4cd02a;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  animation: pulse 2s infinite;
     
 }
 .button-play-play {
