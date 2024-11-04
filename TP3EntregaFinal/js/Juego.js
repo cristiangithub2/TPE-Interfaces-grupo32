@@ -2,7 +2,7 @@ class Juego{
     constructor(Tablero,ctx,jugador1,jugador2,img1,img2,){
         this.Tablero=Tablero;
         this.Receptor=this.Tablero.getReceptor();
-        this.fichas = []; // Define fichas como un array
+        this.fichas = []; 
         this.ctx=ctx;
         this.turno=1;
         this.cantCells = this.Tablero.getRows() * this.Tablero.getCols();

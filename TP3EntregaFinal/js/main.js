@@ -1,12 +1,12 @@
 
-let juego1;  // Declaración global de juego1
+let juego1;  
 let canvas = document.getElementById("myCanvas");
 let ctx = canvas.getContext("2d");
-let win= new Audio('./audio/win.mp3')
+let win= new Audio('./audio/cancionFinal.mp3')
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
 let tablero7;
-let cronometroInterval;  // Cambia el nombre para mayor claridad
+let cronometroInterval;  
 let imgFichaJugador1 ;
 let imgFichaJugador2  ;
 let imgFicha1 = "./img/robotPrueba1.png";
@@ -24,12 +24,12 @@ let numColumn ;
 let numFilas ;
 let TAMESPACIO ;
 const arrowIndicator = document.getElementById("arrow-indicator");
-let fichaSostenida = false; // Activa la flecha al agarrar la ficha
+let fichaSostenida = false; 
 let menu=document.querySelector(".menusGame");
 
 
 
-// Crea un array para los receptores
+
 
 
 
@@ -270,7 +270,7 @@ function finalizarJuego(){
     menu.style.left= 43.8+"%";
 
     
-    //setea a las fichas para q no se puedan mover  
+     
   
 }
 
@@ -285,9 +285,9 @@ function finalizarJuegoEmpate(){
 }
 
 canvas.addEventListener("mousedown", (event) => {
-    const rect = canvas.getBoundingClientRect(); // Obtén las coordenadas del canvas en la pantalla
-    let mouseX = event.clientX - rect.left;      // Ajusta la posición X
-    let mouseY = event.clientY - rect.top;       // Ajusta la posición Y
+    const rect = canvas.getBoundingClientRect(); // Obtengo las coordenadas del canvas en la pantalla
+    let mouseX = event.clientX - rect.left;      // Ajusto la posición X
+    let mouseY = event.clientY - rect.top;       // Ajusto la posición Y
 
     fichaSostenida = true; // Activa la flecha al agarrar la ficha
     
@@ -309,7 +309,7 @@ canvas.addEventListener("mousemove", (event) => {
     if (juego1.getFichaActual() != null) {
         const rect = canvas.getBoundingClientRect(); // Vuelve a obtener el rectángulo del canvas
         const x = event.clientX - canvas.getBoundingClientRect().left;
-        const col = juego1.Receptor.colReceptor(x); //
+        const col = juego1.Receptor.colReceptor(x); 
         if (fichaSostenida) { // Solo muestra la flecha cuando la ficha esté agarrada
             console.log("pos x recetor"+juego1.Receptor.getPosX()+ col * juego1.Receptor.getCellSize()+ juego1.Receptor.getCellSize()*2)
             console.log("boca" )
@@ -333,8 +333,8 @@ canvas.addEventListener("mousemove", (event) => {
         } else {
             arrowIndicator.style.display = "none";
         }
-        let mouseX = event.clientX - rect.left;      // Ajusta la posición X
-        let mouseY = event.clientY - rect.top;       // Ajusta la posición Y
+        let mouseX = event.clientX - rect.left;      // Ajusto la posición X
+        let mouseY = event.clientY - rect.top;       // Ajusto la posición Y
 
         // Mueve la ficha de lugar y redibuja todo
         let fichaActual = juego1.getFichaActual();
@@ -351,7 +351,7 @@ canvas.addEventListener("mouseup", () =>{
         let x = juego1.getFichaActual().getPosX();
         let y = juego1.getFichaActual().getPosY();
        console.log(juego1.getFichaActual().getPosX() )
-        //recorro todos los dropzone
+        //recorro todos los receptores
         
         let gano =juego1.tirarFicha(x,y);
         cambiarTurno();

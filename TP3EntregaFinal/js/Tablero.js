@@ -4,8 +4,8 @@ class Tablero {
         this.rows = rows;       // Número de filas
         this.cols = cols;       // Número de columnas
         this.ctx = ctx;         // Contexto del canvas
-        this.matriz = []; //logica
-        this.cuadrados=[];    //dibujo
+        this.matriz = []; //esta es la  logica
+        this.cuadrados=[];    //ese es para el dibujo
         this.offset_X = (ctx.canvas.width - cols * cuadradoSize) / 2; // Centrado horizontal
         this.offset_Y = ctx.canvas.height - (rows * cuadradoSize) - 20; // Posicionado cerca del fondo
         this.receptor = new Receptor(this.cols, this.offset_X, this.offset_Y - cuadradoSize, cuadradoSize, this.ctx);
